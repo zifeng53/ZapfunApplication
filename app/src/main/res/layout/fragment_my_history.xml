@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My History"
+        android:text="weilun testing"
         android:textSize="38sp"
         />
 
