@@ -21,10 +21,4 @@
 
         />
 
-    <item
-        android:id="@+id/more"
-        android:title="More"
-
-        />
-
 </menu>
