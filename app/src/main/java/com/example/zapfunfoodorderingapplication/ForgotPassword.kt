@@ -3,9 +3,9 @@ package com.example.zapfunfoodorderingapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class Register : AppCompatActivity() {
+class ForgotPassword : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register2)
+        setContentView(R.layout.activity_forgot_password)
     }
 }
