@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Zapfun Food Ordering Application</string>
-    <string name="Delivery To:">Delivery Location</string>
     <string name="DeliveryLocation">"Delivery To : "</string>
     <string name="RiceType"><![CDATA["Rice type & size : "]]></string>
 </resources>
