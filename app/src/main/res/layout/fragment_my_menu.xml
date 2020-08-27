@@ -14,6 +14,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
         android:text="@string/LocationAddress"
+        android:textColor="@android:color/holo_red_light"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/lblDelivery"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,7 +23,7 @@
         android:id="@+id/lblConfirmRice"
         android:layout_width="226dp"
         android:layout_height="22dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="110dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="4dp"
         android:text="@string/ConfirmRice"
@@ -49,10 +50,11 @@
         android:layout_width="128dp"
         android:layout_height="22dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="110dp"
         android:text="@string/RiceType"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Line1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -62,6 +64,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="16dp"
         android:text="@string/DeliveryLocation"
+        android:textColor="@android:color/holo_red_light"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/imgPinLocation"
         app:layout_constraintStart_toStartOf="@+id/imgPinLocation"
@@ -72,7 +75,7 @@
         android:layout_width="29dp"
         android:layout_height="33dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_iconfinder_menu_alt_134216"
+        android:src="@drawable/ic_baseline_menu_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toEndOf="@+id/lblAddress"
@@ -83,9 +86,7 @@
         android:layout_width="364dp"
         android:layout_height="42dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="18dp"
         android:layout_marginEnd="155dp"
-        android:layout_marginBottom="10dp"
         android:background="@drawable/search_bg"
         android:drawableLeft="@drawable/ic_baseline_search_24"
         android:drawablePadding="16sp"
@@ -162,11 +163,8 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <ScrollView
-        android:layout_width="412dp"
-        android:layout_height="535dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_width="410dp"
+        android:layout_height="549dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -174,9 +172,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        </LinearLayout>
+            android:orientation="vertical"/>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
