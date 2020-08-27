@@ -4,4 +4,6 @@
     <string name="RiceType"><![CDATA["Rice type & size : "]]></string>
     <string name="MyOrderLabel">My Orders</string>
     <string name="MyOrderEditLabel">Edit</string>
+    <string name="ConfirmRice" />
+    <string name="LocationAddress">Current Location</string>
 </resources>
