@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     // create three objects for fragments
-
+    //lateinit var welcome: fragment_welcome
     lateinit var myMenuFragment: MyMenuFragment
     lateinit var myOrderFragment: MyOrderFragment
     lateinit var myHistoryFragment: MyHistoryFragment
@@ -19,6 +19,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val bottomNavigation : BottomNavigationView = findViewById(R.id.btm_nav)
+
+        // set Welcome as default activity, when app is open the Welcome activity will show all that time
+        /*welcome = fragment_welcome()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frame_layout,welcome)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            .commit()*/
+
 
         // set Menu as default fragment, when app is open the Menu fragment will show all that time
         myMenuFragment = MyMenuFragment()
