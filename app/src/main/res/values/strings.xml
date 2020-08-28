@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Zapfun Food Ordering Application</string>
     <string name="DeliveryLocation">"Delivery To : "</string>
+    <string name="HistoryTitle">"My History"</string>
     <string name="RiceType"><![CDATA["Rice type & size : "]]></string>
     <string name="MyOrderLabel">My Orders</string>
     <string name="MyOrderEditLabel">Edit</string>
@@ -8,4 +9,6 @@
     <string name="LocationAddress">Current Location</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="img_description">This is an image</string>
 </resources>
