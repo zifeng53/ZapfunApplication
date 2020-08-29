@@ -29,4 +29,19 @@
     <string name="register">Register</string>
     <string name="or">OR</string>
     <string name="loginQ">Have an account? Login here!</string>
+    <string name="login">Login</string>
+    <string name="checkrobot">Please check the box below to proceed.</string>
+    <string name="checkboxrobot">I am not a robot</string>
+    <string name="rememberme">Remember Me</string>
+    <string name="noaccount">Don\'t have an account? Sign up here!</string>
+    <string name="locationname">Location Name:</string>
+    <string name="recipiantname">Recipient Name:</string>
+    <string name="remark">Remark</string>
+    <string name="setdefault">Set as default delivery address?</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="cancel">Cancel</string>
+    <string name="myaddress">My Address</string>
+    <string name="delete">delete</string>
+    <string name="home">home</string>
+    <string name="aboutus">About Us</string>
 </resources>
