@@ -5,6 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".AboutUsFragment" >
 
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="248dp"
+        android:layout_marginBottom="648dp"
+        android:text="@string/aboutus"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="38dp"
@@ -27,6 +39,28 @@
         android:text="@string/aboutus"
         android:textSize="24sp" />
 
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="272dp"
+        android:layout_height="38dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="129dp"
+        android:layout_marginBottom="432dp"
+        android:text="@string/terms"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="272dp"
+        android:layout_height="38dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="129dp"
+        android:layout_marginBottom="377dp"
+        android:text="@string/datapolicy"
+        android:textSize="24sp" />
+
     <View
         android:id="@+id/line8"
         android:layout_width="match_parent"
@@ -37,4 +71,59 @@
         android:layout_marginBottom="678dp"
         android:background="#c0c0c0"
         tools:ignore="UnknownIdInLayout" />
+
+    <View
+        android:id="@+id/line9"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="479dp"
+        android:background="#c0c0c0"
+        tools:ignore="UnknownIdInLayout" />
+
+    <View
+        android:id="@+id/line10"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="423dp"
+        android:background="#c0c0c0"
+        tools:ignore="UnknownIdInLayout" />
+
+    <View
+        android:id="@+id/line11"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="367dp"
+        android:background="#c0c0c0"
+        tools:ignore="UnknownIdInLayout" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="48dp"
+        android:layout_height="41dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="428dp"
+        android:contentDescription="@string/backarrow"
+        android:src="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="48dp"
+        android:layout_height="41dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="376dp"
+        android:contentDescription="@string/backarrow"
+        android:src="@drawable/ic_baseline_keyboard_arrow_down_24" />
 </RelativeLayout>

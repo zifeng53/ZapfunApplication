@@ -44,4 +44,6 @@
     <string name="delete">delete</string>
     <string name="home">home</string>
     <string name="aboutus">About Us</string>
+    <string name="terms">Terms and Conditions</string>
+    <string name="datapolicy">Data Policy</string>
 </resources>
