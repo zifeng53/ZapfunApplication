@@ -46,4 +46,25 @@
     <string name="aboutus">About Us</string>
     <string name="terms">Terms and Conditions</string>
     <string name="datapolicy">Data Policy</string>
+    <string name="contactus">Contact Us</string>
+    <string name="realaddress">Jalan 3/3d, Jalan Danou Kota 12, 53000 Kuala Lumpur, Wilayah Kuala Lumpur</string>
+    <string name="phone">+60169631563</string>
+    <string name="realemail">zapfun@gmail.com</string>
+    <string name="operatinghour">Operating Hours</string>
+    <string name="monday2friday">Monday to Friday</string>
+    <string name="time">11a.m. to 7p.m.</string>
+    <string name="helpcentre">Help Centre</string>
+    <string name="question">How can we help?</string>
+    <string name="faq">FAQ</string>
+    <string name="makingpayment">Making Payment</string>
+    <string name="myaccount">My Account</string>
+    <string name="myprofile">My Profile</string>
+    <string name="contactinfo">Contact Info</string>
+    <string name="currentpassword">Current Password</string>
+    <string name="npassword">New Password</string>
+    <string name="cpassword">Confirm Password</string>
+    <string name="firstname">First name</string>
+    <string name="lastname">Last name</string>
+    <string name="phoneno">Phone number</string>
+    <string name="email">Email Address</string>
 </resources>
