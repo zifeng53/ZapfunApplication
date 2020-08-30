@@ -34,8 +34,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="252dp"
-        android:layout_marginBottom="401dp"
+        android:layout_marginEnd="225dp"
+        android:layout_marginBottom="416dp"
         android:text="@string/email" />
 
     <Button

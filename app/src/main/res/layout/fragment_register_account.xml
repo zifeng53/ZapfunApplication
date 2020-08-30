@@ -5,16 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".RegisterAccountFragment" >
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="199dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="117dp"
-        android:layout_marginBottom="41dp"
-        android:text="@string/register" />
-
     <EditText
         android:id="@+id/editTextTextPersonName10"
         android:layout_width="307dp"
@@ -63,6 +53,16 @@
         android:layout_marginEnd="242dp"
         android:layout_marginBottom="339dp"
         android:text="@string/phonenumber" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="117dp"
+        android:layout_marginBottom="41dp"
+        android:text="@string/register" />
 
     <TextView
         android:id="@+id/textView28"
