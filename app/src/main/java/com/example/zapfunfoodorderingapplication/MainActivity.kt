@@ -1,9 +1,11 @@
 package com.example.zapfunfoodorderingapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_my_history.*
 
@@ -20,6 +22,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val bottomNavigation : BottomNavigationView = findViewById(R.id.btm_nav)
+
+        //randomly create button for login page testing
+        /*loginbtn.setOnClickListener {
+            startActivity(Intent(this,LoginActivity::class.java))
+        }*/
 
         // set Welcome as default activity, when app is open the Welcome activity will show all that time
         /*welcome = fragment_welcome()
