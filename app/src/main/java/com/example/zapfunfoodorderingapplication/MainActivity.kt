@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.fragment_my_history.*
 class MainActivity : AppCompatActivity() {
 
     // create three objects for fragments
-    //lateinit var welcome: fragment_welcome
     lateinit var myMenuFragment: MyMenuFragment
     lateinit var myOrderFragment: MyOrderFragment
     lateinit var myHistoryFragment: MyHistoryFragment
@@ -28,13 +27,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,LoginActivity::class.java))
         }*/
 
-        // set Welcome as default activity, when app is open the Welcome activity will show all that time
-        /*welcome = fragment_welcome()
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.frame_layout,welcome)
-            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-            .commit()*/
 
 
         // set Menu as default fragment, when app is open the Menu fragment will show all that time
