@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CardCheckoutFragment">
+
+    <TextView
+        android:id="@+id/textView99"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:text="Credit / Debit Card Details"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView101"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView99"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="13dp"
+        android:text="All transactions are secured and encrypted."
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView102"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView101"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="30dp"
+        android:text="* Card Number:"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName29"
+        android:layout_width="307dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/textView102"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="62dp"
+        android:layout_marginBottom="540dp"
+        android:autofillHints="Enter Card Number"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/textView104"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView102"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="84dp"
+        android:text="* Card Holder Name:"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName37"
+        android:layout_width="307dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/textView104"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="62dp"
+        android:layout_marginBottom="426dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/textView105"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView104"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="84dp"
+        android:text="* Expiry Date:"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName38"
+        android:layout_width="307dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/textView105"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="255dp"
+        android:layout_marginBottom="314dp"
+        android:autofillHints="MM/YY"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/textView106"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView104"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="84dp"
+        android:text="* Security Code (CVV):"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName39"
+        android:layout_width="307dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/textView106"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="62dp"
+        android:layout_marginBottom="314dp"
+        android:autofillHints="XXX"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView106"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="119dp"
+        android:text="Cancel" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView106"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="119dp"
+        android:layout_marginRight="75dp"
+        android:text="Confirm" />
+
+</RelativeLayout>
