@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/myOrderFragment"
+            android:icon="@drawable/ic_action_myorder"
+            android:title="My Order" />
+        <item
+            android:id="@+id/myHistoryFragment"
+            android:icon="@drawable/ic_action_myhistory"
+            android:title="My History" />
+        <item
+            android:id="@+id/myAddressFragment"
+            android:icon="@drawable/ic_drawermenu_myaddresses"
+            android:title="My Addresses" />
+        <item
+            android:id="@+id/myProfileFragment"
+            android:icon="@drawable/ic_drawermenu_myprofile"
+            android:title="My Profile" />
+        <item
+            android:id="@+id/loginFragment"
+            android:icon="@drawable/ic_drawermenu_logout"
+            android:title="Logout" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="Support">
+            <menu>
+                <item
+                    android:id="@+id/helpCenterFragment"
+                    android:icon="@drawable/ic_drawermenu_helpcenter"
+                    android:title="Help Center" />
+                <item
+                    android:id="@+id/aboutUsFragment"
+                    android:icon="@drawable/ic_drawermenu_aboutus"
+                    android:title="About Us" />
+                <item
+                    android:id="@+id/contactUsFragment"
+                    android:icon="@drawable/ic_drawermenu_contactus"
+                    android:title="Contact Us" />
+            </menu>
+        </item>
+    </group>
+
+</menu>
