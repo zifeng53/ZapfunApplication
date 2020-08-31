@@ -4,11 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
+//import androidx.navigation.findNavController
+//import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -25,10 +26,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.btm_nav)
-        val navController = findNavController(R.id.myNavHostFragment)
+        loginbtn.setOnClickListener {
+            startActivity(Intent(this,LoginActivity::class.java))
+        }
+        //val bottomNavigationView = findViewById<BottomNavigationView>(R.id.btm_nav)
+        //val navController = findNavController(R.id.myNavHostFragment)
 
-        bottomNavigationView.setupWithNavController(navController)
+        //bottomNavigationView.setupWithNavController(navController)
 
         fun showBottomNav() {
             btm_nav.visibility = View.VISIBLE
@@ -38,12 +42,12 @@ class MainActivity : AppCompatActivity() {
             btm_nav.visibility = View.GONE
         }
 
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.myMenuFragment -> showBottomNav()
-                R.id.myOrderFragment -> showBottomNav()
-                R.id.myHistoryFragment -> showBottomNav()
-                else -> hideBottomNav()
+        //navController.addOnDestinationChangedListener { _, destination, _ ->
+            //when (destination.id) {
+                //R.id.myMenuFragment -> showBottomNav()
+                //R.id.myOrderFragment -> showBottomNav()
+                //R.id.myHistoryFragment -> showBottomNav()
+                //else -> hideBottomNav()
             }
         }
 
@@ -52,10 +56,6 @@ class MainActivity : AppCompatActivity() {
 
         //val bottomNavigation : BottomNavigationView = findViewById(R.id.btm_nav)
 
-        //randomly create button for login page testing
-        /*loginbtn.setOnClickListener {
-            startActivity(Intent(this,LoginActivity::class.java))
-        }*/
 
         // set Menu as default fragment, when app is open the Menu fragment will show all that time
         /*myMenuFragment = MyMenuFragment()
@@ -102,6 +102,6 @@ class MainActivity : AppCompatActivity() {
             true
         }*/
 
-    }
+   // }
 
-}
+//}

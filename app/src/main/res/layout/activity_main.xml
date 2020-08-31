@@ -20,14 +20,20 @@
         app:itemBackground="@color/colorWhite"
         app:menu="@menu/bottom_nav" />
 
-    <fragment
-        android:id="@+id/myNavHostFragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:navGraph="@navigation/navigation"
-        app:defaultNavHost="true"/>
+        android:id="@+id/frame_layout"
+        android:layout_above="@id/btm_nav"
+        >
 
+        <Button
+            android:id="@+id/loginbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login" />
+    </FrameLayout>
 
 
 
