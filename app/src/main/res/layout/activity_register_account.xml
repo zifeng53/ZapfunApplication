@@ -1,500 +1,332 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterAccountActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".RegisterAccountFragment">
-
-        <EditText
-            android:id="@+id/editTextTextPersonName11"
-            android:layout_width="307dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="62dp"
-            android:layout_marginBottom="212dp"
-            android:autofillHints="@string/emailaddress"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="LabelFor" />
-
-        <EditText
-            android:id="@+id/address"
-            android:layout_width="307dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="62dp"
-            android:layout_marginBottom="138dp"
-            android:autofillHints="@string/emailaddress"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="LabelFor" />
-
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="242dp"
-            android:layout_marginBottom="339dp"
-            android:text="@string/phonenumber" />
-
-        <Button
-            android:id="@+id/registerbtn"
-            android:layout_width="199dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="117dp"
-            android:layout_marginBottom="41dp"
-            android:text="@string/register" />
-
-        <TextView
-            android:id="@+id/textView28"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="242dp"
-            android:layout_marginBottom="275dp"
-            android:text="@string/deliveryaddress" />
-
-        <TextView
-            android:id="@+id/textView29"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="241dp"
-            android:layout_marginBottom="251dp"
-            android:text="@string/floorunit" />
-
-        <TextView
-            android:id="@+id/textView30"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="241dp"
-            android:layout_marginBottom="187dp"
-            android:text="@string/address" />
-
-        <TextView
-            android:id="@+id/textView32"
-            android:layout_width="262dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="45dp"
-            android:layout_marginBottom="-2dp"
-            android:text="@string/loginQ" />
-
-        <TextView
-            android:id="@+id/textView31"
-            android:layout_width="45dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="181dp"
-            android:layout_marginBottom="19dp"
-            android:text="@string/or" />
-
-        <EditText
-            android:id="@+id/confirmpassword"
-            android:layout_width="307dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="64dp"
-            android:layout_marginBottom="364dp"
-            android:autofillHints="@string/emailaddress"
-            android:ems="10"
-            android:inputType="textPassword"
-            tools:ignore="LabelFor" />
-
-        <TextView
-            android:id="@+id/textView26"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="242dp"
-            android:layout_marginBottom="402dp"
-            android:text="@string/confirmpassword" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="307dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="62dp"
-            android:layout_marginBottom="424dp"
-            android:autofillHints="@string/emailaddress"
-            android:ems="10"
-            android:inputType="textPassword"
-            tools:ignore="LabelFor" />
-
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="241dp"
-            android:layout_marginBottom="461dp"
-            android:text="@string/password" />
-
-        <EditText
-            android:id="@+id/lname"
-            android:layout_width="307dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="62dp"
-            android:layout_marginBottom="486dp"
-            android:autofillHints="@string/emailaddress"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="LabelFor" />
-
-        <TextView
-            android:id="@+id/textView24"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="241dp"
-            android:layout_marginBottom="523dp"
-            android:text="@string/lname" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="241dp"
-            android:layout_marginBottom="588dp"
-            android:text="@string/fname" />
-
-        <EditText
-            android:id="@+id/fname"
-            android:layout_width="307dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="62dp"
-            android:layout_marginBottom="551dp"
-            android:autofillHints="@string/emailaddress"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="LabelFor" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="272dp"
-            android:layout_height="38dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="682dp"
-            android:text="@string/registeraccount"
-            android:textSize="24sp" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="38dp"
-            android:layout_height="37dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="290dp"
-            android:layout_marginBottom="683dp"
-            android:contentDescription="@string/backarrow"
-            android:src="@drawable/ic_back_arrow" />
-
-        <View
-            android:id="@+id/line2"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@+id/textView"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="678dp"
-            android:background="#c0c0c0"
-            tools:ignore="UnknownIdInLayout" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="241dp"
-            android:layout_marginBottom="651dp"
-            android:text="@string/emailaddress" />
-
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="307dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="62dp"
-            android:layout_marginBottom="615dp"
-            android:autofillHints="@string/emailaddress"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            tools:ignore="LabelFor" />
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="360dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="96dp"
-            android:text="@string/termncondition" />
-
-    </RelativeLayout>
-
-    <EditText
-        android:id="@+id/editTextTextPersonName30"
-        android:layout_width="307dp"
-        android:layout_height="35dp"
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="38dp"
+        android:layout_height="37dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="212dp"
+        android:contentDescription="@string/backarrow"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView84"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <TextView
+        android:id="@+id/textView84"
+        android:layout_width="272dp"
+        android:layout_height="38dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/registeraccount"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="307dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="600dp"
         android:autofillHints="@string/emailaddress"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView100"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/editTextTextPersonName31"
         android:layout_width="307dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="138dp"
+        android:layout_marginBottom="232dp"
         android:autofillHints="@string/emailaddress"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView92"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textView89"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="242dp"
-        android:layout_marginBottom="339dp"
-        android:text="@string/phonenumber" />
+        android:text="@string/phonenumber"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName35"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/registerbtn"
         android:layout_width="199dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="117dp"
-        android:layout_marginBottom="41dp"
-        android:text="@string/register" />
+        android:text="@string/register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.429"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox7"
+        app:layout_constraintVertical_bias="0.068" />
 
     <TextView
         android:id="@+id/textView90"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="242dp"
-        android:layout_marginBottom="275dp"
-        android:text="@string/deliveryaddress" />
+        android:text="@string/deliveryaddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName35"
+        app:layout_constraintVertical_bias="0.154" />
 
     <TextView
         android:id="@+id/textView91"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="241dp"
-        android:layout_marginBottom="251dp"
-        android:text="@string/floorunit" />
+        android:text="@string/floorunit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView90"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView92"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="241dp"
-        android:layout_marginBottom="187dp"
-        android:text="@string/address" />
+        android:text="@string/address"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName36"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView93"
         android:layout_width="262dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="-2dp"
-        android:text="@string/loginQ" />
+        android:text="@string/loginQ"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView94"
+        app:layout_constraintVertical_bias="0.309" />
 
     <TextView
         android:id="@+id/textView94"
         android:layout_width="45dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="181dp"
-        android:layout_marginBottom="19dp"
-        android:text="@string/or" />
+        android:layout_marginBottom="60dp"
+        android:text="@string/or"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerbtn"
+        app:layout_constraintVertical_bias="0.937"
+        tools:ignore="UnknownId" />
 
     <EditText
         android:id="@+id/editTextTextPersonName32"
         android:layout_width="307dp"
         android:layout_height="35dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="364dp"
         android:autofillHints="@string/emailaddress"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView98"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textView95"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="242dp"
-        android:layout_marginBottom="402dp"
-        android:text="@string/confirmpassword" />
+        android:text="@string/confirmpassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UnknownId" />
 
     <EditText
         android:id="@+id/editTextTextPersonName33"
         android:layout_width="307dp"
         android:layout_height="35dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="424dp"
         android:autofillHints="@string/emailaddress"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView97"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textView96"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="241dp"
-        android:layout_marginBottom="461dp"
-        android:text="@string/password" />
+        android:text="@string/password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName33"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName34"
+        android:id="@+id/password"
         android:layout_width="307dp"
         android:layout_height="35dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="486dp"
         android:autofillHints="@string/emailaddress"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView96"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textView97"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="241dp"
-        android:layout_marginBottom="523dp"
-        android:text="@string/lname" />
+        android:text="@string/lname"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName32"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextTextPersonName35"
         android:layout_width="307dp"
         android:layout_height="35dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="549dp"
         android:autofillHints="@string/emailaddress"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView95"
+        app:layout_constraintVertical_bias="0.018"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName40"
+        android:layout_width="307dp"
+        android:layout_height="35dp"
+        android:autofillHints="@string/emailaddress"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView95"
+        app:layout_constraintVertical_bias="0.162"
         tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textView98"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="241dp"
-        android:layout_marginBottom="586dp"
-        android:text="@string/fname" />
+        android:text="@string/fname"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/line22"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="678dp"
         android:background="#c0c0c0"
-        tools:ignore="UnknownIdInLayout" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
 
     <TextView
         android:id="@+id/textView100"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="241dp"
-        android:layout_marginBottom="651dp"
-        android:text="@string/emailaddress" />
+        android:text="@string/emailaddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line22"
+        app:layout_constraintVertical_bias="0.013" />
 
     <EditText
         android:id="@+id/editTextTextPersonName36"
         android:layout_width="307dp"
         android:layout_height="35dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="615dp"
+        android:layout_marginBottom="288dp"
         android:autofillHints="@string/emailaddress"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView91"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="LabelFor" />
 
     <CheckBox
         android:id="@+id/checkBox7"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="96dp"
-        android:text="@string/termncondition" />
-</RelativeLayout>
+        android:text="@string/termncondition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName31"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
