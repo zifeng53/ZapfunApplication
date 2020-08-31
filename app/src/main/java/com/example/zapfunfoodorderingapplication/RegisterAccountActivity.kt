@@ -5,28 +5,28 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_register_account.*
+//import com.google.firebase.auth.FirebaseAuth
+//import com.google.firebase.auth.ktx.auth
+//import com.google.firebase.ktx.Firebase
+//import kotlinx.android.synthetic.main.activity_register_account.*
 import java.util.regex.Pattern
 
 class RegisterAccountActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
+    //private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_account)
-        auth = Firebase.auth
+        //auth = Firebase.auth
 
-        registerbtn.setOnClickListener {
+        //registerbtn.setOnClickListener {
 
         }
     }
 
     private fun registerUser() {
-        if(email.text.toString().isEmpty()) {
+        /*if(email.text.toString().isEmpty()) {
             email.error = "Please enter email"
             email.requestFocus()
             return
@@ -56,5 +56,5 @@ class RegisterAccountActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT).show()
                 }
             }
-    }
+    }*/
 }

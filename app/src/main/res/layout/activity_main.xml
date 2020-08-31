@@ -20,12 +20,6 @@
         app:itemBackground="@color/colorWhite"
         app:menu="@menu/bottom_nav" />
 
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/frame_layout"
-        android:layout_above="@id/btm_nav">
     <fragment
         android:id="@+id/myNavHostFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -33,7 +27,7 @@
         android:layout_height="match_parent"
         app:navGraph="@navigation/navigation"
         app:defaultNavHost="true"/>
-    </FrameLayout>
+
 
 
 

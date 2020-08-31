@@ -71,7 +71,7 @@
             android:text="@string/ForgotPassword" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnLogin"
             android:layout_width="199dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
