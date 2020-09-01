@@ -260,6 +260,12 @@
         android:layout_marginTop="-599dp"
         android:text="Checkout" />
 
+    <Button
+        android:id="@+id/loginbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
 
 </RelativeLayout>
 
