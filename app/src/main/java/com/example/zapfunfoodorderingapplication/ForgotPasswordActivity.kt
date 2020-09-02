@@ -21,6 +21,10 @@ class ForgotPasswordActivity : AppCompatActivity() {
         changepassbtn.setOnClickListener() {
             changepassword()
         }
+
+        backbtnforgot.setOnClickListener() {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
     }
 
     private fun changepassword() {

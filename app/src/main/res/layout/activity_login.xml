@@ -97,7 +97,7 @@
         app:layout_constraintVertical_bias="0.529" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName27"
+        android:id="@+id/passwordlogin"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
@@ -114,14 +114,14 @@
         tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName28"
+        android:id="@+id/emaillogin"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:autofillHints="@string/emailaddress"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"

@@ -35,25 +35,25 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun doLogin() {
-        if(email.text.toString().isEmpty()) {
-            email.error = "Please enter email"
-            email.requestFocus()
+        if(emaillogin.text.toString().isEmpty()) {
+            emaillogin.error = "Please enter email"
+            emaillogin.requestFocus()
             return
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches()) {
-            email.error = "Please enter valid email"
-            email.requestFocus()
+        if(!Patterns.EMAIL_ADDRESS.matcher(emaillogin.text.toString()).matches()) {
+            emaillogin.error = "Please enter valid email"
+            emaillogin.requestFocus()
             return
         }
 
-        if(password.text.toString().isEmpty()) {
-            password.error = "Please enter password"
-            password.requestFocus()
+        if(passwordlogin.text.toString().isEmpty()) {
+            passwordlogin.error = "Please enter password"
+            passwordlogin.requestFocus()
             return
         }
 
-        auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
+        auth.signInWithEmailAndPassword(emaillogin.text.toString(), passwordlogin.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
@@ -77,7 +77,7 @@ class LoginActivity : AppCompatActivity() {
             if(currentUser.isEmailVerified) {
 
                 //login successful page go to
-                startActivity(Intent(this, ForgotPasswordFragment::class.java))
+                startActivity(Intent(this, ForgotPasswordActivity::class.java))
                 finish()
             } else {
                 Toast.makeText(

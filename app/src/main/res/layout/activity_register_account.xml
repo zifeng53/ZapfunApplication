@@ -104,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName40"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -146,7 +146,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName32"
+        android:id="@+id/fname"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:autofillHints="@string/emailaddress"
@@ -174,7 +174,7 @@
         tools:ignore="UnknownId" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName33"
+        android:id="@+id/lname"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:autofillHints="@string/emailaddress"
@@ -197,7 +197,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName33"
+        app:layout_constraintTop_toBottomOf="@+id/lname"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
@@ -224,7 +224,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName32"
+        app:layout_constraintTop_toBottomOf="@+id/fname"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
@@ -243,7 +243,7 @@
         tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName40"
+        android:id="@+id/editTextTextPersonName7"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:autofillHints="@string/emailaddress"
@@ -255,7 +255,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView95"
         app:layout_constraintVertical_bias="0.163"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor,TextFields" />
 
     <TextView
         android:id="@+id/textView98"

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_forgot_password.*
 import kotlinx.android.synthetic.main.activity_register_account.*
 class RegisterAccountActivity : AppCompatActivity() {
 
@@ -30,6 +31,18 @@ class RegisterAccountActivity : AppCompatActivity() {
     }
 
     private fun registerUser() {
+        if(fname.text.toString().isEmpty()) {
+            fname.error = "Please enter first name"
+            fname.requestFocus()
+            return
+            }
+
+        if(lname.text.toString().isEmpty()) {
+            lname.error = "Please enter first name"
+            lname.requestFocus()
+            return
+        }
+
         if(email.text.toString().isEmpty()) {
             email.error = "Please enter email"
             email.requestFocus()
@@ -39,6 +52,12 @@ class RegisterAccountActivity : AppCompatActivity() {
         if(!Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches()) {
             email.error = "Please enter valid email"
             email.requestFocus()
+            return
+        }
+
+        if(confirmpassword.text.toString().isEmpty()) {
+            confirmpassword.error = "Please enter password"
+            confirmpassword.requestFocus()
             return
         }
 
@@ -63,7 +82,7 @@ class RegisterAccountActivity : AppCompatActivity() {
                     finish()
                 } else {
                     // If sign in fails, display a message to the user.
-                    Toast.makeText(baseContext, "Authentication failed.",
+                    Toast.makeText(baseContext, "Register failed.",
                         Toast.LENGTH_SHORT).show()
                 }
             }
