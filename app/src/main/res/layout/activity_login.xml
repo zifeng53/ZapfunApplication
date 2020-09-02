@@ -7,49 +7,20 @@
     tools:context=".LoginActivity">
 
     <TextView
-        android:id="@+id/textView81"
+        android:id="@+id/forgotpassword"
         android:layout_width="124dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="16dp"
         android:text="@string/ForgotPassword"
+        android:textColor="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView83"
-        app:layout_constraintVertical_bias="0.535" />
-
-    <TextView
-        android:id="@+id/textView82"
-        android:layout_width="45dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="136dp"
-        android:text="@string/or"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button10"
-        app:layout_constraintVertical_bias="0.437" />
-
-    <TextView
-        android:id="@+id/textView83"
-        android:layout_width="55dp"
-        android:layout_height="21dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="44dp"
-        android:text="@string/or"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/noaccount"
-        app:layout_constraintVertical_bias="0.558" />
+        app:layout_constraintVertical_bias="0.359" />
 
     <TextView
         android:id="@+id/noaccount"
@@ -57,17 +28,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="124dp"
         android:text="@string/noaccount"
+        android:textColor="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.327" />
+        app:layout_constraintTop_toBottomOf="@+id/loginbtn"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/loginbtn"
         android:layout_width="199dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -75,10 +47,10 @@
         android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.726" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBox4"
+        app:layout_constraintVertical_bias="0.153" />
 
     <CheckBox
         android:id="@+id/checkBox4"
@@ -94,7 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox6"
         app:layout_constraintVertical_bias="0.428"
-        tools:ignore="NotSibling" />
+        tools:ignore="NotSibling,UnknownId" />
 
     <CheckBox
         android:id="@+id/checkBox6"
@@ -127,12 +99,12 @@
     <EditText
         android:id="@+id/editTextTextPersonName27"
         android:layout_width="307dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:autofillHints="@string/emailaddress"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
@@ -144,7 +116,7 @@
     <EditText
         android:id="@+id/editTextTextPersonName28"
         android:layout_width="307dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:autofillHints="@string/emailaddress"

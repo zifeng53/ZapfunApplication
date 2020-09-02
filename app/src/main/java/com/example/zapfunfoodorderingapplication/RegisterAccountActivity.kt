@@ -21,7 +21,11 @@ class RegisterAccountActivity : AppCompatActivity() {
         }
 
         registerbtn.setOnClickListener {
+            registerUser()
+        }
 
+        gotaccount.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 
@@ -47,7 +51,14 @@ class RegisterAccountActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
+                    val user = auth.currentUser
+                    user!!.sendEmailVerification()
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                startActivity(Intent(this, LoginActivity::class.java))
+                                finish()
+                            }
+                        }
                     startActivity(Intent(this,LoginActivity::class.java))
                     finish()
                 } else {

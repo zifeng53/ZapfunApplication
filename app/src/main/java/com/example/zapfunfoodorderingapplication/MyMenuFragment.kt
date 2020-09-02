@@ -9,6 +9,7 @@ import android.view.ViewGroup
 
 class MyMenuFragment : Fragment() {
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -16,5 +17,4 @@ class MyMenuFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_my_menu, container, false)
         return inflater.inflate(R.layout.fragment_my_menu, container, false)
     }
-
 }
