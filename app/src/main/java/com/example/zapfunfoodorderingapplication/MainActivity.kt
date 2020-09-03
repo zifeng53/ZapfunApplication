@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
         //btm_nav start
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.btm_nav)
+        /*val bottomNavigationView = findViewById<BottomNavigationView>(R.id.btm_nav)
         val navController = findNavController(R.id.myNavHostFragment)
         bottomNavigationView.setupWithNavController(navController)
         fun showBottomNav() {
@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 R.id.myHistoryFragment -> showBottomNav()
                 else -> hideBottomNav()
             }
-        }
+        }*/
         //btm_nav end
 
 

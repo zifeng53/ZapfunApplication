@@ -9,62 +9,30 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register_account.*
+import kotlinx.android.synthetic.main.activity_login.email as email1
+import kotlinx.android.synthetic.main.activity_register_account.password as password1
 
 
 class LoginActivity : AppCompatActivity() {
 
+    //global variable
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        //assign authentication to auth
         auth = FirebaseAuth.getInstance()
 
+        //dont have account text to register page
         noaccount.setOnClickListener {
             startActivity(Intent(this, RegisterAccountActivity::class.java))
             finish()
         }
-
-        loginbtn.setOnClickListener() {
-            //startActivity(Intent(this, MainActivity::class.java))
-            doLogin()
-        }
-
-        forgotpassword.setOnClickListener() {
-            startActivity(Intent(this, ForgotPasswordActivity::class.java))
-        }
     }
 
-    private fun doLogin() {
-        if(emaillogin.text.toString().isEmpty()) {
-            emaillogin.error = "Please enter email"
-            emaillogin.requestFocus()
-            return
-        }
-
-        if(!Patterns.EMAIL_ADDRESS.matcher(emaillogin.text.toString()).matches()) {
-            emaillogin.error = "Please enter valid email"
-            emaillogin.requestFocus()
-            return
-        }
-
-        if(passwordlogin.text.toString().isEmpty()) {
-            passwordlogin.error = "Please enter password"
-            passwordlogin.requestFocus()
-            return
-        }
-
-        auth.signInWithEmailAndPassword(emaillogin.text.toString(), passwordlogin.text.toString())
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    val user = auth.currentUser
-                    updateUI(user)
-                } else {
-                    updateUI(null)
-                }
-            }
-    }
-
+    //check if the user logged in or not
     public override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -72,23 +40,7 @@ class LoginActivity : AppCompatActivity() {
         updateUI(currentUser)
     }
 
-    private fun updateUI(currentUser: FirebaseUser?) {
+    fun updateUI(currentUser : FirebaseUser?) {
 
-        if(currentUser != null) {
-            if(currentUser.isEmailVerified) {
-
-                //login successful page go to
-                startActivity(Intent(this, ForgotPasswordActivity::class.java))
-                finish()
-            } else {
-                Toast.makeText(
-                    baseContext, "please verify email address.",
-                    Toast.LENGTH_SHORT).show()
-            }
-        } else {
-            Toast.makeText(
-                baseContext, "login failed.",
-                Toast.LENGTH_SHORT).show()
-        }
     }
 }
