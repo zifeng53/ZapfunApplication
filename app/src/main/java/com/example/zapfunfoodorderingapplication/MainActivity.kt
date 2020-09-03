@@ -36,10 +36,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button2.setOnClickListener() {
-            startActivity(Intent(this, LoginActivity::class.java))
-        }
-
         //appbar top start
         //ToolBar.visibility = View.GONE
         setSupportActionBar(ToolBar)

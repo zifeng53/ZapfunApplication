@@ -3,21 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/loginFragment">
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.zapfunfoodorderingapplication.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_myMenuFragment"
-            app:destination="@id/myMenuFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/myMenuFragment"
-        android:name="com.example.zapfunfoodorderingapplication.MyMenuFragment"
-        android:label="fragment_my_menu"
-        tools:layout="@layout/fragment_my_menu" />
+    app:startDestination="@id/myMenuFragment">
     <fragment
         android:id="@+id/myHistoryFragment"
         android:name="com.example.zapfunfoodorderingapplication.MyHistoryFragment"
@@ -28,4 +14,9 @@
         android:name="com.example.zapfunfoodorderingapplication.MyOrderFragment"
         android:label="MyOrderFragment"
         tools:layout="@layout/fragment_my_order"/>
+    <fragment
+        android:id="@+id/myMenuFragment"
+        android:name="com.example.zapfunfoodorderingapplication.MyMenuFragment"
+        android:label="fragment_my_menu"
+        tools:layout="@layout/fragment_my_menu" />
 </navigation>
