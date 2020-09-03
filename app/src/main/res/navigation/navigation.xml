@@ -13,7 +13,7 @@
         android:id="@+id/myOrderFragment"
         android:name="com.example.zapfunfoodorderingapplication.MyOrderFragment"
         android:label="MyOrderFragment"
-        tools:layout="@layout/fragment_my_order"/>
+        tools:layout="@layout/activity_my_order"/>
     <fragment
         android:id="@+id/myMenuFragment"
         android:name="com.example.zapfunfoodorderingapplication.MyMenuFragment"

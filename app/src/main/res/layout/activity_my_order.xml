@@ -237,7 +237,6 @@
             android:id="@+id/radio_cash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="checkButton"
             android:text="Cash On Delivery"
             android:textSize="18sp" />
 
@@ -246,7 +245,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
-            android:onClick="checkButton"
             android:text="Credit Card / Debit Card"
             android:textSize="18sp" />
 
