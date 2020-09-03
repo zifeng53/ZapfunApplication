@@ -50,6 +50,18 @@ class RegisterAccountActivity : AppCompatActivity() {
             return
         }
 
+        if(fname.text.toString().isEmpty()) {
+            fname.error = "Please enter first name"
+            fname.requestFocus()
+            return
+        }
+
+        if(lname.text.toString().isEmpty()) {
+            lname.error = "Please enter last name"
+            lname.requestFocus()
+            return
+        }
+
         if(password.text.toString().isEmpty()) {
             password.error = "Please enter password"
             password.requestFocus()
@@ -65,7 +77,7 @@ class RegisterAccountActivity : AppCompatActivity() {
                     finish()
                 } else {
                     // If register fails, display a message to the user.
-                    Toast.makeText(baseContext, "Register failed.",
+                    Toast.makeText(baseContext, "Register failed, please try again later.",
                         Toast.LENGTH_SHORT).show()
                 }
 
