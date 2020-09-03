@@ -20,7 +20,7 @@ class RegisterAccountActivity : AppCompatActivity() {
         //set authentication to auth
         auth = FirebaseAuth.getInstance()
 
-        //register button
+            //register button
         registerbtn.setOnClickListener {
             registerUser()
         }
@@ -68,19 +68,27 @@ class RegisterAccountActivity : AppCompatActivity() {
             return
         }
 
-        //create user in firebase
-        auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    //if successful register go to login
-                    startActivity(Intent(this,LoginActivity::class.java))
-                    finish()
-                } else {
-                    // If register fails, display a message to the user.
-                    Toast.makeText(baseContext, "Register failed, please try again later.",
-                        Toast.LENGTH_SHORT).show()
-                }
+        if(checkBox7.isChecked == true) {
+            //create user in firebase
+            auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        //if successful register go to login
+                        startActivity(Intent(this,LoginActivity::class.java))
+                        finish()
+                    } else {
+                        // If register fails, display a message to the user.
+                        Toast.makeText(baseContext, "Register failed, please try again later.",
+                            Toast.LENGTH_SHORT).show()
+                    }
 
-            }
+                }
+        }
+
+        else if(checkBox7.isChecked == false) {
+            Toast.makeText(baseContext, "PLease check the terms and condition.",
+                Toast.LENGTH_SHORT).show()
+        }
+
     }
 }
