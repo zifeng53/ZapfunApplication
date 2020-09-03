@@ -30,6 +30,44 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, RegisterAccountActivity::class.java))
             finish()
         }
+
+        //login button
+        loginbtn.setOnClickListener {
+            dologin()
+        }
+    }
+
+    //login button function
+    private fun dologin() {
+        if(email.text.toString().isEmpty()) {
+            email.error = "Please enter email"
+            email.requestFocus()
+            return
+        }
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches()) {
+            email.error = "Please enter valid email"
+            email.requestFocus()
+            return
+        }
+
+        if(password.text.toString().isEmpty()) {
+            password.error = "Please enter password"
+            password.requestFocus()
+            return
+        }
+
+        //user login with email and password
+        auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    val user = auth.currentUser
+                    updateUI(user)
+                } else {
+                    updateUI(null)
+                }
+            }
     }
 
     //check if the user logged in or not
@@ -40,7 +78,33 @@ class LoginActivity : AppCompatActivity() {
         updateUI(currentUser)
     }
 
-    fun updateUI(currentUser : FirebaseUser?) {
+    private fun updateUI(currentUser : FirebaseUser?) {
+
+        //check the im not robot checkbox
+        if(checkBox6.isChecked == true) {
+            //if login successful go to this page
+            if(currentUser != null) {
+                if(currentUser.isEmailVerified == true) {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                }
+
+                else if(currentUser.isEmailVerified == false) {
+                    Toast.makeText(this, "Please verify your email address", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            else if (currentUser == null){
+                // If login fails, display a message to the user.
+                Toast.makeText(baseContext, "login failed.",
+                    Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        else if(checkBox6.isChecked == false) {
+            Toast.makeText(baseContext, "Please check i am not a robot.",
+                Toast.LENGTH_SHORT).show()
+        }
 
     }
 }

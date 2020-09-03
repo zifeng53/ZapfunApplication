@@ -73,9 +73,17 @@ class RegisterAccountActivity : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        //if successful register go to login
-                        startActivity(Intent(this,LoginActivity::class.java))
-                        finish()
+
+                        //send email verification
+                        val user = auth.currentUser
+                        user!!.sendEmailVerification()
+                            .addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    //if successful register go to login
+                                    startActivity(Intent(this,LoginActivity::class.java))
+                                    finish()
+                                }
+                            }
                     } else {
                         // If register fails, display a message to the user.
                         Toast.makeText(baseContext, "Register failed, please try again later.",
