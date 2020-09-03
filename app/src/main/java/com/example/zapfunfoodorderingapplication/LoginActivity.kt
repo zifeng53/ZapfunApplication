@@ -35,6 +35,11 @@ class LoginActivity : AppCompatActivity() {
         loginbtn.setOnClickListener {
             dologin()
         }
+
+        //forgot password text button
+        forgotpassword.setOnClickListener {
+            startActivity(Intent(this, ForgotPasswordActivity::class.java))
+        }
     }
 
     //login button function
