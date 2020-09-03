@@ -250,20 +250,22 @@
             android:text="Credit Card / Debit Card"
             android:textSize="18sp" />
 
-        </RadioGroup>
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="Checkout" />
 
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/view4"
-        android:layout_marginTop="-599dp"
-        android:text="Checkout" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/loginbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView81"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="86dp"
         android:text="Button" />
 
 
