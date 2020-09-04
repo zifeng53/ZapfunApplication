@@ -9,7 +9,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register_account.*
-import kotlinx.android.synthetic.main.activity_login.email as email1
 import kotlinx.android.synthetic.main.activity_register_account.password as password1
 
 
@@ -44,15 +43,15 @@ class LoginActivity : AppCompatActivity() {
 
     //login button function
     private fun dologin() {
-        if(email.text.toString().isEmpty()) {
-            email.error = "Please enter email"
-            email.requestFocus()
+        if(emailL.text.toString().isEmpty()) {
+            emailL.error = "Please enter email"
+            emailL.requestFocus()
             return
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches()) {
-            email.error = "Please enter valid email"
-            email.requestFocus()
+        if(!Patterns.EMAIL_ADDRESS.matcher(emailL.text.toString()).matches()) {
+            emailL.error = "Please enter valid email"
+            emailL.requestFocus()
             return
         }
 
@@ -63,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         //user login with email and password
-        auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
+        auth.signInWithEmailAndPassword(emailL.text.toString(), password.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information

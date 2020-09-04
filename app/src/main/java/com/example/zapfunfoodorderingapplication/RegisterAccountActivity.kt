@@ -38,15 +38,15 @@ class RegisterAccountActivity : AppCompatActivity() {
 
     //register function
     private fun registerUser() {
-        if(email.text.toString().isEmpty()) {
-            email.error = "Please enter email"
-            email.requestFocus()
+        if(emailR.text.toString().isEmpty()) {
+            emailR.error = "Please enter email"
+            emailR.requestFocus()
             return
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(email.text.toString()).matches()) {
-            email.error = "Please enter valid email"
-            email.requestFocus()
+        if(!Patterns.EMAIL_ADDRESS.matcher(emailR.text.toString()).matches()) {
+            emailR.error = "Please enter valid email"
+            emailR.requestFocus()
             return
         }
 
@@ -70,7 +70,7 @@ class RegisterAccountActivity : AppCompatActivity() {
 
         if(checkBox7.isChecked == true) {
             //create user in firebase
-            auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
+            auth.createUserWithEmailAndPassword(emailR.text.toString(), password.text.toString())
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
 
