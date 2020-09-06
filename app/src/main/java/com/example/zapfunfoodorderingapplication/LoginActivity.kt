@@ -1,15 +1,14 @@
 package com.example.zapfunfoodorderingapplication
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_register_account.*
-import kotlinx.android.synthetic.main.activity_register_account.password as password1
 
 
 class LoginActivity : AppCompatActivity() {
@@ -68,6 +67,7 @@ class LoginActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     val user = auth.currentUser
                     updateUI(user)
+
                 } else {
                     updateUI(null)
                 }
@@ -82,7 +82,7 @@ class LoginActivity : AppCompatActivity() {
         updateUI(currentUser)
     }
 
-    private fun updateUI(currentUser : FirebaseUser?) {
+    private fun updateUI(currentUser: FirebaseUser?) {
 
         //check the im not robot checkbox
         if(checkBox6.isChecked == true) {
@@ -100,14 +100,18 @@ class LoginActivity : AppCompatActivity() {
 
             else if (currentUser == null){
                 // If login fails, display a message to the user.
-                Toast.makeText(baseContext, "login failed.",
-                    Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    baseContext, "login failed.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
         else if(checkBox6.isChecked == false) {
-            Toast.makeText(baseContext, "Please check i am not a robot.",
-                Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                baseContext, "Please check i am not a robot.",
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
     }
