@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".OrderSummaryFragment">
+
+        <ImageView
+            android:id="@+id/backbtnOrderSummary"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_back_arrow"/>
+
+        <TextView
+            android:id="@+id/lblOSOrderDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/OrderSummaryTitle"
+            android:textSize="21sp"
+            android:layout_toEndOf="@+id/backbtnOrderSummary"/>
+
+        <View
+            android:id="@+id/OSLine1"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="11dp"
+            android:background="@color/cardview_dark_background"
+            android:layout_below="@+id/lblOSOrderDetails" />
+
+        <TextView
+            android:id="@+id/lblOSOrderReceived"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/OSLine1"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="13dp"
+            android:text="Order Received"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+
+        <TextView
+            android:id="@+id/lblOSEstimatedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSOrderReceived"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Estimated Time: 15:20 (10 mins)"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="18sp" />
+
+
+        <View
+            android:id="@+id/OSLine2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="20dp"
+            android:background="#c0c0c0"
+            android:layout_below="@id/imageOSstatus"/>
+
+        <TextView
+            android:id="@+id/lblOSOrderDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/OSLine2"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="13dp"
+            android:text="Order Details"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblOSItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSOrderDetail"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:text="ITEM"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lblOSQty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSOrderDetail"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/lblOSItem"
+            android:text="QTY"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lblOSPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSOrderDetail"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="13dp"
+            android:layout_alignEnd="@id/OSLine2"
+            android:text="PRICE (RM)"
+            android:textSize="18sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/OSRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/lblOSItem"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:id="@+id/lblOSSubTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/OSRecyclerView"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="13dp"
+            android:text="Subtotal"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblOSSubTotalShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/OSRecyclerView"
+            android:layout_alignEnd="@+id/lblOSPrice"
+            android:layout_marginTop="13dp"
+            android:text="RM0.00"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblDeliveryFee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSSubTotal"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="13dp"
+            android:text="Delivery Fee"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/lblOSDeliveryFeeShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSSubTotalShow"
+            android:layout_alignEnd="@+id/lblOSSubTotalShow"
+            android:layout_marginTop="13dp"
+            android:text="RM0.00"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblOrderTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblDeliveryFee"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="13dp"
+            android:text="Order Total"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/lblOrderTotalShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSDeliveryFeeShow"
+            android:layout_alignEnd="@+id/lblOSDeliveryFeeShow"
+            android:layout_marginTop="13dp"
+            android:text="RM0.00"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/lblOSOrderDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOrderTotal"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="13dp"
+            android:text="Order DateTime"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/lblOSOrderDateTimeShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOrderTotalShow"
+            android:layout_alignEnd="@+id/lblOrderTotalShow"
+            android:layout_marginTop="13dp"
+            android:text="DD MM YYYY 00:00"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblOSPaymentMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSOrderDateTime"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="13dp"
+            android:text="Payment Method"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageOSCashCard"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/lblOSPaymentMethodShow"
+            android:layout_below="@+id/lblOSOrderDateTimeShow"
+            android:src="@drawable/image_card"/>
+
+        <TextView
+            android:id="@+id/lblOSPaymentMethodShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSOrderDateTimeShow"
+            android:layout_alignEnd="@+id/lblOSOrderDateTimeShow"
+            android:layout_marginTop="13dp"
+            android:text="Card"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/OSLine3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/lblOSPaymentMethod"
+            android:layout_marginTop="13dp"
+            android:background="#c0c0c0" />
+
+        <ImageView
+            android:id="@+id/imageOSlocation"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/OSLine3"
+            android:src="@drawable/ic_baseline_location_on_24"/>
+
+        <TextView
+            android:id="@+id/lblDeliveryAddr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/OSLine3"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/imageOSlocation"
+            android:text="Delivery Address"
+            android:textSize="19sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/lblOSRecName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblDeliveryAddr"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:text="Recipient Name"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lblOSHpNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSRecName"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="13dp"
+            android:text="Phone Number"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lblOSDeliveryDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSHpNo"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="13dp"
+            android:text="Delivery Details"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lblOSAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSDeliveryDetails"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="10dp"
+            android:text="Street Address" />
+
+        <TextView
+            android:id="@+id/lblOSUnitFloor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSAddress"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="10dp"
+            android:text="Unit / Floor" />
+
+        <TextView
+            android:id="@+id/lblOSRemark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOSUnitFloor"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp"
+            android:text="Remark" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/imageViewStatus"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/image_preparing"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="0dp"
+            android:layout_below="@+id/lblOSEstimatedTime"
+            />
+
+        <ImageView
+            android:id="@+id/imageOSstatus"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/imageViewStatus"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/preparing"/>
+
+
+    </RelativeLayout>
+
+</ScrollView>
