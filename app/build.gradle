@@ -53,4 +53,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.3.2'
     implementation "android.arch.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "android.arch.navigation:navigation-ui-ktx:$navigationVersion"
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
 }
