@@ -29,6 +29,8 @@ class RegisterAccountActivity : AppCompatActivity() {
 
         //set authentication to auth
         auth = FirebaseAuth.getInstance()
+
+        //declaration
         email = findViewById(R.id.email_register)
         first_name = findViewById(R.id.fname)
         last_name = findViewById(R.id.lname)
@@ -55,6 +57,7 @@ class RegisterAccountActivity : AppCompatActivity() {
 
     //register function
     private fun registerUser() {
+
         val email = email.text.toString()
         val first_name = first_name.text.toString()
         val last_name = last_name.text.toString()
@@ -132,6 +135,7 @@ class RegisterAccountActivity : AppCompatActivity() {
                         user!!.sendEmailVerification()
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
+                                    //save user information into firebase
                                     val database = FirebaseDatabase.getInstance().getReference("User_Profile")
                                     val userid = database.push().key
 
@@ -154,8 +158,9 @@ class RegisterAccountActivity : AppCompatActivity() {
                 }
         }
 
+        //if the term and condition checkbox is not checked
         else if(checkBox7.isChecked == false) {
-            Toast.makeText(baseContext, "PLease check the Term & Condition before register",
+            Toast.makeText(baseContext, "Check the Term & Condition before register",
                 Toast.LENGTH_SHORT).show()
         }
 

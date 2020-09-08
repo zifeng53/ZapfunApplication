@@ -17,10 +17,10 @@
         android:textColor="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/noaccount"
-        app:layout_constraintVertical_bias="0.359" />
+        app:layout_constraintVertical_bias="0.348" />
 
     <TextView
         android:id="@+id/noaccount"
@@ -58,11 +58,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/rememberme"
         app:layout_constraintBottom_toTopOf="@+id/button10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox6"
         app:layout_constraintVertical_bias="0.428"
@@ -77,10 +77,10 @@
         android:text="@string/checkboxrobot"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573" />
+        app:layout_constraintTop_toBottomOf="@+id/textView85"
+        app:layout_constraintVertical_bias="0.03" />
 
     <TextView
         android:id="@+id/textView85"
@@ -158,6 +158,66 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView86"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints,UnknownIdInLayout" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="280dp"
+        android:layout_height="1dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:background="#c0c0c0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView85"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints,UnknownIdInLayout" />
+
+    <View
+        android:id="@+id/line4"
+        android:layout_width="280dp"
+        android:layout_height="1dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:background="#c0c0c0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView85"
+        app:layout_constraintVertical_bias="0.151"
+        tools:ignore="MissingConstraints,UnknownIdInLayout" />
+
+    <View
+        android:id="@+id/line23"
+        android:layout_width="1dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:background="#c0c0c0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView85"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints,UnknownIdInLayout" />
+
+    <View
+        android:id="@+id/line24"
+        android:layout_width="1dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:background="#c0c0c0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView85"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints,UnknownIdInLayout" />
 

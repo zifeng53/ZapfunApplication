@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         //assign authentication to auth
         auth = FirebaseAuth.getInstance()
 
-        //dont have account text to register page
+        //do not have account text to register page
         noaccount.setOnClickListener {
             startActivity(Intent(this, RegisterAccountActivity::class.java))
             finish()
@@ -43,19 +43,19 @@ class LoginActivity : AppCompatActivity() {
     //login button function
     private fun dologin() {
         if(email_login.text.toString().isEmpty()) {
-            email_login.error = "Please enter email"
+            email_login.error = "Enter email"
             email_login.requestFocus()
             return
         }
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email_login.text.toString()).matches()) {
-            email_login.error = "Please enter valid email"
+            email_login.error = "Enter valid email"
             email_login.requestFocus()
             return
         }
 
         if(password_login.text.toString().isEmpty()) {
-            password_login.error = "Please enter password"
+            password_login.error = "Enter password"
             password_login.requestFocus()
             return
         }
@@ -94,22 +94,23 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 else if(currentUser.isEmailVerified == false) {
-                    Toast.makeText(this, "Please verify your email address", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Verify your email address before login", Toast.LENGTH_SHORT).show()
                 }
             }
 
             else if (currentUser == null){
                 // If login fails, display a message to the user.
                 Toast.makeText(
-                    baseContext, "login failed.",
+                    baseContext, "login failed",
                     Toast.LENGTH_SHORT
                 ).show()
             }
         }
 
+        //if the robot checkbox is not checked
         else if(checkBox6.isChecked == false) {
             Toast.makeText(
-                baseContext, "Please check i am not a robot.",
+                baseContext, "Check i am not a robot before login",
                 Toast.LENGTH_SHORT
             ).show()
         }
