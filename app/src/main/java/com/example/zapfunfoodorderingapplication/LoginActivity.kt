@@ -42,26 +42,26 @@ class LoginActivity : AppCompatActivity() {
 
     //login button function
     private fun dologin() {
-        if(emailL.text.toString().isEmpty()) {
-            emailL.error = "Please enter email"
-            emailL.requestFocus()
+        if(email_login.text.toString().isEmpty()) {
+            email_login.error = "Please enter email"
+            email_login.requestFocus()
             return
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(emailL.text.toString()).matches()) {
-            emailL.error = "Please enter valid email"
-            emailL.requestFocus()
+        if(!Patterns.EMAIL_ADDRESS.matcher(email_login.text.toString()).matches()) {
+            email_login.error = "Please enter valid email"
+            email_login.requestFocus()
             return
         }
 
-        if(password.text.toString().isEmpty()) {
-            password.error = "Please enter password"
-            password.requestFocus()
+        if(password_login.text.toString().isEmpty()) {
+            password_login.error = "Please enter password"
+            password_login.requestFocus()
             return
         }
 
         //user login with email and password
-        auth.signInWithEmailAndPassword(emailL.text.toString(), password.text.toString())
+        auth.signInWithEmailAndPassword(email_login.text.toString(), password_login.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information

@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/emailR"
+        android:id="@+id/email_register"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:layout_marginTop="1dp"
@@ -80,7 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName35"
+        app:layout_constraintTop_toBottomOf="@+id/confirmpassword_register"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -104,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+        app:layout_constraintTop_toBottomOf="@+id/phoneno"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -169,7 +169,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordR"
+        app:layout_constraintTop_toBottomOf="@+id/password_register"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="UnknownId" />
 
@@ -201,7 +201,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/passwordR"
+        android:id="@+id/password_register"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:autofillHints="@string/emailaddress"
@@ -228,7 +228,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName35"
+        android:id="@+id/confirmpassword_register"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:autofillHints="@string/emailaddress"
@@ -243,7 +243,7 @@
         tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/phoneno"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:autofillHints="@string/emailaddress"
@@ -266,7 +266,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailR"
+        app:layout_constraintTop_toBottomOf="@+id/email_register"
         app:layout_constraintVertical_bias="0.0" />
 
     <View

@@ -18,6 +18,10 @@ class RegisterAccountActivity : AppCompatActivity() {
     lateinit var email: EditText
     lateinit var first_name: EditText
     lateinit var last_name: EditText
+    lateinit var password: EditText
+    lateinit var phoneno: EditText
+    lateinit var floor: EditText
+    lateinit var address: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,9 +29,13 @@ class RegisterAccountActivity : AppCompatActivity() {
 
         //set authentication to auth
         auth = FirebaseAuth.getInstance()
-        email = findViewById(R.id.emailR)
+        email = findViewById(R.id.email_register)
         first_name = findViewById(R.id.fname)
         last_name = findViewById(R.id.lname)
+        password = findViewById(R.id.password_register)
+        phoneno = findViewById(R.id.phoneno)
+        floor = findViewById(R.id.editTextFloor)
+        address = findViewById(R.id.editTextAddress)
 
         //register button
         registerbtn.setOnClickListener {
@@ -50,16 +58,20 @@ class RegisterAccountActivity : AppCompatActivity() {
         val email = email.text.toString()
         val first_name = first_name.text.toString()
         val last_name = last_name.text.toString()
+        val password = password.text.toString()
+        val phoneno = phoneno.text.toString()
+        val floor = floor.text.toString()
+        val address = address.text.toString()
 
-        if(emailR.text.toString().isEmpty()) {
-            emailR.error = "Please enter email"
-            emailR.requestFocus()
+        if(email_register.text.toString().isEmpty()) {
+            email_register.error = "Please enter email"
+            email_register.requestFocus()
             return
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(emailR.text.toString()).matches()) {
-            emailR.error = "Please enter valid email"
-            emailR.requestFocus()
+        if(!Patterns.EMAIL_ADDRESS.matcher(email_register.text.toString()).matches()) {
+            email_register.error = "Please enter valid email"
+            email_register.requestFocus()
             return
         }
 
@@ -75,15 +87,15 @@ class RegisterAccountActivity : AppCompatActivity() {
             return
         }
 
-        if(passwordR.text.toString().isEmpty()) {
-            passwordR.error = "Please enter password"
-            passwordR.requestFocus()
+        if(password_register.text.toString().isEmpty()) {
+            password_register.error = "Please enter password"
+            password_register.requestFocus()
             return
         }
 
         if(checkBox7.isChecked == true) {
             //create user in firebase
-            auth.createUserWithEmailAndPassword(emailR.text.toString(), passwordR.text.toString())
+            auth.createUserWithEmailAndPassword(email_register.text.toString(), password_register.text.toString())
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         //send email verification
@@ -94,7 +106,7 @@ class RegisterAccountActivity : AppCompatActivity() {
                                     val database = FirebaseDatabase.getInstance().getReference("User_Profile")
                                     val userid = database.push().key
 
-                                    val Userdata = UserProfile(userid, email, first_name, last_name)
+                                    val Userdata = UserProfile(userid, email, first_name, last_name, password, phoneno, floor, address)
                                     if (userid != null) {
                                        database.child(userid).setValue(Userdata)
                                     }
