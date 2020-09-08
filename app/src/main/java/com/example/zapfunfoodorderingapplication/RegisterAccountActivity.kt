@@ -33,7 +33,7 @@ class RegisterAccountActivity : AppCompatActivity() {
         first_name = findViewById(R.id.fname)
         last_name = findViewById(R.id.lname)
         password = findViewById(R.id.password_register)
-        phoneno = findViewById(R.id.phoneno)
+        phoneno = findViewById(R.id.editTextPhone)
         floor = findViewById(R.id.editTextFloor)
         address = findViewById(R.id.editTextAddress)
 
@@ -64,35 +64,64 @@ class RegisterAccountActivity : AppCompatActivity() {
         val address = address.text.toString()
 
         if(email_register.text.toString().isEmpty()) {
-            email_register.error = "Please enter email"
+            email_register.error = "Enter email"
             email_register.requestFocus()
             return
         }
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email_register.text.toString()).matches()) {
-            email_register.error = "Please enter valid email"
+            email_register.error = "Invalid email"
             email_register.requestFocus()
             return
         }
 
         if(fname.text.toString().isEmpty()) {
-            fname.error = "Please enter first name"
+            fname.error = "Enter first name"
             fname.requestFocus()
             return
         }
 
         if(lname.text.toString().isEmpty()) {
-            lname.error = "Please enter last name"
+            lname.error = "Enter last name"
             lname.requestFocus()
             return
         }
 
         if(password_register.text.toString().isEmpty()) {
-            password_register.error = "Please enter password"
+            password_register.error = "Enter password"
             password_register.requestFocus()
             return
         }
 
+        if(confirmpassword_register.text.toString().isEmpty()) {
+            confirmpassword_register.error = "Confirm your password"
+            confirmpassword_register.requestFocus()
+            return
+        }
+
+        if(!password_register.text.toString().equals(confirmpassword_register.text.toString())) {
+            confirmpassword_register.error = "Those passwords didnt match"
+            confirmpassword_register.requestFocus()
+            return
+        }
+
+        if(editTextPhone.text.toString().isEmpty()) {
+            editTextPhone.error = "Enter phone number"
+            editTextPhone.requestFocus()
+            return
+        }
+
+        if(editTextFloor.text.toString().isEmpty()) {
+            editTextFloor.error = "Enter floor or unit"
+            editTextFloor.requestFocus()
+            return
+        }
+
+        if(editTextAddress.text.toString().isEmpty()) {
+            editTextAddress.error = "Enter address"
+            editTextAddress.requestFocus()
+            return
+        }
         if(checkBox7.isChecked == true) {
             //create user in firebase
             auth.createUserWithEmailAndPassword(email_register.text.toString(), password_register.text.toString())
@@ -126,7 +155,7 @@ class RegisterAccountActivity : AppCompatActivity() {
         }
 
         else if(checkBox7.isChecked == false) {
-            Toast.makeText(baseContext, "PLease check the terms and condition.",
+            Toast.makeText(baseContext, "PLease check the Term & Condition before register",
                 Toast.LENGTH_SHORT).show()
         }
 
