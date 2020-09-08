@@ -108,7 +108,7 @@ class RegisterAccountActivity : AppCompatActivity() {
 
                                     val Userdata = UserProfile(userid, email, first_name, last_name, password, phoneno, floor, address)
                                     if (userid != null) {
-                                       database.child(userid).setValue(Userdata)
+                                       database.child(first_name + " " + last_name).setValue(Userdata)
                                     }
 
                                     //if successful register go to login
