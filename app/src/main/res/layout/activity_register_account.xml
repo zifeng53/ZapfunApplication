@@ -56,7 +56,7 @@
         tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName31"
+        android:id="@+id/editTextAddress"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:layout_marginBottom="232dp"
@@ -104,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -128,7 +128,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName36"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFloor"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -169,7 +169,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/passwordR"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="UnknownId" />
 
@@ -201,7 +201,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordR"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:autofillHints="@string/emailaddress"
@@ -243,7 +243,7 @@
         tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/editTextPhone"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:autofillHints="@string/emailaddress"
@@ -294,7 +294,7 @@
         app:layout_constraintVertical_bias="0.013" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName36"
+        android:id="@+id/editTextFloor"
         android:layout_width="307dp"
         android:layout_height="40dp"
         android:layout_marginBottom="288dp"
@@ -318,6 +318,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName31"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddress"
         app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

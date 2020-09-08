@@ -1,12 +1,12 @@
 package com.example.zapfunfoodorderingapplication
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.google.firebase.auth.EmailAuthProvider
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_forgot_password.*
+
 
 class ForgotPasswordActivity : AppCompatActivity() {
 
@@ -22,7 +22,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
         //change password button
         changepassbtn.setOnClickListener {
-            changepassword()
+            //changepassword()
         }
 
         //top right back icon button
@@ -32,7 +32,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
     }
 
     //change password function
-    private fun changepassword() {
+    /*private fun changepassword() {
 
         if(email.text.isNotEmpty() &&
                 newpassword.text.isNotEmpty() &&
@@ -50,6 +50,6 @@ class ForgotPasswordActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, " Please enter all the fields.",Toast.LENGTH_SHORT).show()
         }
-    }
+    }*/
 
 }
