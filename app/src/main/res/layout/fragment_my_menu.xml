@@ -8,6 +8,15 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+    <View
+        android:id="@+id/line25"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLocation" />
 
     <TextView
         android:id="@+id/lblConfirmRice"
@@ -121,5 +130,48 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"/>
     </ScrollView>
+
+    <ImageView
+        android:id="@+id/imgLocation"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="9dp"
+        android:src="@drawable/ic_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblDelivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/lblDeliveryLocation"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/imgBurgermenu"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/DeliveryLocation"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgBurgermenu"
+        android:layout_width="30dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="11dp"
+        android:src="@drawable/ic_burger_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

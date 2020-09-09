@@ -13,10 +13,106 @@
         android:id="@+id/myOrderFragment"
         android:name="com.example.zapfunfoodorderingapplication.MyOrderFragment"
         android:label="MyOrderFragment"
-        tools:layout="@layout/activity_my_order"/>
+        tools:layout="@layout/fragment_my_order">
+        <action
+            android:id="@+id/action_myOrderFragment_to_cardCheckoutActivity"
+            app:destination="@id/cardCheckoutActivity" />
+    </fragment>
     <fragment
         android:id="@+id/myMenuFragment"
         android:name="com.example.zapfunfoodorderingapplication.MyMenuFragment"
         android:label="fragment_my_menu"
-        tools:layout="@layout/fragment_my_menu" />
+        tools:layout="@layout/fragment_my_menu" >
+        <action
+            android:id="@+id/action_myMenuFragment_to_burgerMenuFragment"
+            app:destination="@id/burgerMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.zapfunfoodorderingapplication.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" >
+        <action
+            android:id="@+id/action_aboutUsFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.example.zapfunfoodorderingapplication.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" >
+        <action
+            android:id="@+id/action_contactUsFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpCentreFragment"
+        android:name="com.example.zapfunfoodorderingapplication.HelpCentreFragment"
+        android:label="fragment_help_centre"
+        tools:layout="@layout/fragment_help_centre" >
+        <action
+            android:id="@+id/action_helpCentreFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myAddressFragment"
+        android:name="com.example.zapfunfoodorderingapplication.MyAddressFragment"
+        android:label="fragment_my_address"
+        tools:layout="@layout/fragment_my_address" >
+        <action
+            android:id="@+id/action_myAddressFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.example.zapfunfoodorderingapplication.MyProfileFragment"
+        android:label="fragment_my_profile"
+        tools:layout="@layout/fragment_my_profile" >
+        <action
+            android:id="@+id/action_myProfileFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.zapfunfoodorderingapplication.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/burgerMenuFragment"
+        android:name="com.example.zapfunfoodorderingapplication.BurgerMenuFragment"
+        android:label="fragment_burger_menu"
+        tools:layout="@layout/fragment_burger_menu" >
+        <action
+            android:id="@+id/action_burgerMenuFragment_to_myHistoryFragment"
+            app:destination="@id/myHistoryFragment" />
+        <action
+            android:id="@+id/action_burgerMenuFragment_to_myOrderFragment"
+            app:destination="@id/myOrderFragment" />
+        <action
+            android:id="@+id/action_burgerMenuFragment_to_myAddressFragment"
+            app:destination="@id/myAddressFragment" />
+        <action
+            android:id="@+id/action_burgerMenuFragment_to_myProfileFragment"
+            app:destination="@id/myProfileFragment" />
+        <action
+            android:id="@+id/action_burgerMenuFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_burgerMenuFragment_to_contactUsFragment"
+            app:destination="@id/contactUsFragment" />
+        <action
+            android:id="@+id/action_burgerMenuFragment_to_helpCentreFragment"
+            app:destination="@id/helpCentreFragment" />
+        <action
+            android:id="@+id/action_burgerMenuFragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_burgerMenuFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/cardCheckoutActivity"
+        android:name="com.example.zapfunfoodorderingapplication.CardCheckoutActivity"
+        android:label="activity_card_checkout"
+        tools:layout="@layout/activity_card_checkout" />
 </navigation>

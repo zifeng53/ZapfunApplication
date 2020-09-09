@@ -12,10 +12,10 @@
     android:paddingStart="0dp"
     android:paddingEnd="0dp">
 
-    <include
+    <!--<include
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        layout="@layout/appbar"/>
+        layout="@layout/appbar"/>-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btm_nav"
