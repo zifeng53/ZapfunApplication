@@ -9,6 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="60dp"
         tools:context=".MyOrderFragment">
 
         <!-- TODO: Update blank fragment layout -->
@@ -59,29 +60,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Line2"
-            android:layout_marginRight="150dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="150dp"
             android:text="QTY"
-            android:textSize="18sp"
-            android:layout_alignParentRight="true" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Line2"
-            android:layout_marginRight="7dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="7dp"
             android:text="PRICE (RM)"
-            android:textSize="18sp"
-            android:layout_alignParentRight="true" />
+            android:textSize="18sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerOrderList"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="match_parent"
             android:layout_below="@+id/textView3"
-            android:layout_marginTop="6dp" />
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
 
         <View
             android:id="@+id/Line1"
@@ -225,6 +227,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/view4"
             android:layout_marginTop="11dp"
+            android:layout_marginLeft="7dp"
             android:text="Payment Methods"
             android:textSize="18sp" />
 
@@ -256,115 +259,116 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/view4"
-            android:layout_marginLeft="290dp"
+            android:layout_marginRight="100dp"
             android:layout_marginTop="150dp"
-            android:text="Button" />
+            android:text="Button"
+            android:layout_alignParentRight="true"/>
 
         <TextView
             android:id="@+id/textView29"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Line1"
-            android:layout_marginRight="7dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="7dp"
             android:text="RM"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_alignParentRight="true"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView29"
-            android:layout_marginRight="7dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="7dp"
             android:text="RM"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_alignParentRight="true" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView30"
-            android:layout_marginRight="7dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="7dp"
             android:text="RM"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_alignParentRight="true" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView16"
-            android:layout_marginRight="7dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="7dp"
             android:text="name"
-            android:textSize="18sp"
-            android:layout_alignParentRight="true"/>
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textView33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView32"
-            android:layout_marginRight="7dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="13dp"
+            android:layout_marginRight="7dp"
             android:text="hp number"
-            android:textSize="18sp"
-            android:layout_alignParentRight="true"/>
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textView34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView19"
-            android:layout_marginRight="7dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
-            android:text="address"
-            android:layout_alignParentRight="true" />
+            android:layout_marginRight="7dp"
+            android:text="address" />
 
         <TextView
             android:id="@+id/textView35"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView34"
-            android:layout_marginRight="7dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
-            android:text="unit no."
-            android:layout_alignParentRight="true"/>
+            android:layout_marginRight="7dp"
+            android:text="unit no." />
 
         <TextView
             android:id="@+id/textView36"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView35"
-            android:layout_marginRight="7dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
-            android:text="remarks"
-            android:layout_alignParentRight="true" />
+            android:layout_marginRight="7dp"
+            android:text="remarks" />
 
         <TextView
             android:id="@+id/textView37"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView36"
-            android:layout_marginRight="7dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="13dp"
+            android:layout_marginRight="7dp"
             android:text="deliver time"
-            android:textSize="18sp"
-            android:layout_alignParentRight="true" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/button12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/view4"
-            android:layout_marginLeft="130dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="150dp"
             android:text="Checkout" />
 
