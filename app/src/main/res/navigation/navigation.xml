@@ -16,7 +16,20 @@
         tools:layout="@layout/activity_my_order"/>
     <fragment
         android:id="@+id/myMenuFragment"
-        android:name="com.example.zapfunfoodorderingapplication.MyMenuFragment"
+        android:name="com.example.zapfunfoodorderingapplication.MyMenuActivity"
         android:label="fragment_my_menu"
-        tools:layout="@layout/fragment_my_menu" />
+        tools:layout="@layout/fragment_my_menu" >
+        <action
+            android:id="@+id/action_myMenuFragment_to_fragment_burger_menu"
+            app:destination="@id/fragment_burger_menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_burger_menu"
+        android:name="com.example.zapfunfoodorderingapplication.BurgerMenuActivity"
+        android:label="fragment_burger_menu"
+        tools:layout="@layout/fragment_burger_menu">
+        <action
+            android:id="@+id/action_fragment_burger_menu_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
 </navigation>
