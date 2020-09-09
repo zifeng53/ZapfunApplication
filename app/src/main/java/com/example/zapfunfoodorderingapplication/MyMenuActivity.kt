@@ -21,7 +21,7 @@ class MyMenuActivity : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_my_menu, container, false)
         val burgerMenu: ImageView = view.findViewById(R.id.imgBurgermenu)
         burgerMenu.setOnClickListener{view : View ->
-            view.findNavController().navigate(R.id.action_myMenuFragment_to_fragment_burger_menu)}
+            view.findNavController().navigate(R.id.action_myMenuFragment_to_burgerMenuFragment)}
         return view
     }
 }

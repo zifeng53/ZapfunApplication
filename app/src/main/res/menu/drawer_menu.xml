@@ -20,7 +20,7 @@
             android:icon="@drawable/ic_drawermenu_myprofile"
             android:title="My Profile" />
         <item
-            android:id="@+id/loginFragment"
+            android:id="@+id/loginActivity"
             android:icon="@drawable/ic_drawermenu_logout"
             android:title="Logout" />
     </group>
@@ -29,7 +29,7 @@
         <item android:title="Support">
             <menu>
                 <item
-                    android:id="@+id/helpCenterFragment"
+                    android:id="@+id/helpCentreFragment"
                     android:icon="@drawable/ic_drawermenu_helpcenter"
                     android:title="Help Center" />
                 <item

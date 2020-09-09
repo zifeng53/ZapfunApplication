@@ -5,35 +5,271 @@
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BurgerMenuActivity"
+    tools:context=".BurgerMenuFragment"
     android:gravity="bottom">
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="414dp"
-        android:layout_height="736dp"
-        android:layout_gravity="start"
-        android:background="@color/colorWhite"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/header"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <include
+        android:id="@+id/include"
+        layout="@layout/header"
+        android:layout_width="411dp"
+        android:layout_height="176dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15sp"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_back_arrow"
+        android:text="Back"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/orderFrame"
+        android:layout_width="411dp"
+        android:layout_height="53dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
+        <ImageView
+            android:id="@+id/imgOrder"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_action_myorder" />
+
+        <TextView
+            android:id="@+id/txtOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="101dp"
+            android:layout_marginTop="13dp"
+            android:text="My Order"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/historyFrame"
+        android:layout_width="411dp"
+        android:layout_height="53dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderFrame">
+
+        <ImageView
+            android:id="@+id/imgHistory"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_action_myhistory" />
+
+        <TextView
+            android:id="@+id/txtHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="93dp"
+            android:layout_marginTop="13dp"
+            android:text="My History"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/addressFrame"
+        android:layout_width="411dp"
+        android:layout_height="53dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/historyFrame">
+
+        <ImageView
+            android:id="@+id/imgAddress"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_drawermenu_myaddresses" />
+
+        <TextView
+            android:id="@+id/txtAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="94dp"
+            android:layout_marginTop="13dp"
+            android:text="My Addresses"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/profileFrame"
+        android:layout_width="411dp"
+        android:layout_height="53dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressFrame">
+
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="36dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_drawermenu_myprofile" />
+
+        <TextView
+            android:id="@+id/txtProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="96dp"
+            android:layout_marginTop="13dp"
+            android:text="My Profile"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/logoutFrame"
+        android:layout_width="411dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileFrame">
+
+        <ImageView
+            android:id="@+id/imgLogout"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_drawermenu_logout" />
+
+        <TextView
+            android:id="@+id/txtLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="13dp"
+            android:text="Logout"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/line25"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoutFrame" />
+
+    <TextView
+        android:id="@+id/lblSupport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="339dp"
+        android:text="Support"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line25" />
+
+    <FrameLayout
+        android:id="@+id/helpFrame"
+        android:layout_width="411dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblSupport">
+
+        <ImageView
+            android:id="@+id/imgHelp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_drawermenu_helpcenter" />
+
+        <TextView
+            android:id="@+id/txtHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="13dp"
+            android:text="Help Center"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/aboutFrame"
+        android:layout_width="411dp"
+        android:layout_height="53dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:menu="@menu/drawer_menu" >
+        app:layout_constraintTop_toBottomOf="@+id/helpFrame">
+
+        <ImageView
+            android:id="@+id/imgAbout"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_drawermenu_aboutus" />
 
         <TextView
-            android:id="@+id/txtBack"
+            android:id="@+id/txtAbout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_back_arrow"
-            android:text="Back"
+            android:layout_marginStart="91dp"
+            android:layout_marginTop="13dp"
+            android:text="About Us"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textSize="20sp"
-            android:layout_marginStart="15sp"
-            android:layout_marginTop="10sp"/>
+            android:textSize="18sp" />
+    </FrameLayout>
 
-    </com.google.android.material.navigation.NavigationView>
+    <FrameLayout
+        android:id="@+id/contactFrame"
+        android:layout_width="411dp"
+        android:layout_height="53dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutFrame">
+
+        <ImageView
+            android:id="@+id/imgContact"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_drawermenu_contactus" />
+
+        <TextView
+            android:id="@+id/txtContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="13dp"
+            android:text="Contact Us"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
