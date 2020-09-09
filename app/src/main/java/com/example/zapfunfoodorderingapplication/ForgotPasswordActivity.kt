@@ -2,11 +2,10 @@ package com.example.zapfunfoodorderingapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_forgot_password.*
 
 
@@ -23,8 +22,9 @@ class ForgotPasswordActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         //change password button
-        changepassbtn.setOnClickListener {
-            changepassword()
+        resetpassbtn.setOnClickListener {
+            //changepassword()
+            resetpass()
         }
 
         //top right back icon button
@@ -33,8 +33,32 @@ class ForgotPasswordActivity : AppCompatActivity() {
         }
     }
 
+    //reset password via email function
+    private fun resetpass() {
+        if(email_forgotpassword.text.toString().isEmpty()) {
+            email_forgotpassword.error = "Enter email"
+            email_forgotpassword.requestFocus()
+            return
+        }
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(email_forgotpassword.text.toString()).matches()) {
+            email_forgotpassword.error = "Invalid email"
+            email_forgotpassword.requestFocus()
+            return
+        }
+
+        auth.sendPasswordResetEmail(email_forgotpassword.text.toString())
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Password reset email has sent to " + email_forgotpassword.text.toString(),
+                    Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, LoginActivity::class.java))
+                }
+            }
+    }
+
     //change password function
-    private fun changepassword() {
+    /*private fun changepassword() {
 
         if(email_forgotpassword.text.toString().isNotEmpty() &&
                 editTextPhone_forgotpassword.text.toString().isNotEmpty() &&
@@ -82,6 +106,6 @@ class ForgotPasswordActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, " Please enter all the fields",Toast.LENGTH_SHORT).show()
         }
-    }
+    }*/
 
 }

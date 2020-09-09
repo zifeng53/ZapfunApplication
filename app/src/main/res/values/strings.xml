@@ -71,4 +71,6 @@
     <string name="profile_name" />
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="resetpassword">Reset Password</string>
+    <string name="enteremail">Enter your email address to reset password</string>
 </resources>
