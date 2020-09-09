@@ -13,10 +13,14 @@
         android:id="@+id/myOrderFragment"
         android:name="com.example.zapfunfoodorderingapplication.MyOrderFragment"
         android:label="MyOrderFragment"
-        tools:layout="@layout/activity_my_order"/>
+        tools:layout="@layout/fragment_my_order">
+        <action
+            android:id="@+id/action_myOrderFragment_to_cardCheckoutActivity"
+            app:destination="@id/cardCheckoutActivity" />
+    </fragment>
     <fragment
         android:id="@+id/myMenuFragment"
-        android:name="com.example.zapfunfoodorderingapplication.MyMenuActivity"
+        android:name="com.example.zapfunfoodorderingapplication.MyMenuFragment"
         android:label="fragment_my_menu"
         tools:layout="@layout/fragment_my_menu" >
         <action
@@ -106,4 +110,9 @@
             android:id="@+id/action_burgerMenuFragment_to_myMenuFragment"
             app:destination="@id/myMenuFragment" />
     </fragment>
+    <activity
+        android:id="@+id/cardCheckoutActivity"
+        android:name="com.example.zapfunfoodorderingapplication.CardCheckoutActivity"
+        android:label="activity_card_checkout"
+        tools:layout="@layout/activity_card_checkout" />
 </navigation>

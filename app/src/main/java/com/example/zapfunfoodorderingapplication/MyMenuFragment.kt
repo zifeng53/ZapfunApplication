@@ -12,7 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_my_menu.*
 
-class MyMenuActivity : Fragment() {
+class MyMenuFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
