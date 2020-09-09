@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CardCheckoutActivity"></activity>
+        <activity android:name=".MyProfileActivity" />
+        <activity android:name=".CardCheckoutActivity" />
         <activity android:name=".MyOrderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

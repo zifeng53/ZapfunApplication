@@ -9,4 +9,5 @@ class UserProfile (
     val phoneno: String,
     val floor: String,
     val address: String
-)
+) {
+}
