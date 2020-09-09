@@ -9,7 +9,7 @@
     app:cardCornerRadius="2dp"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true"
-    android:background="@color/colorWhite"
+    android:background="@drawable/bg_whiterounded"
     >
 
 
@@ -20,48 +20,78 @@
         android:id="@+id/expandable_layout"
         android:visibility="visible"
         >
+
+        <ImageView
+            android:id="@+id/imageFood"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_food"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvRecipientName"
+            android:layout_toEndOf="@id/imageFood"
             android:text="Recipient Name"
-            android:textSize="16sp"
-            android:padding="5dp"
+            android:textSize="15sp"
+            android:paddingLeft="5dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="2dp"
+            android:textColor="#035"
             android:textStyle="bold"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvAmount"
             android:text="Amount"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:layout_alignParentEnd="true"
-            android:padding="5dp"
+            android:padding="4dp"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvItemDetails"
+            android:layout_toEndOf="@id/imageFood"
             android:text="Item Details"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:layout_below="@id/tvRecipientName"
             android:paddingTop="0dp"
-            android:paddingStart="16dp"
-            android:paddingBottom="2dp"
+            android:paddingStart="5dp"
+            android:paddingBottom="1dp"
             android:paddingEnd="16dp"
+            />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblOSStatus"
+            android:textSize="14sp"
+            android:text="Preparing"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/bg_rounded"
+            android:textStyle="bold"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvOrderDate"
+            android:layout_toEndOf="@id/imageFood"
             android:text="Order date"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:layout_below="@id/tvItemDetails"
             android:paddingTop="0dp"
-            android:paddingStart="16dp"
-            android:paddingBottom="3dp"/>
+            android:paddingStart="5dp"
+            android:paddingBottom="2dp"/>
 
     </RelativeLayout>
 

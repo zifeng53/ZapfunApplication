@@ -1,19 +1,19 @@
 {
   "order_history": [
     {
-      "order_status": "Order Preparing",
+      "order_status": "Order Ongoing",
       "headlines": [
         {
           "recipient_name": "Philip",
           "total_amount": "RM0.00",
-          "order_item": "Item details",
-          "order_date": "20 SEP 2020 12:00AM"
+          "order_item": "• 1 item",
+          "order_date": "20 Oct, 12:00"
         },
         {
-          "recipient_name": "Philip",
+          "recipient_name": "Miao",
           "total_amount": "RM0.00",
-          "order_item": "Rice Type - Meat Name - Fish Name - Vegetable",
-          "order_date": "20 SEP 2020 11:00AM"
+          "order_item": "• 2 items",
+          "order_date": "20 Oct, 11:32"
         }
       ]
     },
@@ -23,14 +23,26 @@
         {
           "recipient_name": "Philip",
           "total_amount": "RM0.00",
-          "order_item": "Item details",
-          "order_date": "20 SEP 2020 11:00AM"
+          "order_item": "1 Item",
+          "order_date": "20 Oct"
         },
         {
           "recipient_name": "Philip",
           "total_amount": "RM0.00",
-          "order_item": "Item details",
-          "order_date": "20 SEP 2020 11:00AM"
+          "order_item": "1 Item",
+          "order_date": "20 Oct"
+        },
+        {
+          "recipient_name": "Philip",
+          "total_amount": "RM0.00",
+          "order_item": "1 Item",
+          "order_date": "20 Oct"
+        },
+        {
+          "recipient_name": "Philip",
+          "total_amount": "RM0.00",
+          "order_item": "1 Item",
+          "order_date": "20 Oct"
         }
       ]
     }

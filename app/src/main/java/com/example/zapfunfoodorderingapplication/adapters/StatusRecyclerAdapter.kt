@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -32,7 +33,7 @@ class StatusRecyclerAdapter(context: Context, data: List<OrderStatusModel>?) :
         headlineAdapter = ItemRecyclerAdapter(mContext, item?.paperHeadlines)
         holder.rvHeadlines.adapter = headlineAdapter
         holder.rvHeadlines.layoutManager = LinearLayoutManager(mContext)
-        holder.ivArrow.setOnClickListener { onItemClicked(item) }
+        holder.statusBar.setOnClickListener { onItemClicked(item) }
         if (item?.isExpanded!!) {
             holder.rvHeadlines.visibility = View.VISIBLE
             holder.ivArrow.setImageResource(R.drawable.ic_arrow_up)
@@ -40,6 +41,7 @@ class StatusRecyclerAdapter(context: Context, data: List<OrderStatusModel>?) :
             holder.rvHeadlines.visibility = View.GONE
             holder.ivArrow.setImageResource(R.drawable.ic_arrow_down)
         }
+
     }
 
     override
@@ -56,6 +58,7 @@ class StatusRecyclerAdapter(context: Context, data: List<OrderStatusModel>?) :
         var tvName: TextView = itemView.findViewById(R.id.tvOrderStatus)
         var rvHeadlines: RecyclerView = itemView.findViewById(R.id.rvHeadlines)
         var ivArrow: ImageView = itemView.findViewById(R.id.ivArrow)
+        var statusBar: RelativeLayout = itemView.findViewById(R.id.StatusBar)
     }
 
 
