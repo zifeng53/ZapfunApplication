@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.appbar.*
 import kotlinx.android.synthetic.main.fragment_my_history.*
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity() {
 
     // create three objects for fragments
     /*lateinit var myMenuFragment: MyMenuFragment
@@ -134,10 +134,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             true
         }*/
 
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        return true
     }
 
 }

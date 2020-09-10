@@ -12,8 +12,8 @@
 
         <ImageView
             android:id="@+id/backbtnOrderSummary"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:src="@drawable/ic_back_arrow"/>
@@ -25,7 +25,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="15dp"
             android:text="@string/OrderSummaryTitle"
-            android:textSize="21sp"
+            android:fontFamily="sans-serif-black"
+            android:textSize="18sp"
             android:layout_toEndOf="@+id/backbtnOrderSummary"/>
 
         <View
@@ -41,13 +42,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/OSLine1"
-            android:layout_marginLeft="7dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="13dp"
             android:text="Order Received"
             android:textSize="18sp"
             android:textStyle="bold" />
-
-
 
         <TextView
             android:id="@+id/lblOSEstimatedTime"
@@ -60,6 +59,25 @@
             android:fontFamily="sans-serif-smallcaps"
             android:textSize="18sp" />
 
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/imageViewStatus"
+            android:layout_width="200dp"
+            android:layout_height="170dp"
+            android:src="@drawable/image_preparing"
+            android:paddingTop="18dp"
+            android:paddingBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="0dp"
+            android:layout_below="@+id/lblOSEstimatedTime"
+            />
+
+        <ImageView
+            android:id="@+id/imageOSstatus"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/imageViewStatus"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/preparing"/>
 
         <View
             android:id="@+id/OSLine2"
@@ -74,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/OSLine2"
-            android:layout_marginLeft="7dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="13dp"
             android:text="Order Details"
             android:textSize="18sp"
@@ -85,7 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblOSOrderDetail"
-            android:layout_marginLeft="7dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:text="ITEM"
             android:textSize="18sp" />
@@ -107,9 +125,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblOSOrderDetail"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="13dp"
+            android:layout_marginEnd="10dp"
             android:layout_alignEnd="@id/OSLine2"
-            android:text="PRICE (RM)"
+            android:text="RM"
             android:textSize="18sp" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -117,18 +135,19 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_below="@+id/lblOSItem"
-            android:layout_marginTop="6dp" />
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:id="@+id/lblOSSubTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/OSRecyclerView"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="10dp"
             android:text="Subtotal"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_alignStart="@+id/lblOSOrderDetail"/>
 
         <TextView
             android:id="@+id/lblOSSubTotalShow"
@@ -136,9 +155,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/OSRecyclerView"
             android:layout_alignEnd="@+id/lblOSPrice"
-            android:layout_marginTop="13dp"
-            android:text="RM0.00"
-            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:text="0.00"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -146,10 +165,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblOSSubTotal"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="13dp"
+            android:layout_alignStart="@+id/lblOSOrderDetail"
+            android:layout_marginTop="10dp"
             android:text="Delivery Fee"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/lblOSDeliveryFeeShow"
@@ -157,9 +176,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblOSSubTotalShow"
             android:layout_alignEnd="@+id/lblOSSubTotalShow"
-            android:layout_marginTop="13dp"
-            android:text="RM0.00"
-            android:textSize="18sp"
+
+            android:layout_marginTop="10dp"
+            android:text="0.00"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -167,10 +187,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblDeliveryFee"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="13dp"
+            android:layout_alignStart="@+id/lblOSOrderDetail"
+            android:layout_marginTop="10dp"
             android:text="Order Total"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/lblOrderTotalShow"
@@ -178,19 +198,19 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblOSDeliveryFeeShow"
             android:layout_alignEnd="@+id/lblOSDeliveryFeeShow"
-            android:layout_marginTop="13dp"
-            android:text="RM0.00"
-            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:text="0.00"
+            android:textSize="16sp"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/lblOSOrderDateTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblOrderTotal"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="13dp"
-            android:text="Order DateTime"
-            android:textSize="18sp"
+            android:layout_alignStart="@+id/lblOSOrderDetail"
+            android:layout_marginTop="10dp"
+            android:text="Order Time"
+            android:textSize="16sp"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/lblOSOrderDateTimeShow"
@@ -198,9 +218,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblOrderTotalShow"
             android:layout_alignEnd="@+id/lblOrderTotalShow"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="10dp"
             android:text="DD MM YYYY 00:00"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -208,19 +228,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblOSOrderDateTime"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="13dp"
+            android:layout_alignStart="@+id/lblOSOrderDetail"
+            android:layout_marginTop="10dp"
             android:text="Payment Method"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageOSCashCard"
             android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_height="30dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
             android:layout_toStartOf="@id/lblOSPaymentMethodShow"
             android:layout_below="@+id/lblOSOrderDateTimeShow"
             android:src="@drawable/image_card"/>
@@ -231,9 +251,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblOSOrderDateTimeShow"
             android:layout_alignEnd="@+id/lblOSOrderDateTimeShow"
-            android:layout_marginTop="13dp"
-            android:text="Card"
-            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:text="Credit/Debit Card"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <View
@@ -248,10 +268,10 @@
             android:id="@+id/imageOSlocation"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:layout_marginStart="7dp"
             android:layout_marginTop="7dp"
             android:layout_below="@+id/OSLine3"
-            android:src="@drawable/ic_baseline_location_on_24"/>
+            android:src="@drawable/ic_baseline_location_on_24"
+            android:layout_alignStart="@+id/lblOSOrderDetail"/>
 
         <TextView
             android:id="@+id/lblDeliveryAddr"
@@ -261,8 +281,8 @@
             android:layout_marginLeft="7dp"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/imageOSlocation"
-            android:text="Delivery Address"
-            android:textSize="19sp"
+            android:text="Delivery Details"
+            android:textSize="18sp"
             android:textStyle="bold"/>
 
         <TextView
@@ -270,76 +290,64 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblDeliveryAddr"
-            android:layout_marginLeft="7dp"
+            android:layout_alignStart="@+id/lblOSOrderDetail"
             android:layout_marginTop="10dp"
             android:text="Recipient Name"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/lblOSHpNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblOSRecName"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="13dp"
+            android:layout_alignStart="@+id/lblOSOrderDetail"
+            android:layout_marginTop="10dp"
             android:text="Phone Number"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/lblOSDeliveryDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/lblOSHpNo"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="13dp"
-            android:text="Delivery Details"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/lblOSAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/lblOSDeliveryDetails"
-            android:layout_marginLeft="18dp"
+            android:layout_below="@+id/lblOSHpNo"
+            android:layout_alignStart="@+id/lblOSOrderDetail"
             android:layout_marginTop="10dp"
-            android:text="Street Address" />
+            android:text="Street Address"
+            android:textSize="16sp"/>
 
         <TextView
             android:id="@+id/lblOSUnitFloor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblOSAddress"
-            android:layout_marginLeft="18dp"
+            android:layout_alignStart="@+id/lblOSOrderDetail"
             android:layout_marginTop="10dp"
+            android:textSize="16sp"
             android:text="Unit / Floor" />
+
+        <ImageView
+            android:id="@+id/imageOSRemark"
+            android:layout_width="20dp"
+            android:layout_height="27dp"
+            android:layout_alignStart="@+id/lblOSOrderDetail"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/lblOSUnitFloor"
+            android:src="@drawable/ic_baseline_remark"/>
 
         <TextView
             android:id="@+id/lblOSRemark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/lblOSUnitFloor"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@id/imageOSRemark"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="13dp"
-            android:text="Remark" />
+            android:text="Remark"
+            android:textSize="16sp"/>
 
-        <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/imageViewStatus"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:src="@drawable/image_preparing"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="0dp"
-            android:layout_below="@+id/lblOSEstimatedTime"
-            />
 
-        <ImageView
-            android:id="@+id/imageOSstatus"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/imageViewStatus"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/preparing"/>
 
 
     </RelativeLayout>

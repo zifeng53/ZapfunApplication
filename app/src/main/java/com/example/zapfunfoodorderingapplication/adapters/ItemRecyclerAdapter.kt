@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.zapfunfoodorderingapplication.OrderSummaryFragment
 import com.example.zapfunfoodorderingapplication.R
 import com.example.zapfunfoodorderingapplication.models.OrderItemModel
 
@@ -29,6 +31,21 @@ class ItemRecyclerAdapter(context: Context, data: List<OrderItemModel>?) :
         holder.tvItemDetails.text = item?.item_details
         holder.tvOrderDate.text = item?.order_date
 
+        //
+        holder.itemView.setOnClickListener(object :View.OnClickListener{
+            override fun onClick(v:View?){
+                /*val activity=v!!.context as AppCompatActivity
+                val fragment = OrderDetailsFragment()
+                val fragmentManager = activity!!.supportFragmentManager
+                val fragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.expandable_layout,fragment)
+                 */
+                val activity=v!!.context as AppCompatActivity
+                val orderDetailsFragment = OrderSummaryFragment()
+                activity.supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_layout, orderDetailsFragment).addToBackStack(null).commit()
+            }
+        })
     }
 
     override

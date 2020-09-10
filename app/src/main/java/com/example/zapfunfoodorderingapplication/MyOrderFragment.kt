@@ -10,10 +10,18 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.zapfunfoodorderingapplication.adapters.OrderItemHeaderRecyclerAdapter
+import com.example.zapfunfoodorderingapplication.utils.JsonHelper2
 import kotlinx.android.synthetic.main.fragment_my_order.*
 import kotlinx.android.synthetic.main.popup_edit_dialog.view.*
 
 class MyOrderFragment : Fragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        retainInstance = true
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,5 +63,18 @@ class MyOrderFragment : Fragment() {
             }
         }
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
+    {
+        super.onViewCreated(view, savedInstanceState)
+
+        recyclerOrderList.apply {
+            layoutManager = LinearLayoutManager(activity)
+            adapter = OrderItemHeaderRecyclerAdapter((this.context!!), JsonHelper2(this.context!!).getListData())
+        }
+    }
+    companion object{
+        fun newInstance(): MyOrderFragment = MyOrderFragment()
     }
 }
