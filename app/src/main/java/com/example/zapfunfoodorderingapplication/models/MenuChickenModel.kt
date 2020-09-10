@@ -1,6 +1,6 @@
 package com.example.zapfunfoodorderingapplication.models
 
-class TodaySpecialModel {
+class MenuChickenModel {
     var menu_id:String?=null
     var name:String?=null
     var image:String?=null

@@ -8,13 +8,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.zapfunfoodorderingapplication.R
-import com.example.zapfunfoodorderingapplication.models.TodaySpecialModel
+import com.example.zapfunfoodorderingapplication.models.MenuTodaySpecialModel
 import de.hdodenhof.circleimageview.CircleImageView
 
-class TodaySpecialAdapter (internal var context: Context,
-                           internal var todaySpecialModels: List<TodaySpecialModel>) :
+class MenuTodaySpecialAdapter (internal var context: Context,
+                               internal var menuTodaySpecialModels: List<MenuTodaySpecialModel>) :
 
-    RecyclerView.Adapter<TodaySpecialAdapter.MyViewHolder>(){
+    RecyclerView.Adapter<MenuTodaySpecialAdapter.MyViewHolder>(){
 
     inner class MyViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView) {
         //@BindView(R.id.txt_category_name)
@@ -31,16 +31,16 @@ class TodaySpecialAdapter (internal var context: Context,
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.layout_today_special, parent, false))
+        return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.layout_today_special_items, parent, false))
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        Glide.with(context).load(todaySpecialModels.get(position).image).into(holder.todaySpecial_image!!)
-        holder.todaySpecial_name!!.setText(todaySpecialModels.get(position).name)
+        Glide.with(context).load(menuTodaySpecialModels.get(position).image).into(holder.todaySpecial_image!!)
+        holder.todaySpecial_name!!.setText(menuTodaySpecialModels.get(position).name)
     }
 
     override fun getItemCount(): Int {
-        return todaySpecialModels.size
+        return menuTodaySpecialModels.size
     }
 
 }
