@@ -17,6 +17,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.fragment_my_menu.*
+import kotlinx.coroutines.Dispatchers.Main
 
 class BurgerMenuFragment : Fragment() {
     override fun onCreateView(
@@ -39,7 +40,9 @@ class BurgerMenuFragment : Fragment() {
             view.findNavController().navigate(R.id.action_burgerMenuFragment_to_myAddressFragment)}
         val btnProfile: FrameLayout = view.findViewById(R.id.profileFrame)
         btnProfile.setOnClickListener{view : View ->
-            view.findNavController().navigate(R.id.action_burgerMenuFragment_to_myProfileFragment)}
+            val intent = Intent(activity, ProfileActivity::class.java)
+            activity?.startActivity(intent)
+        }
         val btnLogout: FrameLayout = view.findViewById(R.id.logoutFrame)
         btnLogout.setOnClickListener{view : View ->
             view.findNavController().navigate(R.id.action_burgerMenuFragment_to_loginActivity)}
@@ -54,4 +57,5 @@ class BurgerMenuFragment : Fragment() {
             view.findNavController().navigate(R.id.action_burgerMenuFragment_to_contactUsFragment)}
         return view
     }
+
 }

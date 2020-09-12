@@ -137,11 +137,13 @@ class RegisterAccountActivity : AppCompatActivity() {
                                 if (task.isSuccessful) {
                                     //save user information into firebase
                                     val database = FirebaseDatabase.getInstance().getReference("User_Profile")
-                                    val userid = database.push().key
+                                    val uid = user?.uid
+                                    //val upass = user?.password
+                                    //val userid = database.push().key
 
-                                    val Userdata = UserProfile(userid, email, first_name, last_name, password, phoneno, floor, address)
-                                    if (userid != null) {
-                                       database.child(userid).setValue(Userdata)
+                                    val Userdata = UserProfile(uid, email, first_name, last_name, password, phoneno, floor, address)
+                                    if (uid != null) {
+                                       database.child(uid).setValue(Userdata)
                                     }
 
                                     //if successful register go to login
