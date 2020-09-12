@@ -42,7 +42,8 @@
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:hint="Enter Card Number"
-        android:inputType="textPersonName" />
+        android:inputType="number"
+        android:maxLength="16"/>
 
     <TextView
         android:id="@+id/textView104"
@@ -81,8 +82,9 @@
         android:layout_below="@+id/textView105"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="250dp"
-        android:hint="Enter Expiry Date"
-        android:inputType="textPersonName" />
+        android:hint="mm/yy"
+        android:inputType="date"
+        android:maxLength="5"/>
 
     <TextView
         android:id="@+id/textView106"
@@ -102,7 +104,8 @@
         android:layout_marginLeft="200dp"
         android:layout_marginRight="35dp"
         android:hint="Enter CVV"
-        android:inputType="textPersonName" />
+        android:inputType="numberPassword"
+        android:maxLength="3"/>
 
     <Button
         android:id="@+id/button13"
