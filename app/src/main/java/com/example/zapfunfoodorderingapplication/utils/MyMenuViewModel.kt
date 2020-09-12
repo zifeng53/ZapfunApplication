@@ -19,8 +19,8 @@ class MyMenuViewModel : ViewModel(), MenuLoadCallback {
     private var todaySpecialLoadCallbackListener:MenuLoadCallback = this
 
     //CHICKEN
-    private var chickenListMutableLiveData:MutableLiveData<List<MenuChickenModel>>?=null
-    private var chickenLoadCallbackListener:MenuLoadCallback = this
+    //private var chickenListMutableLiveData:MutableLiveData<List<MenuChickenModel>>?=null
+    //private var chickenLoadCallbackListener:MenuLoadCallback = this
 
     //ERROR MESSAGE
     private lateinit var messageError:MutableLiveData<String>
@@ -65,7 +65,7 @@ class MyMenuViewModel : ViewModel(), MenuLoadCallback {
 
 
     //CHICKEN START
-    val chickenList:LiveData<List<MenuChickenModel>>
+    /*val chickenList:LiveData<List<MenuChickenModel>>
         get(){
             if(chickenListMutableLiveData == null)
             {
@@ -99,6 +99,6 @@ class MyMenuViewModel : ViewModel(), MenuLoadCallback {
     }
     override fun onChickenLoadFailed(message: String) {
         messageError.value = message
-    }
+    }*/
     //CHICKEN END
 }

@@ -13,13 +13,22 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.zapfunfoodorderingapplication.Common.Common
+import com.example.zapfunfoodorderingapplication.Common.SpacesItemDecoration
+import com.example.zapfunfoodorderingapplication.adapters.MenuChickenAdapter
 import com.example.zapfunfoodorderingapplication.adapters.MenuTodaySpecialAdapter
+import com.example.zapfunfoodorderingapplication.utils.ChickenMenuViewModel
 import com.example.zapfunfoodorderingapplication.utils.MyMenuViewModel
+import kotlinx.android.synthetic.main.fragment_my_menu.*
 
 class MyMenuFragment : Fragment() {
 
     private lateinit var myMenuViewModel: MyMenuViewModel
     var  recyclerView:RecyclerView?=null
+
+    //private lateinit var chickenMenuViewModel: ChickenMenuViewModel
+    //var recyclerChickenView:RecyclerView?=null
+    //private var chickenAdapter:MenuChickenAdapter?=null
 
    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +43,9 @@ class MyMenuFragment : Fragment() {
         myMenuViewModel =
             ViewModelProviders.of(this).get(MyMenuViewModel::class.java)
 
+       //chickenMenuViewModel =
+           //ViewModelProviders.of(this).get(ChickenMenuViewModel::class.java)
+
         initTodaySpecialView(view)
         //initChickenView(view)
         //Bind data
@@ -42,6 +54,11 @@ class MyMenuFragment : Fragment() {
             val adapter = MenuTodaySpecialAdapter(requireContext(), listData)
             recyclerView!!.adapter = adapter
         })
+       /*chickenMenuViewModel.chickenList.observe(viewLifecycleOwner, Observer {
+           val listData = it
+           val adapter = MenuChickenAdapter(requireContext(), listData)
+           recyclerChickenView!!.adapter = adapter
+       })*/
         return view
     }
 
@@ -52,10 +69,25 @@ class MyMenuFragment : Fragment() {
     }
 
     /*private fun initChickenView(view:View) {
-        recyclerView = view.findViewById(R.id.recycler_chicken) as RecyclerView
-        recyclerView!!.setHasFixedSize(true)
-        val layoutManager = GridLayoutManager(context, 4)
+        recyclerChickenView = view.findViewById(R.id.recycler_chicken) as RecyclerView
+        recyclerChickenView!!.setHasFixedSize(true)
+        val layoutManager = GridLayoutManager(context, 2)
         layoutManager.orientation = RecyclerView.VERTICAL
-        //recyclerView!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        layoutManager.spanSizeLookup = object: GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                return if(chickenAdapter != null)
+                {
+                    when(chickenAdapter!!.getItemViewType(position)) {
+                        Common.DEFAULT_COLUMN_COUNT -> 1
+                        Common.FULL_WIDTH_COLUMN -> 2
+                        else -> 1
+                    }
+                } else
+                    -1
+            }
+        }
+        recyclerChickenView!!.layoutManager = layoutManager
+        recyclerChickenView!!.addItemDecoration(SpacesItemDecoration(8))
+        //recyclerChickenView!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
     }*/
 }

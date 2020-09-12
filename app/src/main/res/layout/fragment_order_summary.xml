@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,7 +12,7 @@
         tools:context=".OrderSummaryFragment">
 
         <ImageView
-            android:id="@+id/backbtnOrderSummary"
+            android:id="@+id/OSBtnBack"
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_marginStart="16dp"
@@ -27,7 +28,7 @@
             android:text="@string/OrderSummaryTitle"
             android:fontFamily="sans-serif-black"
             android:textSize="18sp"
-            android:layout_toEndOf="@+id/backbtnOrderSummary"/>
+            android:layout_toEndOf="@+id/OSBtnBack"/>
 
         <View
             android:id="@+id/OSLine1"
@@ -38,21 +39,10 @@
             android:layout_below="@+id/lblOSOrderDetails" />
 
         <TextView
-            android:id="@+id/lblOSOrderReceived"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/OSLine1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="13dp"
-            android:text="Order Received"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
             android:id="@+id/lblOSEstimatedTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/lblOSOrderReceived"
+            android:layout_below="@+id/OSLine1"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:text="Estimated Time: 15:20 (10 mins)"
@@ -133,10 +123,11 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/OSRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/lblOSItem"
             android:layout_marginTop="6dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
 
         <TextView
             android:id="@+id/lblOSSubTotal"
