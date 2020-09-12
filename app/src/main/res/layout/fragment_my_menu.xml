@@ -25,6 +25,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="14dp"
         android:text="@string/lblDeliveryLocation"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/imgBurgermenu"
         app:layout_constraintTop_toTopOf="parent" />
