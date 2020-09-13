@@ -8,7 +8,20 @@
         android:id="@+id/myHistoryFragment"
         android:name="com.example.zapfunfoodorderingapplication.MyHistoryFragment"
         android:label="fragment_my_history"
-        tools:layout="@layout/fragment_my_history" />
+        tools:layout="@layout/fragment_my_history" >
+        <action
+            android:id="@+id/action_myHistoryFragment_to_orderSummaryFragment"
+            app:destination="@id/orderSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderSummaryFragment"
+        android:name="com.example.zapfunfoodorderingapplication.OrderSummaryFragment"
+        android:label="OrderSummaryFragment"
+        tools:layout="@layout/fragment_order_summary">
+        <action
+            android:id="@+id/action_orderSummaryFragment_to_myHistoryFragment"
+            app:destination="@id/myHistoryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/myOrderFragment"
         android:name="com.example.zapfunfoodorderingapplication.MyOrderFragment"
@@ -115,4 +128,5 @@
         android:name="com.example.zapfunfoodorderingapplication.CardCheckoutActivity"
         android:label="activity_card_checkout"
         tools:layout="@layout/activity_card_checkout" />
+
 </navigation>

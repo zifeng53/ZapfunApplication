@@ -12,13 +12,6 @@
         <activity android:name=".ContactUsActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".CardCheckoutActivity" />
-        <activity android:name=".MyOrderActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".RegisterAccountActivity" />
         <activity android:name=".LoginActivity" />

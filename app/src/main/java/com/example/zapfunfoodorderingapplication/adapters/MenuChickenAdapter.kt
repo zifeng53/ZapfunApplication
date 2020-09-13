@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide
 import com.example.zapfunfoodorderingapplication.Common.Common
 import com.example.zapfunfoodorderingapplication.R
 import com.example.zapfunfoodorderingapplication.models.MenuChickenModel
-import com.example.zapfunfoodorderingapplication.models.MenuTodaySpecialModel
 import de.hdodenhof.circleimageview.CircleImageView
 
 class MenuChickenAdapter (internal var context: Context,
@@ -23,12 +22,12 @@ class MenuChickenAdapter (internal var context: Context,
         var chicken_image: CircleImageView?= null
 
         init{
-            chicken_name = itemView.findViewById(R.id.txt_chicken) as TextView
+            chicken_name = itemView.findViewById(R.id.chicken_name) as TextView
             chicken_image = itemView.findViewById(R.id.chicken_img) as CircleImageView
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuChickenAdapter.MyViewHolder {
         return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.layout_chicken_items, parent, false))
     }
 
@@ -41,7 +40,7 @@ class MenuChickenAdapter (internal var context: Context,
         return menuChickenModels.size
     }
 
-    /*override fun getItemViewType(position: Int): Int {
+    override fun getItemViewType(position: Int): Int {
         return if(menuChickenModels.size == 1)
             Common.DEFAULT_COLUMN_COUNT
         else {
@@ -53,5 +52,5 @@ class MenuChickenAdapter (internal var context: Context,
             else
                     Common.DEFAULT_COLUMN_COUNT
         }
-    }*/
+    }
 }

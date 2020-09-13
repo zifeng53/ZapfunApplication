@@ -13,14 +13,50 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zapfunfoodorderingapplication.adapters.OrderItemHeaderRecyclerAdapter
 import com.example.zapfunfoodorderingapplication.utils.JsonHelper2
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_my_order.*
 import kotlinx.android.synthetic.main.popup_edit_dialog.view.*
 
 class MyOrderFragment : Fragment() {
 
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
+
+        auth = FirebaseAuth.getInstance()
+
+        readdata()
+    }
+
+    fun readdata() {
+        val user = auth.currentUser
+        val email_search = user?.email
+        val uid_search = user?.uid
+
+        if (email_search != null && uid_search != null){
+            FirebaseDatabase.getInstance().reference
+                .child("User_Profile")
+                .child(uid_search)
+                .addValueEventListener(object : ValueEventListener {
+                    override fun onCancelled(p0: DatabaseError){
+
+                    }
+
+                    override fun onDataChange(p0: DataSnapshot){
+                        val map = p0.value as Map<String,Any>
+                        textView32.text = map["last_name"].toString()
+                        textView33.text = map["phoneno"].toString()
+                        textView34.text = map["address"].toString()
+                        textView35.text = map["floor"].toString()
+                    }
+                })
+        }
     }
 
     override fun onCreateView(
@@ -39,14 +75,27 @@ class MyOrderFragment : Fragment() {
                 .setTitle("Edit Details")
             //show dialog
             val mAlertDialog = mBuilder.show()
+
+            mDialogView.editTextTextPersonName.setText(textView32.text)
+            mDialogView.editTextTextPersonName2.setText(textView33.text)
+            mDialogView.editTextTextPersonName3.setText(textView34.text)
+            mDialogView.editTextTextPersonName4.setText(textView35.text)
+            mDialogView.editTextTextPersonName5.setText(textView36.text)
+
             mDialogView.button2.setOnClickListener {
                 mAlertDialog.dismiss()
                 //get text from EditTexts of custom layout
-                //val name = mDialogView.dialogNameEt.text.toString()
-                //val email = mDialogView.dialogEmailEt.text.toString()
-                //val password = mDialogView.dialogPasswEt.text.toString()
-                //set the input text in TextView
-                //mainInfoTv.setText("Name:"+ name +"\nEmail: "+ email +"\nPassword: "+ password)
+                val name = mDialogView.editTextTextPersonName.text.toString()
+                val phone = mDialogView.editTextTextPersonName2.text.toString()
+                val street = mDialogView.editTextTextPersonName3.text.toString()
+                val unit = mDialogView.editTextTextPersonName4.text.toString()
+                val remark = mDialogView.editTextTextPersonName5.text.toString()
+                //set the input text in TextView of MyOrder page
+                textView32.setText(name)
+                textView33.setText(phone)
+                textView34.setText(street)
+                textView35.setText(unit)
+                textView36.setText(remark)
             }
             //cancel button click of custom layout
             mDialogView.button.setOnClickListener {

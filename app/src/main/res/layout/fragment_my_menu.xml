@@ -25,6 +25,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="14dp"
         android:text="@string/lblDeliveryLocation"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/imgBurgermenu"
         app:layout_constraintTop_toTopOf="parent" />
@@ -69,6 +70,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="4dp"
         android:text="@string/ConfirmRice"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,6 +86,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="110dp"
         android:text="@string/RiceType"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -102,8 +105,9 @@
         android:hint="Search food you like"
         android:inputType="textPersonName"
         android:paddingStart="16sp"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/lblRiceType"
+        app:layout_constraintBottom_toTopOf="@+id/lblConfirmRice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
@@ -182,7 +186,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1.58"
             android:orientation="vertical"
             android:padding="8dp">
 
