@@ -51,15 +51,19 @@ class BurgerMenuFragment : Fragment() {
         }
         val btnHelp: FrameLayout = view.findViewById(R.id.helpFrame)
         btnHelp.setOnClickListener{view : View ->
-            view.findNavController().navigate(R.id.action_burgerMenuFragment_to_helpCentreFragment)}
+            val intent = Intent(activity, HelpCentreActivity::class.java)
+            activity?.startActivity(intent)
+        }
         val btnAbout: FrameLayout = view.findViewById(R.id.aboutFrame)
         btnAbout.setOnClickListener{view : View ->
-            val intent = Intent(activity, ContactUsActivity::class.java)
+            val intent = Intent(activity, AboutUsActivity::class.java)
             activity?.startActivity(intent)
         }
         val btnContact: FrameLayout = view.findViewById(R.id.contactFrame)
         btnContact.setOnClickListener{view : View ->
-            view.findNavController().navigate(R.id.action_burgerMenuFragment_to_contactUsFragment)}
+            val intent = Intent(activity, ContactUsActivity::class.java)
+            activity?.startActivity(intent)
+        }
         return view
     }
 
