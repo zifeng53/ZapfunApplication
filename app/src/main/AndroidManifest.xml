@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MyAddressActivity"></activity>
+        <activity android:name=".AddressActivity" />
+        <activity android:name=".MyAddressActivity" />
         <activity android:name=".HelpCentreActivity" />
         <activity android:name=".AboutUsActivity" />
         <activity android:name=".ContactUsActivity" />

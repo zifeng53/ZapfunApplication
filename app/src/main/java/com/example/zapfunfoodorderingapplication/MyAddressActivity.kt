@@ -1,5 +1,6 @@
 package com.example.zapfunfoodorderingapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -20,6 +21,10 @@ class MyAddressActivity : AppCompatActivity() {
         setContentView(R.layout.activity_my_address)
 
         auth = FirebaseAuth.getInstance()
+
+        edit_address.setOnClickListener {
+            startActivity(Intent(this, AddressActivity::class.java))
+        }
 
         deletebtn.setOnClickListener {
             Toast.makeText(this, "You are not allow to delete default address", Toast.LENGTH_SHORT).show()
