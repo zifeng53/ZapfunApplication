@@ -6,20 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.FrameLayout
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_my_menu.*
 import kotlinx.coroutines.Dispatchers.Main
 
 class BurgerMenuFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,13 +44,19 @@ class BurgerMenuFragment : Fragment() {
         }
         val btnLogout: FrameLayout = view.findViewById(R.id.logoutFrame)
         btnLogout.setOnClickListener{view : View ->
-            view.findNavController().navigate(R.id.action_burgerMenuFragment_to_loginActivity)}
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(activity, LoginActivity::class.java)
+            activity?.startActivity(intent)
+            Toast.makeText(activity, "Logged out successful", Toast.LENGTH_SHORT).show()
+        }
         val btnHelp: FrameLayout = view.findViewById(R.id.helpFrame)
         btnHelp.setOnClickListener{view : View ->
             view.findNavController().navigate(R.id.action_burgerMenuFragment_to_helpCentreFragment)}
         val btnAbout: FrameLayout = view.findViewById(R.id.aboutFrame)
         btnAbout.setOnClickListener{view : View ->
-            view.findNavController().navigate(R.id.action_burgerMenuFragment_to_aboutUsFragment)}
+            val intent = Intent(activity, ContactUsActivity::class.java)
+            activity?.startActivity(intent)
+        }
         val btnContact: FrameLayout = view.findViewById(R.id.contactFrame)
         btnContact.setOnClickListener{view : View ->
             view.findNavController().navigate(R.id.action_burgerMenuFragment_to_contactUsFragment)}
