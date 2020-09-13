@@ -27,7 +27,7 @@ class MenuChickenAdapter (internal var context: Context,
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuChickenAdapter.MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(LayoutInflater.from(context).inflate(R.layout.layout_chicken_items, parent, false))
     }
 

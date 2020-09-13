@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.circularreveal.CircularRevealFrameLayout
+<androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="80dp">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/chicken_img"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
 
     <TextView
         android:id="@+id/chicken_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal|center_vertical"
-        android:layout_gravity="bottom"
-        android:text="@string/chicken"
+        android:layout_height="33dp"
+        android:gravity="center_horizontal"
+        android:text="@string/today_special"
         android:textColor="@color/common_google_signin_btn_text_light_pressed"
         android:textSize="14sp"
         app:autoSizeTextType="none" />
-</com.google.android.material.circularreveal.CircularRevealFrameLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -26,8 +26,8 @@ class MyMenuFragment : Fragment() {
     private lateinit var myMenuViewModel: MyMenuViewModel
     var  recyclerView:RecyclerView?=null
 
-    //private lateinit var chickenMenuViewModel: ChickenMenuViewModel
-    //var recyclerChickenView:RecyclerView?=null
+    private lateinit var chickenMenuViewModel: ChickenMenuViewModel
+    var recyclerChickenView:RecyclerView?=null
     //private var chickenAdapter:MenuChickenAdapter?=null
 
    override fun onCreateView(
@@ -43,22 +43,22 @@ class MyMenuFragment : Fragment() {
         myMenuViewModel =
             ViewModelProviders.of(this).get(MyMenuViewModel::class.java)
 
-       //chickenMenuViewModel =
-           //ViewModelProviders.of(this).get(ChickenMenuViewModel::class.java)
+       chickenMenuViewModel =
+           ViewModelProviders.of(this).get(ChickenMenuViewModel::class.java)
 
         initTodaySpecialView(view)
-        //initChickenView(view)
+        initChickenView(view)
         //Bind data
         myMenuViewModel.todaySpecialList.observe(viewLifecycleOwner, Observer {
             val listData = it
             val adapter = MenuTodaySpecialAdapter(requireContext(), listData)
             recyclerView!!.adapter = adapter
         })
-       /*chickenMenuViewModel.chickenList.observe(viewLifecycleOwner, Observer {
+       chickenMenuViewModel.chickenList.observe(viewLifecycleOwner, Observer {
            val listData = it
            val adapter = MenuChickenAdapter(requireContext(), listData)
            recyclerChickenView!!.adapter = adapter
-       })*/
+       })
         return view
     }
 
@@ -68,10 +68,10 @@ class MyMenuFragment : Fragment() {
         recyclerView!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
     }
 
-    /*private fun initChickenView(view:View) {
+    private fun initChickenView(view:View) {
         recyclerChickenView = view.findViewById(R.id.recycler_chicken) as RecyclerView
         recyclerChickenView!!.setHasFixedSize(true)
-        val layoutManager = GridLayoutManager(context, 2)
+        /*val layoutManager = GridLayoutManager(context, 2)
         layoutManager.orientation = RecyclerView.VERTICAL
         layoutManager.spanSizeLookup = object: GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
@@ -87,7 +87,7 @@ class MyMenuFragment : Fragment() {
             }
         }
         recyclerChickenView!!.layoutManager = layoutManager
-        recyclerChickenView!!.addItemDecoration(SpacesItemDecoration(8))
-        //recyclerChickenView!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-    }*/
+        recyclerChickenView!!.addItemDecoration(SpacesItemDecoration(8))*/
+        recyclerChickenView!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+    }
 }
