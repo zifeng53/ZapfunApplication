@@ -16,9 +16,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.zapfunfoodorderingapplication.Common.Common
 import com.example.zapfunfoodorderingapplication.Common.SpacesItemDecoration
 import com.example.zapfunfoodorderingapplication.adapters.MenuChickenAdapter
+import com.example.zapfunfoodorderingapplication.adapters.MenuPork1Adapter
 import com.example.zapfunfoodorderingapplication.adapters.MenuTodaySpecialAdapter
 import com.example.zapfunfoodorderingapplication.utils.ChickenMenuViewModel
 import com.example.zapfunfoodorderingapplication.utils.MyMenuViewModel
+import com.example.zapfunfoodorderingapplication.utils.Pork1MenuViewModel
 import kotlinx.android.synthetic.main.fragment_my_menu.*
 
 class MyMenuFragment : Fragment() {
@@ -29,6 +31,9 @@ class MyMenuFragment : Fragment() {
     private lateinit var chickenMenuViewModel: ChickenMenuViewModel
     var recyclerChickenView:RecyclerView?=null
     //private var chickenAdapter:MenuChickenAdapter?=null
+
+    private lateinit var pork1MenuViewModel: Pork1MenuViewModel
+    var recyclerPork1View:RecyclerView?=null
 
    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,18 +51,29 @@ class MyMenuFragment : Fragment() {
        chickenMenuViewModel =
            ViewModelProviders.of(this).get(ChickenMenuViewModel::class.java)
 
+       pork1MenuViewModel =
+           ViewModelProviders.of(this).get(Pork1MenuViewModel::class.java)
+
         initTodaySpecialView(view)
         initChickenView(view)
+        initPork1View(view)
         //Bind data
         myMenuViewModel.todaySpecialList.observe(viewLifecycleOwner, Observer {
             val listData = it
             val adapter = MenuTodaySpecialAdapter(requireContext(), listData)
             recyclerView!!.adapter = adapter
         })
+
        chickenMenuViewModel.chickenList.observe(viewLifecycleOwner, Observer {
            val listData = it
            val adapter = MenuChickenAdapter(requireContext(), listData)
            recyclerChickenView!!.adapter = adapter
+       })
+
+       pork1MenuViewModel.pork1List.observe(viewLifecycleOwner, Observer {
+           val listData = it
+           val adapter = MenuPork1Adapter(requireContext(), listData)
+           recyclerPork1View!!.adapter = adapter
        })
         return view
     }
@@ -89,5 +105,11 @@ class MyMenuFragment : Fragment() {
         recyclerChickenView!!.layoutManager = layoutManager
         recyclerChickenView!!.addItemDecoration(SpacesItemDecoration(8))*/
         recyclerChickenView!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+    }
+
+    private fun initPork1View(view:View) {
+        recyclerPork1View = view.findViewById(R.id.recycler_pork1) as RecyclerView
+        recyclerPork1View!!.setHasFixedSize(true)
+        recyclerPork1View!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
     }
 }
