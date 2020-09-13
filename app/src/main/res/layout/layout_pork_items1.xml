@@ -8,16 +8,16 @@
     android:padding="8dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/chicken_img"
+        android:id="@+id/pork1_img"
         android:layout_width="80dp"
         android:layout_height="80dp"/>
 
     <TextView
-        android:id="@+id/chicken_name"
+        android:id="@+id/pork1_name"
         android:layout_width="match_parent"
         android:layout_height="33dp"
         android:gravity="center_horizontal"
-        android:text="@string/chicken"
+        android:text="@string/pork"
         android:textColor="@color/common_google_signin_btn_text_light_pressed"
         android:textSize="14sp"
         app:autoSizeTextType="none" />
