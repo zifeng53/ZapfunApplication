@@ -5,34 +5,42 @@
       "order_price": "RM50",
       "headlines": [
         {
-          "item_detail": "Rice Type - Meat Name - Fish Name - Vegetable"
+          "item_detail": "Rice Type - Meat Name - Fish Name - Vegetable",
+          "item_price": "RM10"
         },
         {
-          "item_detail": "Rice Type - Meat Name - Fish Name - Vegetable"
+          "item_detail": "Rice Type - Meat Name - Fish Name - Vegetable",
+          "item_price": "RM10"
         },
         {
-          "item_detail": "Rice Type - Meat Name - Fish Name - Vegetable"
+          "item_detail": "Rice Type - Meat Name - Fish Name - Vegetable",
+          "item_price": "RM10"
         },
         {
-          "item_detail": "Rice Type - Meat Name - Fish Name - Vegetable"
+          "item_detail": "Rice Type - Meat Name - Fish Name - Vegetable",
+          "item_price": "RM10"
         },
         {
-          "item_detail": "Rice Type - Meat Name - Fish Name - Vegetable"
+          "item_detail": "Rice Type - Meat Name - Fish Name - Vegetable",
+          "item_price": "RM10"
         }
       ]
     },
     {
       "order_qty": "3",
-      "order_price": "RM20",
+      "order_price": "RM24",
       "headlines": [
         {
-          "item_detail": "Rice Type - Meat Name - Fish Name"
+          "item_detail": "Rice Type - Meat Name - Fish Name",
+          "item_price": "RM8"
         },
         {
-          "item_detail": "Rice Type - Meat Name - Fish Name"
+          "item_detail": "Rice Type - Meat Name - Fish Name",
+          "item_price": "RM8"
         },
         {
-          "item_detail": "Rice Type - Meat Name - Fish Name"
+          "item_detail": "Rice Type - Meat Name - Fish Name",
+          "item_price": "RM8"
         }
       ]
     }

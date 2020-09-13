@@ -25,6 +25,7 @@ class OrderItemListRecyclerAdapter(context: Context, data: List<OrderItemListMod
         val item = items?.get(position)
 
         holder.tvItem.text = item?.item_detail
+        holder.tvPrice.text = item?.unit_price
     }
 
     override
@@ -34,5 +35,6 @@ class OrderItemListRecyclerAdapter(context: Context, data: List<OrderItemListMod
 
     class OrderListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var tvItem: TextView = itemView.findViewById(R.id.textView28)
+        var tvPrice: TextView = itemView.findViewById(R.id.textView41)
     }
 }
