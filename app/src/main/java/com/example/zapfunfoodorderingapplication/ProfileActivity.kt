@@ -80,7 +80,7 @@ class ProfileActivity : AppCompatActivity() {
         //edit change profile button
         changeprofilebtn2.setOnClickListener {
             //inflate dialog with custom view
-            val mDialogView = LayoutInflater.from(this).inflate(R.layout.fragment_my_profile_contact_info_edit, null)
+            val mDialogView = LayoutInflater.from(this).inflate(R.layout.contact_info_dialog, null)
 
             //alert dialog builder
             val mBuilder = AlertDialog.Builder(this)

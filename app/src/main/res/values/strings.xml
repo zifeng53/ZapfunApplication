@@ -80,4 +80,8 @@
     <string name="resetpassword">Reset Password</string>
     <string name="enteremail">Enter your email address to reset password</string>
     <string name="aboutusinfo">At ZapFun we strive to bring youthe unbeatable variety and affordability of economy rice combined with the unparalleled convenience of online delivery. In just a matter of minutes, your order will be sent to our kitchen, prepared and sent to your nearest pickup location.</string>
+    <string name="Home">Home</string>
+    <string name="recipient" />
+    <string name="recipientname">Recipient Name</string>
+    <string name="phoneNo">Phone Number</string>
 </resources>

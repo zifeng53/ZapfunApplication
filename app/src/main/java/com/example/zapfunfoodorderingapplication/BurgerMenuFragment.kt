@@ -36,7 +36,9 @@ class BurgerMenuFragment : Fragment() {
             view.findNavController().navigate(R.id.action_burgerMenuFragment_to_myHistoryFragment)}
         val btnAddress: FrameLayout = view.findViewById(R.id.addressFrame)
         btnAddress.setOnClickListener{view : View ->
-            view.findNavController().navigate(R.id.action_burgerMenuFragment_to_myAddressFragment)}
+            val intent = Intent(activity, MyAddressActivity::class.java)
+            activity?.startActivity(intent)
+        }
         val btnProfile: FrameLayout = view.findViewById(R.id.profileFrame)
         btnProfile.setOnClickListener{view : View ->
             val intent = Intent(activity, ProfileActivity::class.java)
