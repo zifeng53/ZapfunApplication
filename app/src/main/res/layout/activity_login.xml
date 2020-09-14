@@ -168,7 +168,7 @@
         android:layout_below="@+id/textView"
         android:layout_alignParentBottom="true"
         android:background="#c0c0c0"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/line4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.297"
         app:layout_constraintStart_toStartOf="parent"
@@ -184,11 +184,11 @@
         android:layout_alignParentBottom="true"
         android:background="#c0c0c0"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.305"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/line23"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/checkBox6"
         app:layout_constraintTop_toBottomOf="@+id/textView85"
-        app:layout_constraintVertical_bias="0.151"
+        app:layout_constraintVertical_bias="0.148"
         tools:ignore="MissingConstraints,UnknownIdInLayout" />
 
     <View
@@ -200,8 +200,8 @@
         android:background="#c0c0c0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.778"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.747"
+        app:layout_constraintStart_toStartOf="@+id/checkBox6"
         app:layout_constraintTop_toBottomOf="@+id/textView85"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints,UnknownIdInLayout" />
@@ -214,11 +214,11 @@
         android:layout_alignParentBottom="true"
         android:background="#c0c0c0"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintEnd_toStartOf="@+id/line23"
+        app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView85"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.003"
         tools:ignore="MissingConstraints,UnknownIdInLayout" />
 
     <TextView
