@@ -46,8 +46,8 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.388"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toEndOf="@+id/backbtn_myaddress"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
@@ -133,7 +133,7 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/line13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintHorizontal_bias="0.618"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line14"
         app:layout_constraintVertical_bias="0.301" />
@@ -145,10 +145,10 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/line13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toEndOf="@+id/textView62"
         app:layout_constraintTop_toBottomOf="@+id/line14"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintVertical_bias="0.476" />
 
     <TextView
         android:id="@+id/address"
@@ -157,10 +157,10 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/line13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintHorizontal_bias="0.618"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line14"
-        app:layout_constraintVertical_bias="0.683" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <TextView
         android:id="@+id/unitorfloor"
@@ -169,10 +169,10 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/line13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintHorizontal_bias="0.618"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line14"
-        app:layout_constraintVertical_bias="0.872" />
+        app:layout_constraintVertical_bias="0.841" />
 
     <TextView
         android:id="@+id/textView62"
@@ -181,10 +181,10 @@
         android:text="@string/recipientname"
         app:layout_constraintBottom_toBottomOf="@+id/line13"
         app:layout_constraintEnd_toStartOf="@+id/recipientname"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.368"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line14"
-        app:layout_constraintVertical_bias="0.316" />
+        app:layout_constraintVertical_bias="0.306" />
 
     <TextView
         android:id="@+id/textView63"
@@ -193,9 +193,10 @@
         android:text="@string/phoneNo"
         app:layout_constraintBottom_toBottomOf="@+id/line13"
         app:layout_constraintEnd_toStartOf="@+id/phonenumber"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line14"
-        app:layout_constraintVertical_bias="0.489" />
+        app:layout_constraintVertical_bias="0.476" />
 
     <TextView
         android:id="@+id/textView108"
@@ -204,10 +205,10 @@
         android:text="@string/floorunit"
         app:layout_constraintBottom_toBottomOf="@+id/line13"
         app:layout_constraintEnd_toStartOf="@+id/unitorfloor"
-        app:layout_constraintHorizontal_bias="0.271"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line14"
-        app:layout_constraintVertical_bias="0.848" />
+        app:layout_constraintVertical_bias="0.815" />
 
     <TextView
         android:id="@+id/textView109"
@@ -216,9 +217,9 @@
         android:text="@string/address"
         app:layout_constraintBottom_toBottomOf="@+id/line13"
         app:layout_constraintEnd_toStartOf="@+id/address"
-        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line14"
-        app:layout_constraintVertical_bias="0.667" />
+        app:layout_constraintVertical_bias="0.63" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
