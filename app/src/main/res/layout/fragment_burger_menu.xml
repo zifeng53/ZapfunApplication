@@ -107,7 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="94dp"
             android:layout_marginTop="13dp"
-            android:text="My Addresses"
+            android:text="My Address"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="18sp" />
     </FrameLayout>
