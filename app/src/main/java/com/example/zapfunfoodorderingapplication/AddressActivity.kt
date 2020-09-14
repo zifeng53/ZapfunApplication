@@ -8,7 +8,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_address.*
 import kotlinx.android.synthetic.main.activity_register_account.*
-import kotlinx.android.synthetic.main.fragment_my_profile_contact_info_edit.*
 import kotlin.math.floor
 
 class AddressActivity : AppCompatActivity() {
