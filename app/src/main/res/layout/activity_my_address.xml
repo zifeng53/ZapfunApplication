@@ -12,16 +12,17 @@
         android:id="@+id/backbtn_myaddress"
         android:layout_width="30dp"
         android:layout_height="35dp"
-        android:contentDescription="@string/backarrow"
         android:layout_marginLeft="20dp"
-        android:src="@drawable/ic_back_arrow"  />
+        android:contentDescription="@string/backarrow"
+        android:src="@drawable/ic_back_arrow" />
 
     <TextView
         android:id="@+id/lblMyAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/myaddress"
+        android:layout_marginStart="5dp"
         android:layout_toEndOf="@id/backbtn_myaddress"
+        android:text="@string/myaddress"
         android:textSize="24sp" />
 
     <View
@@ -46,12 +47,14 @@
         android:id="@+id/textView48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/imageView15"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="7dp"
+        android:layout_toEndOf="@id/imageView15"
+        android:paddingBottom="2dp"
         android:text="@string/Home"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:paddingBottom="2dp"
-        android:layout_toEndOf="@id/imageView15"
-        android:layout_alignBottom="@id/imageView15"/>
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/edit_address"
