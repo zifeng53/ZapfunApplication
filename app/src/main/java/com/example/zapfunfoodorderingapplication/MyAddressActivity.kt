@@ -24,6 +24,7 @@ class MyAddressActivity : AppCompatActivity() {
 
         edit_address.setOnClickListener {
             startActivity(Intent(this, AddressActivity::class.java))
+            finish()
         }
 
         deletebtn.setOnClickListener {

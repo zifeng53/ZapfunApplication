@@ -9,7 +9,7 @@
     <EditText
         android:id="@+id/editTextTextPersonName6"
         android:layout_width="307dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:autofillHints="@string/emailaddress"
@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.278"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipientname"
-        app:layout_constraintVertical_bias="0.547"
+        app:layout_constraintVertical_bias="0.581"
         tools:ignore="LabelFor" />
 
     <TextView
@@ -40,7 +40,7 @@
     <EditText
         android:id="@+id/floorunit_address"
         android:layout_width="307dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:autofillHints="@string/emailaddress"
@@ -71,7 +71,7 @@
     <EditText
         android:id="@+id/recipientname"
         android:layout_width="307dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:autofillHints="@string/emailaddress"
@@ -145,7 +145,7 @@
     <EditText
         android:id="@+id/address_address"
         android:layout_width="307dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:autofillHints="@string/emailaddress"
@@ -179,7 +179,7 @@
     <EditText
         android:id="@+id/phonenumber"
         android:layout_width="307dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:autofillHints="@string/emailaddress"
@@ -234,7 +234,7 @@
         app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.722" />
+        app:layout_constraintVertical_bias="0.745" />
 
     <Button
         android:id="@+id/confirmbtn"
