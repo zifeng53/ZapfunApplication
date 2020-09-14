@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -85,7 +84,7 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUI(currentUser: FirebaseUser?) {
 
         //check the im not robot checkbox
-        if(checkBox6.isChecked == true) {
+        if(checkNotRobot.isChecked == true) {
             //if login successful go to this page
             if(currentUser != null) {
                 if(currentUser.isEmailVerified == true) {
@@ -108,7 +107,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         //if the robot checkbox is not checked
-        else if(checkBox6.isChecked == false) {
+        else if(checkNotRobot.isChecked == false) {
             Toast.makeText(
                 baseContext, "Check i am not a robot before login",
                 Toast.LENGTH_SHORT
