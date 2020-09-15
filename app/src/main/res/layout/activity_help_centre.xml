@@ -12,13 +12,15 @@
         android:layout_height="2dp"
         android:layout_below="@+id/textView"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:background="#c0c0c0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView50"
-        app:layout_constraintVertical_bias="0.029"
+        app:layout_constraintVertical_bias="0.026"
         tools:ignore="UnknownIdInLayout" />
 
     <View
@@ -27,13 +29,15 @@
         android:layout_height="2dp"
         android:layout_below="@+id/textView"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:background="#c0c0c0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView57"
-        app:layout_constraintVertical_bias="0.041"
+        app:layout_constraintVertical_bias="0.025"
         tools:ignore="UnknownIdInLayout" />
 
     <ImageView
@@ -42,6 +46,7 @@
         android:layout_height="41dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="5dp"
         android:contentDescription="@string/backarrow"
         android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -57,29 +62,36 @@
         android:layout_height="38dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:text="@string/faq"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.507" />
+        app:layout_constraintTop_toBottomOf="@+id/line9"
+        app:layout_constraintVertical_bias="0.029" />
 
     <TextView
         android:id="@+id/textView51"
-        android:layout_width="272dp"
-        android:layout_height="38dp"
+        android:layout_width="257dp"
+        android:layout_height="29dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="3dp"
         android:text="@string/helpcentre"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toEndOf="@+id/backbtn_help"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.018" />
 
     <TextView
         android:id="@+id/textView52"
@@ -87,14 +99,17 @@
         android:layout_height="38dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:text="@string/MyOrderLabel"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintTop_toBottomOf="@+id/line11"
+        app:layout_constraintVertical_bias="0.024" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -102,6 +117,7 @@
         android:layout_height="41dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="60dp"
         android:contentDescription="@string/backarrow"
         android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
@@ -118,13 +134,15 @@
         android:layout_height="2dp"
         android:layout_below="@+id/textView"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:background="#c0c0c0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView52"
-        app:layout_constraintVertical_bias="0.033"
+        app:layout_constraintVertical_bias="0.021"
         tools:ignore="UnknownIdInLayout" />
 
     <ImageView
@@ -133,14 +151,17 @@
         android:layout_height="37dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
         android:contentDescription="@string/backarrow"
         android:src="@drawable/ic_back_arrow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintHorizontal_bias="0.035"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.018" />
 
     <TextView
         android:id="@+id/textView57"
@@ -148,6 +169,9 @@
         android:layout_height="38dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:text="@string/makingpayment"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -163,13 +187,15 @@
         android:layout_height="2dp"
         android:layout_below="@+id/textView"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:background="#c0c0c0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView59"
-        app:layout_constraintVertical_bias="0.029"
+        app:layout_constraintVertical_bias="0.018"
         tools:ignore="UnknownIdInLayout" />
 
     <View
@@ -178,6 +204,8 @@
         android:layout_height="2dp"
         android:layout_below="@+id/textView"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="2dp"
         android:background="#c0c0c0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -209,6 +237,7 @@
         android:layout_height="41dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="5dp"
         android:contentDescription="@string/backarrow"
         android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -224,6 +253,9 @@
         android:layout_height="38dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
         android:text="@string/myaccount"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -243,7 +275,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView51"
-        app:layout_constraintVertical_bias="0.017"
+        app:layout_constraintVertical_bias="0.03"
         tools:ignore="UnknownIdInLayout" />
 
     <ImageView
@@ -252,12 +284,13 @@
         android:layout_height="41dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="5dp"
         android:contentDescription="@string/backarrow"
         android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line31"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.136" />
 </androidx.constraintlayout.widget.ConstraintLayout>
