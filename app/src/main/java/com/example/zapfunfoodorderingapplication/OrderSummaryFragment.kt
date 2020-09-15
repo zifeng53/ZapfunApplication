@@ -11,16 +11,19 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zapfunfoodorderingapplication.adapters.OrderItemHeaderRecyclerAdapter
 import com.example.zapfunfoodorderingapplication.utils.JsonHelper2
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_my_order.*
 import kotlinx.android.synthetic.main.fragment_my_order.recyclerOrderList
 import kotlinx.android.synthetic.main.fragment_order_summary.*
 
 class OrderSummaryFragment : Fragment() {
     //Creating member variables
-    private var mFirebaseDatabase: DatabaseReference?=null
-    private var mFirebaseInstance: FirebaseDatabase?=null
+    //private var mFirebaseDatabase: DatabaseReference?=null
+    //private var mFirebaseInstance: FirebaseDatabase?=null
+
+    private var mDatabase: DatabaseReference? = null
+    private var mMessageReference: DatabaseReference? = null
+
 
     var userId:String?=null
 
@@ -44,9 +47,20 @@ class OrderSummaryFragment : Fragment() {
     {
         super.onViewCreated(view, savedInstanceState)
 
+
+
+
         OSRecyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
+
+            // ...
+            mDatabase = FirebaseDatabase.getInstance().reference
+            mMessageReference = FirebaseDatabase.getInstance().getReference("Payment")
+
+
             adapter = OrderItemHeaderRecyclerAdapter((this.context!!), JsonHelper2(this.context!!).getListData())
         }
     }
+
+
 }
