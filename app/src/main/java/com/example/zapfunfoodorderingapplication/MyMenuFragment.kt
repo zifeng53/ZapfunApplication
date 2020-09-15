@@ -5,23 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
-import android.widget.ImageView
+import android.widget.*
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.zapfunfoodorderingapplication.Common.Common
-import com.example.zapfunfoodorderingapplication.Common.SpacesItemDecoration
 import com.example.zapfunfoodorderingapplication.adapters.MenuChickenAdapter
 import com.example.zapfunfoodorderingapplication.adapters.MenuPork1Adapter
 import com.example.zapfunfoodorderingapplication.adapters.MenuTodaySpecialAdapter
 import com.example.zapfunfoodorderingapplication.utils.ChickenMenuViewModel
 import com.example.zapfunfoodorderingapplication.utils.MyMenuViewModel
 import com.example.zapfunfoodorderingapplication.utils.Pork1MenuViewModel
-import kotlinx.android.synthetic.main.fragment_my_menu.*
 
 class MyMenuFragment : Fragment() {
 
@@ -44,6 +39,26 @@ class MyMenuFragment : Fragment() {
         val burgerMenu: ImageView = view.findViewById(R.id.imgBurgermenu)
         burgerMenu.setOnClickListener{view : View ->
             view.findNavController().navigate(R.id.action_myMenuFragment_to_burgerMenuFragment)}
+
+        val txtRice: TextView = view.findViewById(R.id.lblConfirmRice)
+        val radioGroup: RadioGroup = view.findViewById(R.id.radioGroup)
+        radioGroup.setOnCheckedChangeListener{group, checkedID ->
+            if(checkedID == R.id.rbNone) {
+                txtRice.text = "No Rice"
+            }
+
+            if(checkedID == R.id.rbLess) {
+                txtRice.text = "Less Rice"
+            }
+
+            if(checkedID == R.id.rbNormal) {
+                txtRice.text = "Normal Rice"
+            }
+
+            if(checkedID == R.id.rbExtra) {
+                txtRice.text = "Add Rice (+RM0.50)"
+            }
+        }
 
         myMenuViewModel =
             ViewModelProviders.of(this).get(MyMenuViewModel::class.java)
