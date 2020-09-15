@@ -17,7 +17,6 @@ class Pork1MenuViewModel : ViewModel(), Pork1MenuLoadCallback {
     //ERROR MESSAGE
     private lateinit var messageError: MutableLiveData<String>
 
-    //CHICKEN START
     val pork1List: LiveData<List<MenuPork1Model>>
         get(){
             if(pork1ListMutableLiveData == null)

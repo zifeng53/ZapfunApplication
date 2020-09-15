@@ -3,18 +3,18 @@ package com.example.zapfunfoodorderingapplication.utils
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.zapfunfoodorderingapplication.callback.MenuLoadCallback
+import com.example.zapfunfoodorderingapplication.callback.TodaySpecialMenuLoadCallback
 import com.example.zapfunfoodorderingapplication.models.MenuTodaySpecialModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class MyMenuViewModel : ViewModel(), MenuLoadCallback {
+class TodaySpecialMenuViewModel : ViewModel(), TodaySpecialMenuLoadCallback {
 
     //TODAY SPECIAL
     private var todaySpecialListMutableLiveData:MutableLiveData<List<MenuTodaySpecialModel>>?=null
-    private var todaySpecialLoadCallbackListener:MenuLoadCallback = this
+    private var todaySpecialLoadCallbackListenerTodaySpecial:TodaySpecialMenuLoadCallback = this
 
     //CHICKEN
     //private var chickenListMutableLiveData:MutableLiveData<List<MenuChickenModel>>?=null
@@ -44,11 +44,11 @@ class MyMenuViewModel : ViewModel(), MenuLoadCallback {
                     val model = itemSnapShot.getValue<MenuTodaySpecialModel>(MenuTodaySpecialModel::class.java)
                     tempList.add(model!!)
                 }
-                todaySpecialLoadCallbackListener.onTodaySpecialLoadSuccess(tempList)
+                todaySpecialLoadCallbackListenerTodaySpecial.onTodaySpecialLoadSuccess(tempList)
             }
 
             override fun onCancelled(p0: DatabaseError) {
-                todaySpecialLoadCallbackListener.onTodaySpecialLoadFailed((p0.message!!))
+                todaySpecialLoadCallbackListenerTodaySpecial.onTodaySpecialLoadFailed((p0.message!!))
             }
 
         })
