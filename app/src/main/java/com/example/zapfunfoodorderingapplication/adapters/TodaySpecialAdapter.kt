@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zapfunfoodorderingapplication.R
-import com.example.zapfunfoodorderingapplication.callback.TodaySpecialClickListener
+import com.example.zapfunfoodorderingapplication.callback.MenuClickListener
 import com.example.zapfunfoodorderingapplication.models.MenuTodaySpecialModel
 import com.squareup.picasso.Picasso
 
@@ -22,10 +22,10 @@ class TodaySpecialAdapter(private val context: Context,
         var today_special_name: TextView
         var today_special_img: ImageView
 
-        lateinit var todaySpecialClickListener: TodaySpecialClickListener
+        lateinit var menuClickListener: MenuClickListener
 
-        fun setClick(todaySpecialClickListener: TodaySpecialClickListener) {
-            this.todaySpecialClickListener = todaySpecialClickListener
+        fun setClick(menuClickListener: MenuClickListener) {
+            this.menuClickListener = menuClickListener
         }
 
         init {
@@ -36,7 +36,7 @@ class TodaySpecialAdapter(private val context: Context,
         }
 
         override fun onClick(view: View?) {
-            todaySpecialClickListener.onTodaySpecialClickListener(view!!, adapterPosition)
+            menuClickListener.onMenuClickListener(view!!, adapterPosition)
         }
 
     }
@@ -50,8 +50,8 @@ class TodaySpecialAdapter(private val context: Context,
         todaySpecialHolder.today_special_name.setText(TodaySpecialList!![position].name!!)
         Picasso.get().load(TodaySpecialList[position].image).into(todaySpecialHolder.today_special_img)
 
-        todaySpecialHolder.setClick(object : TodaySpecialClickListener {
-            override fun onTodaySpecialClickListener(view: View, position: Int) {
+        todaySpecialHolder.setClick(object : MenuClickListener {
+            override fun onMenuClickListener(view: View, position: Int) {
                 Toast.makeText(context, TodaySpecialList[position].name + " Selected", Toast.LENGTH_SHORT).show()
             }
 

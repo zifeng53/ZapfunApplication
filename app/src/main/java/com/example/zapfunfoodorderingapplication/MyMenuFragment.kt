@@ -21,7 +21,6 @@ class   MyMenuFragment : Fragment() {
 
     private lateinit var chickenMenuViewModel: ChickenMenuViewModel
     var recyclerChickenView:RecyclerView?=null
-    //private var chickenAdapter:MenuChickenAdapter?=null
 
     private lateinit var pork1MenuViewModel: Pork1MenuViewModel
     var recyclerPork1View:RecyclerView?=null
@@ -112,11 +111,6 @@ class   MyMenuFragment : Fragment() {
         initVegeEgg4View(view)
 
         //Bind data
-        /*todaySpecialViewModel.todaySpecialList.observe(viewLifecycleOwner, Observer {
-            val listData = it
-            val adapter = MenuTodaySpecialAdapter(requireContext(), listData)
-            recyclerTodaySpecialView!!.adapter = adapter
-        })*/
        todaySpecialViewModel.todaySpecialList.observe(viewLifecycleOwner, Observer {
            val listData = it
            val adapter = TodaySpecialAdapter(requireContext(), listData)
@@ -125,13 +119,13 @@ class   MyMenuFragment : Fragment() {
 
        chickenMenuViewModel.chickenList.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuChickenAdapter(requireContext(), listData)
+           val adapter = ChickenAdapter(requireContext(), listData)
            recyclerChickenView!!.adapter = adapter
        })
 
        pork1MenuViewModel.pork1List.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuPork1Adapter(requireContext(), listData)
+           val adapter = Pork1Adapter(requireContext(), listData)
            recyclerPork1View!!.adapter = adapter
        })
 
@@ -182,23 +176,6 @@ class   MyMenuFragment : Fragment() {
     private fun initChickenView(view:View) {
         recyclerChickenView = view.findViewById(R.id.recycler_chicken) as RecyclerView
         recyclerChickenView!!.setHasFixedSize(true)
-        /*val layoutManager = GridLayoutManager(context, 2)
-        layoutManager.orientation = RecyclerView.VERTICAL
-        layoutManager.spanSizeLookup = object: GridLayoutManager.SpanSizeLookup() {
-            override fun getSpanSize(position: Int): Int {
-                return if(chickenAdapter != null)
-                {
-                    when(chickenAdapter!!.getItemViewType(position)) {
-                        Common.DEFAULT_COLUMN_COUNT -> 1
-                        Common.FULL_WIDTH_COLUMN -> 2
-                        else -> 1
-                    }
-                } else
-                    -1
-            }
-        }
-        recyclerChickenView!!.layoutManager = layoutManager
-        recyclerChickenView!!.addItemDecoration(SpacesItemDecoration(8))*/
         recyclerChickenView!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
     }
 
@@ -243,21 +220,4 @@ class   MyMenuFragment : Fragment() {
         recyclerVegeEgg4View!!.setHasFixedSize(true)
         recyclerVegeEgg4View!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
     }
-
-    /*override fun onStart() {
-        super.onStart()
-        EventBus.getDefault().unregister(this)
-    }
-
-    override fun onStop() {
-        EventBus.getDefault().unregister(this)
-        super.onStop()
-    }
-
-    @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
-    fun onTodaySpecialSelected(event: TodaySpecialClick) {
-        if(event.isSuccess) {
-            Toast.makeText(activity, "Click to " + event.todaySpecial.name, Toast.LENGTH_SHORT).show()
-        }
-    }*/
 }

@@ -1,5 +1,0 @@
-package com.example.zapfunfoodorderingapplication.EventBus
-
-import com.example.zapfunfoodorderingapplication.models.MenuTodaySpecialModel
-
-class TodaySpecialClick(var isSuccess:Boolean, var todaySpecial:MenuTodaySpecialModel)
