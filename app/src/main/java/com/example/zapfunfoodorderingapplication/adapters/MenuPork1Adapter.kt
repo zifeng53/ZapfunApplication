@@ -7,9 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.zapfunfoodorderingapplication.Common.Common
 import com.example.zapfunfoodorderingapplication.R
-import com.example.zapfunfoodorderingapplication.models.MenuChickenModel
 import com.example.zapfunfoodorderingapplication.models.MenuPork1Model
 import de.hdodenhof.circleimageview.CircleImageView
 

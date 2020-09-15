@@ -3,9 +3,7 @@ package com.example.zapfunfoodorderingapplication.utils
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.zapfunfoodorderingapplication.Common.Common
 import com.example.zapfunfoodorderingapplication.callback.ChickenMenuLoadCallback
-import com.example.zapfunfoodorderingapplication.callback.MenuLoadCallback
 import com.example.zapfunfoodorderingapplication.models.MenuChickenModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -33,7 +31,7 @@ class ChickenMenuViewModel : ViewModel(), ChickenMenuLoadCallback {
         }
     private fun loadChickenList() {
         val tempList = ArrayList<MenuChickenModel>()
-        val chickenRef = FirebaseDatabase.getInstance().getReference(Common.CHICKEN_REF)
+        val chickenRef = FirebaseDatabase.getInstance().getReference("Chicken")
         chickenRef.addListenerForSingleValueEvent(object: ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
                 for(itemSnapShot in p0!!.children)
