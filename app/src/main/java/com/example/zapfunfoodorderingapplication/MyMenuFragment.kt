@@ -18,7 +18,7 @@ import com.example.zapfunfoodorderingapplication.utils.ChickenMenuViewModel
 import com.example.zapfunfoodorderingapplication.utils.MyMenuViewModel
 import com.example.zapfunfoodorderingapplication.utils.Pork1MenuViewModel
 
-class MyMenuFragment : Fragment() {
+class   MyMenuFragment : Fragment() {
 
     private lateinit var myMenuViewModel: MyMenuViewModel
     var  recyclerView:RecyclerView?=null

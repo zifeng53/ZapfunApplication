@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "474986043117",
+    "firebase_url": "https://zapfun-cce81.firebaseio.com",
+    "project_id": "zapfun-cce81",
+    "storage_bucket": "zapfun-cce81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474986043117:android:e93f7a3786184fd21f9ee4",
+        "android_client_info": {
+          "package_name": "com.example.zapfunfoodorderingapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474986043117-kr1gj5nia05jepa37552s7367m2c4ue6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zapfunfoodorderingapplication",
+            "certificate_hash": "6e4fd84e6a789540f793fc7dab1a9254edc2e810"
+          }
+        },
+        {
+          "client_id": "474986043117-5dgutbbqpjps9p68g26sdknrtc32unm2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf07I_oRSBbn4M9RkcWGP4LlZ-RaVHvVY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474986043117-5dgutbbqpjps9p68g26sdknrtc32unm2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

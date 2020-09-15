@@ -11,17 +11,20 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.zapfunfoodorderingapplication.adapters.OrderItemHeaderRecyclerAdapter
 import com.example.zapfunfoodorderingapplication.utils.JsonHelper2
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_my_order.*
 import kotlinx.android.synthetic.main.fragment_my_order.recyclerOrderList
 import kotlinx.android.synthetic.main.fragment_order_summary.*
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class OrderSummaryFragment : Fragment() {
+    //Creating member variables
+    private var mFirebaseDatabase: DatabaseReference?=null
+    private var mFirebaseInstance: FirebaseDatabase?=null
+
+    var userId:String?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         super.onCreate(savedInstanceState)
         retainInstance = true
     }

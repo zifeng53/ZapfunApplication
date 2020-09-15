@@ -10,12 +10,8 @@ import com.example.zapfunfoodorderingapplication.adapters.StatusRecyclerAdapter
 import com.example.zapfunfoodorderingapplication.utils.JsonHelper
 import kotlinx.android.synthetic.main.fragment_my_history.*
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 class MyHistoryFragment : Fragment() {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true

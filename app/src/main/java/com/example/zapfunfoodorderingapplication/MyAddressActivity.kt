@@ -24,11 +24,10 @@ class MyAddressActivity : AppCompatActivity() {
 
         edit_address.setOnClickListener {
             startActivity(Intent(this, AddressActivity::class.java))
+            finish()
         }
 
-        deletebtn.setOnClickListener {
-            Toast.makeText(this, "You are not allow to delete default address", Toast.LENGTH_SHORT).show()
-        }
+
 
         backbtn_myaddress.setOnClickListener {
             val BurgerMenuFragment = BurgerMenuFragment()
