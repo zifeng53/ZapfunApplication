@@ -1,18 +1,14 @@
 package com.example.zapfunfoodorderingapplication.models
 
 class MenuTodaySpecialModel {
-    var menu_id:String?=null
     var name:String?=null
     var image:String?=null
-    var food_type: String?=null
     var price: String?=null
 
     constructor()
-        constructor(menu_id: String?, name: String?, image: String?, food_type: String?, price: String?) {
-        this.menu_id = menu_id
+    constructor(name: String?, image: String?, price: String?) {
         this.name = name
         this.image = image
-        this.food_type = food_type
         this.price = price
     }
 }

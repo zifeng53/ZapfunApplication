@@ -15,6 +15,8 @@
     <string name="dishes">DISHES</string>
     <string name="chicken">CHICKEN</string>
     <string name="pork">PORK</string>
+    <string name="fish">FISH</string>
+    <string name="vegeEgg">VEGETABLE &amp; EGG</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
