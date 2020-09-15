@@ -17,7 +17,6 @@ import kotlinx.android.synthetic.main.activity_register_account.*
 import kotlinx.android.synthetic.main.activity_register_account.view.*
 import kotlinx.android.synthetic.main.contact_info_dialog.*
 import kotlinx.android.synthetic.main.contact_info_dialog.view.*
-import kotlinx.android.synthetic.main.contact_info_dialog.view.email_contact2
 import java.util.stream.DoubleStream.builder
 
 class ProfileActivity : AppCompatActivity() {
@@ -65,6 +64,8 @@ class ProfileActivity : AppCompatActivity() {
                 val user = auth.currentUser
                 val userid_contact = user?.uid
                 val database = FirebaseDatabase.getInstance().getReference("User_Profile")
+
+                //mDialogView.email_contact2.text = useremail_contact.toString()
 
                 if(mDialogView.fname_contact2.text.toString().isEmpty()) {
                     mDialogView.fname_contact2.error = "Enter first name"
