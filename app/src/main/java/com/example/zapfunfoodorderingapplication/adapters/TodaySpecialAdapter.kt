@@ -1,0 +1,64 @@
+package com.example.zapfunfoodorderingapplication.adapters
+
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
+import com.example.zapfunfoodorderingapplication.R
+import com.example.zapfunfoodorderingapplication.callback.TodaySpecialClickListener
+import com.example.zapfunfoodorderingapplication.models.MenuTodaySpecialModel
+import com.squareup.picasso.Picasso
+
+class TodaySpecialAdapter(private val context: Context,
+                          private val TodaySpecialList:List<MenuTodaySpecialModel>?)
+    : RecyclerView.Adapter<TodaySpecialAdapter.TodaySpecialHolder>() {
+
+    inner class TodaySpecialHolder(view: View):RecyclerView.ViewHolder(view), View.OnClickListener {
+
+        var today_special_name: TextView
+        var today_special_img: ImageView
+
+        lateinit var todaySpecialClickListener: TodaySpecialClickListener
+
+        fun setClick(todaySpecialClickListener: TodaySpecialClickListener) {
+            this.todaySpecialClickListener = todaySpecialClickListener
+        }
+
+        init {
+            today_special_name = view.findViewById(R.id.txt_today_special) as TextView
+            today_special_img = view.findViewById(R.id.todaySpecial_image) as ImageView
+
+            view.setOnClickListener(this)
+        }
+
+        override fun onClick(view: View?) {
+            todaySpecialClickListener.onTodaySpecialClickListener(view!!, adapterPosition)
+        }
+
+    }
+
+    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): TodaySpecialHolder {
+        val view = LayoutInflater.from(context).inflate(R.layout.layout_today_special_items,p0,false)
+        return TodaySpecialHolder(view)
+    }
+
+    override fun onBindViewHolder(todaySpecialHolder: TodaySpecialHolder, position: Int) {
+        todaySpecialHolder.today_special_name.setText(TodaySpecialList!![position].name!!)
+        Picasso.get().load(TodaySpecialList[position].image).into(todaySpecialHolder.today_special_img)
+
+        todaySpecialHolder.setClick(object : TodaySpecialClickListener {
+            override fun onTodaySpecialClickListener(view: View, position: Int) {
+                Toast.makeText(context, TodaySpecialList[position].name + " Selected", Toast.LENGTH_SHORT).show()
+            }
+
+        })
+    }
+
+    override fun getItemCount(): Int {
+        return TodaySpecialList?.size ?:0
+    }
+}

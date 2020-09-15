@@ -16,10 +16,6 @@ class TodaySpecialMenuViewModel : ViewModel(), TodaySpecialMenuLoadCallback {
     private var todaySpecialListMutableLiveData:MutableLiveData<List<MenuTodaySpecialModel>>?=null
     private var todaySpecialLoadCallbackListenerTodaySpecial:TodaySpecialMenuLoadCallback = this
 
-    //CHICKEN
-    //private var chickenListMutableLiveData:MutableLiveData<List<MenuChickenModel>>?=null
-    //private var chickenLoadCallbackListener:MenuLoadCallback = this
-
     //ERROR MESSAGE
     private lateinit var messageError:MutableLiveData<String>
 
@@ -60,43 +56,4 @@ class TodaySpecialMenuViewModel : ViewModel(), TodaySpecialMenuLoadCallback {
         messageError.value = message
     }
     //TODAY SPECIAL END
-
-
-    //CHICKEN START
-    /*val chickenList:LiveData<List<MenuChickenModel>>
-        get(){
-            if(chickenListMutableLiveData == null)
-            {
-                chickenListMutableLiveData = MutableLiveData()
-                messageError = MutableLiveData()
-                loadChickenList()
-            }
-            return chickenListMutableLiveData!!
-        }
-    private fun loadChickenList() {
-        val tempList = ArrayList<MenuChickenModel>()
-        val chickenRef = FirebaseDatabase.getInstance().getReference(Common.CHICKEN_REF)
-        chickenRef.addListenerForSingleValueEvent(object:ValueEventListener{
-            override fun onDataChange(p0: DataSnapshot) {
-                for(itemSnapShot in p0!!.children)
-                {
-                    val model = itemSnapShot.getValue<MenuChickenModel>(MenuChickenModel::class.java)
-                    tempList.add(model!!)
-                }
-                chickenLoadCallbackListener.onChickenLoadSuccess(tempList)
-            }
-
-            override fun onCancelled(p0: DatabaseError) {
-                chickenLoadCallbackListener.onTodaySpecialLoadFailed((p0.message!!))
-            }
-
-        })
-    }
-    override fun onChickenLoadSuccess(chickenModelListMenu: List<MenuChickenModel>) {
-        chickenListMutableLiveData!!.value = chickenModelListMenu
-    }
-    override fun onChickenLoadFailed(message: String) {
-        messageError.value = message
-    }*/
-    //CHICKEN END
 }

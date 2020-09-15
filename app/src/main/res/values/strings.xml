@@ -10,6 +10,7 @@
     <string name="ConfirmRice" />
     <string name="LocationAddress">Current Location</string>
     <string name="img_description">This is an image</string>
+    <string name="AddToCart">SELECT 2 OR MORE DISHES</string>
 
     <string name="today_special">TODAY SPECIAL</string>
     <string name="dishes">DISHES</string>

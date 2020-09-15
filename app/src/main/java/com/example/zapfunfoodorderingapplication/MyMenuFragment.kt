@@ -16,8 +16,8 @@ import com.example.zapfunfoodorderingapplication.utils.*
 
 class   MyMenuFragment : Fragment() {
 
-    private lateinit var menuViewModel: TodaySpecialMenuViewModel
-    var  recyclerView:RecyclerView?=null
+    private lateinit var todaySpecialViewModel: TodaySpecialMenuViewModel
+    var recyclerTodaySpecialView:RecyclerView?=null
 
     private lateinit var chickenMenuViewModel: ChickenMenuViewModel
     var recyclerChickenView:RecyclerView?=null
@@ -74,7 +74,7 @@ class   MyMenuFragment : Fragment() {
             }
         }
 
-        menuViewModel =
+       todaySpecialViewModel =
             ViewModelProviders.of(this).get(TodaySpecialMenuViewModel::class.java)
 
        chickenMenuViewModel =
@@ -109,13 +109,19 @@ class   MyMenuFragment : Fragment() {
         initVegeEgg1View(view)
         initVegeEgg2View(view)
         initVegeEgg3View(view)
-       initVegeEgg4View(view)
+        initVegeEgg4View(view)
+
         //Bind data
-        menuViewModel.todaySpecialList.observe(viewLifecycleOwner, Observer {
+        /*todaySpecialViewModel.todaySpecialList.observe(viewLifecycleOwner, Observer {
             val listData = it
             val adapter = MenuTodaySpecialAdapter(requireContext(), listData)
-            recyclerView!!.adapter = adapter
-        })
+            recyclerTodaySpecialView!!.adapter = adapter
+        })*/
+       todaySpecialViewModel.todaySpecialList.observe(viewLifecycleOwner, Observer {
+           val listData = it
+           val adapter = TodaySpecialAdapter(requireContext(), listData)
+           recyclerTodaySpecialView!!.adapter = adapter
+       })
 
        chickenMenuViewModel.chickenList.observe(viewLifecycleOwner, Observer {
            val listData = it
@@ -168,9 +174,9 @@ class   MyMenuFragment : Fragment() {
     }
 
     private fun initTodaySpecialView(view:View) {
-        recyclerView = view.findViewById(R.id.recycler_today_special) as RecyclerView
-        recyclerView!!.setHasFixedSize(true)
-        recyclerView!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        recyclerTodaySpecialView = view.findViewById(R.id.recycler_today_special) as RecyclerView
+        recyclerTodaySpecialView!!.setHasFixedSize(true)
+        recyclerTodaySpecialView!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
     }
 
     private fun initChickenView(view:View) {
@@ -237,4 +243,21 @@ class   MyMenuFragment : Fragment() {
         recyclerVegeEgg4View!!.setHasFixedSize(true)
         recyclerVegeEgg4View!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
     }
+
+    /*override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().unregister(this)
+    }
+
+    override fun onStop() {
+        EventBus.getDefault().unregister(this)
+        super.onStop()
+    }
+
+    @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
+    fun onTodaySpecialSelected(event: TodaySpecialClick) {
+        if(event.isSuccess) {
+            Toast.makeText(activity, "Click to " + event.todaySpecial.name, Toast.LENGTH_SHORT).show()
+        }
+    }*/
 }

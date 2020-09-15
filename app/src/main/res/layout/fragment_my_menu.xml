@@ -318,10 +318,22 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_vege_egg4"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recycler_vege_egg3" />
+
+        <Button
+            android:id="@+id/btnAddCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="80dp"
+            android:text="@string/AddToCart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_vege_egg4" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
