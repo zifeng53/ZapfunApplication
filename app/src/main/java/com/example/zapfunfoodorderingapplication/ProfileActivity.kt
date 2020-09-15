@@ -3,12 +3,14 @@ package com.example.zapfunfoodorderingapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_address.*
 import kotlinx.android.synthetic.main.activity_contact_us.*
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.activity_register_account.*
@@ -21,6 +23,9 @@ import java.util.stream.DoubleStream.builder
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var firstname_contact: EditText
+    private lateinit var lastname_contact: EditText
+    private lateinit var phonenumber_contact: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +43,7 @@ class ProfileActivity : AppCompatActivity() {
 
         //edit change profile button
         changeprofilebtn2.setOnClickListener {
+
             //inflate dialog with custom view
             val mDialogView = LayoutInflater.from(this).inflate(R.layout.contact_info_dialog, null)
 
@@ -51,6 +57,15 @@ class ProfileActivity : AppCompatActivity() {
 
             //confirm button click
             mDialogView.confirmbtn_contact2.setOnClickListener {
+
+                val phonenumber_contact = mDialogView.phoneno_contact2.text.toString()
+                val firstname_contact = mDialogView.fname_contact2.text.toString()
+                val lastname_contact = mDialogView.lname_contact2.text.toString()
+
+                val user = auth.currentUser
+                val userid_contact = user?.uid
+                val database = FirebaseDatabase.getInstance().getReference("User_Profile")
+
                 if(mDialogView.fname_contact2.text.toString().isEmpty()) {
                     mDialogView.fname_contact2.error = "Enter first name"
                     mDialogView.fname_contact2.requestFocus()
@@ -69,25 +84,13 @@ class ProfileActivity : AppCompatActivity() {
                     return@setOnClickListener
                 }
 
-                val user = auth.currentUser
-                val user_uid = user?.uid
-                val user_email = user?.email
-                if (user_email != null && user_uid != null) {
-                    FirebaseDatabase.getInstance().reference
-                        .child("User_Profile")
-                        .child(user_uid)
-                        .addValueEventListener(object : ValueEventListener {
-                            override fun onCancelled(p0: DatabaseError) {
-
-                            }
-
-                            override fun onDataChange(p0: DataSnapshot) {
-                                val map = p0.value as Map<String,Any>
-                                mDialogView.email_contact2.text = map["email"].toString()
-                            }
-                        })
+                if (userid_contact != null) {
+                    database.child(userid_contact).child("phoneno").setValue(phonenumber_contact)
+                    database.child(userid_contact).child("first_name").setValue(firstname_contact)
+                    database.child(userid_contact).child("last_name").setValue(lastname_contact)
                 }
 
+                mAlertDialog.dismiss()
             }
 
             //cancel button click
