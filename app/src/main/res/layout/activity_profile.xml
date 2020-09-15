@@ -10,6 +10,7 @@
         android:id="@+id/lname_view2"
         android:layout_width="171dp"
         android:layout_height="26dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.712"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,13 +22,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="2dp"
         android:text="@string/emailaddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView69"
-        app:layout_constraintVertical_bias="0.032" />
+        app:layout_constraintVertical_bias="0.036" />
 
     <TextView
         android:id="@+id/textView69"
@@ -47,6 +49,7 @@
         android:id="@+id/email_view2"
         android:layout_width="202dp"
         android:layout_height="26dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.818"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,10 +75,12 @@
         android:id="@+id/fname_view3"
         android:layout_width="171dp"
         android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.712"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line20" />
+        app:layout_constraintTop_toBottomOf="@+id/line20"
+        app:layout_constraintVertical_bias="0.094" />
 
     <TextView
         android:id="@+id/textView71"
@@ -111,6 +116,7 @@
         android:id="@+id/phone_view2"
         android:layout_width="171dp"
         android:layout_height="26dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.712"
         app:layout_constraintStart_toStartOf="parent"

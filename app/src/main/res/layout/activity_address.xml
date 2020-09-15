@@ -222,20 +222,6 @@
         app:layout_constraintTop_toBottomOf="@+id/line6"
         app:layout_constraintVertical_bias="0.038" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="234dp"
-        android:layout_height="25dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:text="@string/setdefault"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/line6"
-        app:layout_constraintHorizontal_bias="0.163"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.745" />
-
     <Button
         android:id="@+id/confirmbtn"
         android:layout_width="113dp"

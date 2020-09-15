@@ -31,10 +31,12 @@ class AddressActivity : AppCompatActivity() {
 
         backbtn_address.setOnClickListener {
             startActivity(Intent(this, MyAddressActivity::class.java))
+            finish()
         }
 
         cancelbtn.setOnClickListener {
             startActivity(Intent(this, MyAddressActivity::class.java))
+            finish()
         }
 
         confirmbtn.setOnClickListener {
