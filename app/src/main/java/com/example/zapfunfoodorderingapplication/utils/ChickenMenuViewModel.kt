@@ -31,7 +31,7 @@ class ChickenMenuViewModel : ViewModel(), ChickenMenuLoadCallback {
         }
     private fun loadChickenList() {
         val tempList = ArrayList<MenuChickenModel>()
-        val chickenRef = FirebaseDatabase.getInstance().getReference("Chicken")
+        val chickenRef = FirebaseDatabase.getInstance().getReference().child("Dishes").child("Chicken")
         chickenRef.addListenerForSingleValueEvent(object: ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
                 for(itemSnapShot in p0!!.children)

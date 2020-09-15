@@ -30,7 +30,7 @@ class Pork1MenuViewModel : ViewModel(), Pork1MenuLoadCallback {
         }
     private fun loadPork1List() {
         val tempList = ArrayList<MenuPork1Model>()
-        val pork1Ref = FirebaseDatabase.getInstance().getReference("Pork1")
+        val pork1Ref = FirebaseDatabase.getInstance().getReference().child("Dishes").child("Pork1")
         pork1Ref.addListenerForSingleValueEvent(object: ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
                 for(itemSnapShot in p0!!.children)

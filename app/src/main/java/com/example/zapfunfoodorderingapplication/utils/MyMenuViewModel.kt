@@ -36,7 +36,7 @@ class MyMenuViewModel : ViewModel(), MenuLoadCallback {
         }
     private fun loadTodaySpecialList() {
         val tempList = ArrayList<MenuTodaySpecialModel>()
-        val todaySpecialRef = FirebaseDatabase.getInstance().getReference("TodaySpecial")
+        val todaySpecialRef = FirebaseDatabase.getInstance().getReference().child("Dishes").child("Today_Special")
         todaySpecialRef.addListenerForSingleValueEvent(object:ValueEventListener{
             override fun onDataChange(p0: DataSnapshot) {
                 for(itemSnapShot in p0!!.children)
