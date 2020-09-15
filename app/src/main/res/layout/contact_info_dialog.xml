@@ -1,131 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="438dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="201dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="92dp">
 
-        <TextView
-            android:id="@+id/textView42"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginEnd="204dp"
-            android:layout_marginBottom="92dp"
-            android:text="@string/firstname" />
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="75dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/firstname"
+        app:layout_constraintBottom_toTopOf="@+id/fname_contact2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <EditText
-            android:id="@+id/fname_contact2"
-            android:layout_width="264dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="69dp"
-            android:layout_marginBottom="329dp"
-            android:autofillHints="@string/emailaddress"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="LabelFor" />
+    <EditText
+        android:id="@+id/fname_contact2"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="@string/emailaddress"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.131"
+        tools:ignore="LabelFor" />
 
-        <TextView
-            android:id="@+id/textView43"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="19dp"
-            android:layout_marginEnd="203dp"
-            android:layout_marginBottom="298dp"
-            android:text="@string/lastname" />
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="73dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/lastname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fname_contact2" />
 
-        <EditText
-            android:id="@+id/lname_contact2"
-            android:layout_width="307dp"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="141dp"
-            android:layout_marginEnd="70dp"
-            android:layout_marginBottom="257dp"
-            android:autofillHints="@string/emailaddress"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="LabelFor" />
+    <EditText
+        android:id="@+id/lname_contact2"
+        android:layout_width="263dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="@string/emailaddress"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView43"
+        tools:ignore="LabelFor" />
 
-        <TextView
-            android:id="@+id/textView45"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="207dp"
-            android:layout_marginEnd="200dp"
-            android:layout_marginBottom="212dp"
-            android:text="@string/phoneno" />
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="97dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/phoneno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lname_contact2" />
 
-        <EditText
-            android:id="@+id/phoneno_contact2"
-            android:layout_width="307dp"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="67dp"
-            android:layout_marginBottom="170dp"
-            android:autofillHints="@string/emailaddress"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="LabelFor,TextFields" />
+    <EditText
+        android:id="@+id/phoneno_contact2"
+        android:layout_width="262dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="@string/emailaddress"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView45"
+        tools:ignore="LabelFor,TextFields" />
 
-        <Button
-            android:id="@+id/cancelbtn_contact2"
-            android:layout_width="113dp"
-            android:layout_height="36dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="13dp"
-            android:layout_marginBottom="96dp"
-            android:layout_toStartOf="@+id/confirmbtn_contact2"
-            android:background="#FFFFFF"
-            android:text="@string/cancel"
-            android:textColor="#F44336"
-            android:textColorHint="#FFFFFF" />
+    <Button
+        android:id="@+id/cancelbtn_contact2"
+        android:layout_width="97dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
+        android:text="@string/cancel"
+        android:textColor="#F44336"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/confirmbtn_contact2"
+        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneno_contact2"
+        app:layout_constraintVertical_bias="0.128" />
 
-        <Button
-            android:id="@+id/confirmbtn_contact2"
-            android:layout_width="113dp"
-            android:layout_height="36dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="57dp"
-            android:layout_marginBottom="94dp"
-            android:background="#FFFFFF"
-            android:text="@string/confirm"
-            android:textColor="#4CAF50"
-            android:textColorHint="#FFFFFF" />
-    </RelativeLayout>
+    <Button
+        android:id="@+id/confirmbtn_contact2"
+        android:layout_width="104dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF"
+        android:text="@string/confirm"
+        android:textColor="#4CAF50"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneno_contact2" />
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
