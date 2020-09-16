@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zapfunfoodorderingapplication.R
 import com.example.zapfunfoodorderingapplication.callback.MenuClickListener
+import com.example.zapfunfoodorderingapplication.common.common
 import com.example.zapfunfoodorderingapplication.models.MenuChickenModel
 import com.squareup.picasso.Picasso
 
@@ -54,7 +55,8 @@ class ChickenAdapter(private val context: Context,
         chickenHolder.setClick(object : MenuClickListener {
             override fun onMenuClickListener(view: View, position: Int) {
                 //Toast.makeText(context, ChickenList[position].name + " Selected", Toast.LENGTH_SHORT).show()
-                view!!.findNavController().navigate(R.id.action_myMenuFragment_to_menuDetailFragment)
+                common.chickenSelected = ChickenList.get(position)
+                view!!.findNavController().navigate(R.id.action_myMenuFragment_to_chickenDetailFragment)
             }
 
         })

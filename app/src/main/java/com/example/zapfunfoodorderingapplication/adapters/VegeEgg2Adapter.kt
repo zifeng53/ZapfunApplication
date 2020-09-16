@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zapfunfoodorderingapplication.R
 import com.example.zapfunfoodorderingapplication.callback.MenuClickListener
+import com.example.zapfunfoodorderingapplication.common.common
 import com.example.zapfunfoodorderingapplication.models.MenuVegeEgg2Model
 import com.squareup.picasso.Picasso
 
@@ -54,7 +55,8 @@ class VegeEgg2Adapter(private val context: Context,
         vegeEgg2Holder.setClick(object : MenuClickListener {
             override fun onMenuClickListener(view: View, position: Int) {
                 //Toast.makeText(context, VegeEgg2List[position].name + " Selected", Toast.LENGTH_SHORT).show()
-                view!!.findNavController().navigate(R.id.action_myMenuFragment_to_menuDetailFragment)
+                common.vegeEgg2Selected = VegeEgg2List.get(position)
+                view!!.findNavController().navigate(R.id.action_myMenuFragment_to_vegeEgg2DetailFragment)
             }
 
         })

@@ -51,13 +51,11 @@ class TodaySpecialAdapter(private val context: Context,
         todaySpecialHolder.today_special_name.setText(TodaySpecialList!![position].name!!)
         Picasso.get().load(TodaySpecialList[position].image).into(todaySpecialHolder.today_special_img)
 
-        //var menuSelected: MenuTodaySpecialModel?=null
-
         todaySpecialHolder.setClick(object : MenuClickListener {
             override fun onMenuClickListener(view: View, position: Int) {
                 //Toast.makeText(context, TodaySpecialList[position].name + " Selected", Toast.LENGTH_SHORT).show()
-                common.menuSelected = TodaySpecialList.get(position)
-                view!!.findNavController().navigate(R.id.action_myMenuFragment_to_menuDetailFragment)
+                common.todaySpecialSelected = TodaySpecialList.get(position)
+                view!!.findNavController().navigate(R.id.action_myMenuFragment_to_todaySpecialDetailFragment)
             }
 
         })

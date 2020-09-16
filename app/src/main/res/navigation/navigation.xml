@@ -40,8 +40,32 @@
             android:id="@+id/action_myMenuFragment_to_burgerMenuFragment"
             app:destination="@id/burgerMenuFragment" />
         <action
-            android:id="@+id/action_myMenuFragment_to_menuDetailFragment"
+            android:id="@+id/action_myMenuFragment_to_todaySpecialDetailFragment"
             app:destination="@id/menuDetailFragment" />
+        <action
+            android:id="@+id/action_myMenuFragment_to_chickenDetailFragment"
+            app:destination="@id/chickenDetailFragment" />
+        <action
+            android:id="@+id/action_myMenuFragment_to_pork1DetailFragment"
+            app:destination="@id/pork1DetailFragment" />
+        <action
+            android:id="@+id/action_myMenuFragment_to_pork2DetailFragment"
+            app:destination="@id/pork2DetailFragment" />
+        <action
+            android:id="@+id/action_myMenuFragment_to_fishDetailFragment"
+            app:destination="@id/fishDetailFragment" />
+        <action
+            android:id="@+id/action_myMenuFragment_to_vegeEgg1DetailFragment"
+            app:destination="@id/vegeEgg1DetailFragment" />
+        <action
+            android:id="@+id/action_myMenuFragment_to_vegeEgg2DetailFragment"
+            app:destination="@id/vegeEgg2DetailFragment" />
+        <action
+            android:id="@+id/action_myMenuFragment_to_vegeEgg3DetailFragment"
+            app:destination="@id/vegeEgg3DetailFragment" />
+        <action
+            android:id="@+id/action_myMenuFragment_to_vegeEgg4DetailFragment"
+            app:destination="@id/vegeEgg4DetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutUsFragment"
@@ -133,11 +157,83 @@
         tools:layout="@layout/activity_card_checkout" />
     <fragment
         android:id="@+id/menuDetailFragment"
-        android:name="com.example.zapfunfoodorderingapplication.MenuDetailFragment"
+        android:name="com.example.zapfunfoodorderingapplication.TodaySpecialDetailFragment"
         android:label="fragment_menu_detail"
-        tools:layout="@layout/fragment_menu_detail" >
+        tools:layout="@layout/fragment_today_special_detail" >
         <action
-            android:id="@+id/action_menuDetailFragment_to_myMenuFragment"
+            android:id="@+id/action_todaySpecialDetailFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chickenDetailFragment"
+        android:name="com.example.zapfunfoodorderingapplication.ChickenDetailFragment"
+        android:label="ChickenDetailFragment"
+        tools:layout="@layout/fragment_chicken_detail">
+        <action
+            android:id="@+id/action_chickenDetailFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pork1DetailFragment"
+        android:name="com.example.zapfunfoodorderingapplication.Pork1DetailFragment"
+        android:label="fragment_pork1_detail"
+        tools:layout="@layout/fragment_pork1_detail" >
+        <action
+            android:id="@+id/action_pork1DetailFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pork2DetailFragment"
+        android:name="com.example.zapfunfoodorderingapplication.Pork2DetailFragment"
+        android:label="fragment_pork2_detail"
+        tools:layout="@layout/fragment_pork2_detail" >
+        <action
+            android:id="@+id/action_pork2DetailFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fishDetailFragment"
+        android:name="com.example.zapfunfoodorderingapplication.FishDetailFragment"
+        android:label="fragment_fish_detail"
+        tools:layout="@layout/fragment_fish_detail" >
+        <action
+            android:id="@+id/action_fishDetailFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegeEgg1DetailFragment"
+        android:name="com.example.zapfunfoodorderingapplication.VegeEgg1DetailFragment"
+        android:label="fragment_vege_egg1_detail"
+        tools:layout="@layout/fragment_vege_egg1_detail" >
+        <action
+            android:id="@+id/action_vegeEgg1DetailFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegeEgg2DetailFragment"
+        android:name="com.example.zapfunfoodorderingapplication.VegeEgg2DetailFragment"
+        android:label="fragment_vege_egg2_detail"
+        tools:layout="@layout/fragment_vege_egg2_detail" >
+        <action
+            android:id="@+id/action_vegeEgg2DetailFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegeEgg3DetailFragment"
+        android:name="com.example.zapfunfoodorderingapplication.VegeEgg3DetailFragment"
+        android:label="fragment_vege_egg3_detail"
+        tools:layout="@layout/fragment_vege_egg3_detail" >
+        <action
+            android:id="@+id/action_vegeEgg3DetailFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegeEgg4DetailFragment"
+        android:name="com.example.zapfunfoodorderingapplication.VegeEgg4DetailFragment"
+        android:label="fragment_vege_egg4_detail"
+        tools:layout="@layout/fragment_vege_egg4_detail" >
+        <action
+            android:id="@+id/action_vegeEgg4DetailFragment_to_myMenuFragment"
             app:destination="@id/myMenuFragment" />
     </fragment>
 
