@@ -14,7 +14,7 @@ class OrderItemListRecyclerAdapter(internal var context: Context, internal var d
     private var mContext: Context = context
     private var items: List<CartMenuModel>? = data
     private var inflater: LayoutInflater = LayoutInflater.from(context)
-    private var totalNoShipping = 0
+    //var totalNoShipping = 0.0
 
     class OrderListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var tvItem: TextView = itemView.findViewById(R.id.textView28)
@@ -35,10 +35,12 @@ class OrderItemListRecyclerAdapter(internal var context: Context, internal var d
 
         holder.tvItem.text = dishName
         holder.tvPrice.text = "RM " + dishPrice.toString()
+        var dish_price = dishPrice.toString()
 
         //holder.tvItem.text = "Rice: " + riceName + "\n" + dish1Name + "\n" + dish2Name + "\n" + dish3Name + "\n" + dish4Name
 
         //holder.tvPrice.text = item?.unit_price
+        //totalNoShipping += dish_price.toDouble()
     }
 
     override

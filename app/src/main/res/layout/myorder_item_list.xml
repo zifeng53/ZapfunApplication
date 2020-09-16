@@ -55,6 +55,5 @@
             android:layout_marginRight="7dp"
             android:text="RM" />
 
-
     </RelativeLayout>
 </LinearLayout>
