@@ -14,162 +14,97 @@
         tools:openDrawer="start">
 
 
-    <ImageView
-        android:id="@+id/imgLocation"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="9dp"
-        android:src="@drawable/ic_location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imgLocation"
+            android:layout_width="36dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="9dp"
+            android:src="@drawable/ic_location"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/lblDelivery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="14dp"
-        android:text="@string/lblDeliveryLocation"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/imgBurgermenu"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="135dp"
-        android:layout_marginTop="14dp"
-        android:text="@string/DeliveryLocation"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imgBurgermenu"
-        android:layout_width="30dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="11dp"
-        android:src="@drawable/ic_burger_menu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/line25"
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/cardview_dark_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgLocation" />
-
-    <TextView
-        android:id="@+id/lblConfirmRice"
-        android:layout_width="226dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="4dp"
-        android:text="@string/ConfirmRice"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/lblRiceType"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/lblRiceType"
-        android:layout_width="128dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="110dp"
-        android:text="@string/RiceType"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txtSearchFood"
-        android:layout_width="364dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="155dp"
-        android:background="@drawable/search_bg"
-        android:drawableLeft="@drawable/ic_baseline_search_24"
-        android:drawablePadding="16sp"
-        android:ems="10"
-        android:hint="Search food you like"
-        android:inputType="textPersonName"
-        android:paddingStart="16sp"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/lblConfirmRice"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="352dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="29dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblRiceType">
-
-        <RadioButton
-            android:id="@+id/rbNone"
-            android:layout_width="86dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:text="None" />
-
-        <RadioButton
-            android:id="@+id/rbLess"
-            android:layout_width="84dp"
-            android:layout_height="match_parent"
-            android:text="Less" />
-
-        <RadioButton
-            android:id="@+id/rbNormal"
+        <TextView
+            android:id="@+id/lblDelivery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Normal" />
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="14dp"
+            android:text="@string/lblDeliveryLocation"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/imgBurgermenu"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <RadioButton
-            android:id="@+id/rbExtra"
+        <TextView
+            android:id="@+id/textView38"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Extra" />
-    </RadioGroup>
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="14dp"
+            android:text="@string/DeliveryLocation"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/Line2"
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/cardview_dark_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        <ImageView
+            android:id="@+id/imgBurgermenu"
+            android:layout_width="30dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="11dp"
+            android:src="@drawable/ic_burger_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/line25"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/cardview_dark_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgLocation" />
+
+        <TextView
+            android:id="@+id/lblConfirmRice"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:text="@string/ConfirmQuantity"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/Line2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.37"
+            app:layout_constraintStart_toEndOf="@+id/btnMinus"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/lblRiceType"
+            android:layout_width="128dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="65dp"
+            android:text="@string/RiceQuantity"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/Line2"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/cardview_dark_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblRiceType" />
 
         <TextView
             android:id="@+id/lblTodaySpecial"
@@ -183,7 +118,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/Line2" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_today_special"
@@ -300,12 +235,12 @@
             app:layout_constraintTop_toBottomOf="@+id/lblVegeEgg" />
 
         <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_vege_egg2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recycler_vege_egg1" />
+            android:id="@+id/recycler_vege_egg2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_vege_egg1" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_vege_egg3"
@@ -334,6 +269,36 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recycler_vege_egg4" />
+
+        <Button
+            android:id="@+id/btnMinus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginBottom="18dp"
+            android:background="@android:color/transparent"
+            android:text="-"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/lblTodaySpecial"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line25" />
+
+        <Button
+            android:id="@+id/btnPlus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="5dp"
+            android:background="@android:color/transparent"
+            android:text="+"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/Line2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line25"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

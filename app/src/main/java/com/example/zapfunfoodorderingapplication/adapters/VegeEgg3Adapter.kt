@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zapfunfoodorderingapplication.R
 import com.example.zapfunfoodorderingapplication.callback.MenuClickListener
@@ -52,7 +53,8 @@ class VegeEgg3Adapter(private val context: Context,
 
         vegeEgg3Holder.setClick(object : MenuClickListener {
             override fun onMenuClickListener(view: View, position: Int) {
-                Toast.makeText(context, VegeEgg3List[position].name + " Selected", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(context, VegeEgg3List[position].name + " Selected", Toast.LENGTH_SHORT).show()
+                view!!.findNavController().navigate(R.id.action_myMenuFragment_to_menuDetailFragment)
             }
 
         })

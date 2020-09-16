@@ -16,6 +16,8 @@ import com.example.zapfunfoodorderingapplication.utils.*
 
 class   MyMenuFragment : Fragment() {
 
+    var quantity:Int = 0;
+
     private lateinit var todaySpecialViewModel: TodaySpecialMenuViewModel
     var recyclerTodaySpecialView:RecyclerView?=null
 
@@ -54,24 +56,19 @@ class   MyMenuFragment : Fragment() {
             view.findNavController().navigate(R.id.action_myMenuFragment_to_burgerMenuFragment)}
 
         val txtRice: TextView = view.findViewById(R.id.lblConfirmRice)
-        val radioGroup: RadioGroup = view.findViewById(R.id.radioGroup)
-        radioGroup.setOnCheckedChangeListener{group, checkedID ->
-            if(checkedID == R.id.rbNone) {
-                txtRice.text = "No Rice"
-            }
+        val btnMinus: Button = view.findViewById((R.id.btnMinus))
+        val btnPlus: Button = view.findViewById((R.id.btnPlus))
 
-            if(checkedID == R.id.rbLess) {
-                txtRice.text = "Less Rice"
-            }
+       btnMinus.setOnClickListener{view : View ->
+           if(quantity <= 0) {
+               quantity = 0
+           } else {
+               quantity--
+               txtRice.setText("" + quantity) } }
 
-            if(checkedID == R.id.rbNormal) {
-                txtRice.text = "Normal Rice"
-            }
-
-            if(checkedID == R.id.rbExtra) {
-                txtRice.text = "Add Rice (+RM0.50)"
-            }
-        }
+       btnPlus.setOnClickListener{view : View ->
+               quantity++
+               txtRice.setText("" + quantity) }
 
        todaySpecialViewModel =
             ViewModelProviders.of(this).get(TodaySpecialMenuViewModel::class.java)

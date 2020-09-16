@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zapfunfoodorderingapplication.R
 import com.example.zapfunfoodorderingapplication.callback.MenuClickListener
+import com.example.zapfunfoodorderingapplication.common.common
 import com.example.zapfunfoodorderingapplication.models.MenuTodaySpecialModel
 import com.squareup.picasso.Picasso
 
@@ -50,9 +51,13 @@ class TodaySpecialAdapter(private val context: Context,
         todaySpecialHolder.today_special_name.setText(TodaySpecialList!![position].name!!)
         Picasso.get().load(TodaySpecialList[position].image).into(todaySpecialHolder.today_special_img)
 
+        //var menuSelected: MenuTodaySpecialModel?=null
+
         todaySpecialHolder.setClick(object : MenuClickListener {
             override fun onMenuClickListener(view: View, position: Int) {
-                Toast.makeText(context, TodaySpecialList[position].name + " Selected", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(context, TodaySpecialList[position].name + " Selected", Toast.LENGTH_SHORT).show()
+                common.menuSelected = TodaySpecialList.get(position)
+                view!!.findNavController().navigate(R.id.action_myMenuFragment_to_menuDetailFragment)
             }
 
         })
