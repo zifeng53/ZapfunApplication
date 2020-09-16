@@ -4,12 +4,13 @@
     <string name="DeliveryLocation">"Current Location"</string>
     <string name="HistoryTitle">"My History"</string>
     <string name="OrderSummaryTitle">Order Summary</string>
-    <string name="RiceType"><![CDATA["Rice type & size : "]]></string>
+    <string name="RiceQuantity">Rice Quantity : </string>
     <string name="MyOrderLabel">My Orders</string>
     <string name="MyOrderEditLabel">Edit</string>
-    <string name="ConfirmRice" />
+    <string name="ConfirmQuantity">0</string>
     <string name="LocationAddress">Current Location</string>
     <string name="img_description">This is an image</string>
+    <string name="AddToCart">SELECT 2 OR MORE DISHES</string>
 
     <string name="today_special">TODAY SPECIAL</string>
     <string name="dishes">DISHES</string>
@@ -87,4 +88,8 @@
     <string name="recipient" />
     <string name="recipientname">Recipient Name</string>
     <string name="phoneNo">Phone Number</string>
+    <string name="price">Price</string>
+    <string name="description">Description</string>
+    <string name="quantity">Quantity</string>
+    <string name="foodname">FoodName</string>
 </resources>

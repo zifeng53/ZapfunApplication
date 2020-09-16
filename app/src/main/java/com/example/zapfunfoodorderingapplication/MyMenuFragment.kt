@@ -16,12 +16,13 @@ import com.example.zapfunfoodorderingapplication.utils.*
 
 class   MyMenuFragment : Fragment() {
 
-    private lateinit var menuViewModel: TodaySpecialMenuViewModel
-    var  recyclerView:RecyclerView?=null
+    var quantity:Int = 0;
+
+    private lateinit var todaySpecialViewModel: TodaySpecialMenuViewModel
+    var recyclerTodaySpecialView:RecyclerView?=null
 
     private lateinit var chickenMenuViewModel: ChickenMenuViewModel
     var recyclerChickenView:RecyclerView?=null
-    //private var chickenAdapter:MenuChickenAdapter?=null
 
     private lateinit var pork1MenuViewModel: Pork1MenuViewModel
     var recyclerPork1View:RecyclerView?=null
@@ -55,26 +56,21 @@ class   MyMenuFragment : Fragment() {
             view.findNavController().navigate(R.id.action_myMenuFragment_to_burgerMenuFragment)}
 
         val txtRice: TextView = view.findViewById(R.id.lblConfirmRice)
-        val radioGroup: RadioGroup = view.findViewById(R.id.radioGroup)
-        radioGroup.setOnCheckedChangeListener{group, checkedID ->
-            if(checkedID == R.id.rbNone) {
-                txtRice.text = "No Rice"
-            }
+        val btnMinus: Button = view.findViewById((R.id.btnMinus))
+        val btnPlus: Button = view.findViewById((R.id.btnPlus))
 
-            if(checkedID == R.id.rbLess) {
-                txtRice.text = "Less Rice"
-            }
+       btnMinus.setOnClickListener{view : View ->
+           if(quantity <= 0) {
+               quantity = 0
+           } else {
+               quantity--
+               txtRice.setText("" + quantity) } }
 
-            if(checkedID == R.id.rbNormal) {
-                txtRice.text = "Normal Rice"
-            }
+       btnPlus.setOnClickListener{view : View ->
+               quantity++
+               txtRice.setText("" + quantity) }
 
-            if(checkedID == R.id.rbExtra) {
-                txtRice.text = "Add Rice (+RM0.50)"
-            }
-        }
-
-        menuViewModel =
+       todaySpecialViewModel =
             ViewModelProviders.of(this).get(TodaySpecialMenuViewModel::class.java)
 
        chickenMenuViewModel =
@@ -109,90 +105,74 @@ class   MyMenuFragment : Fragment() {
         initVegeEgg1View(view)
         initVegeEgg2View(view)
         initVegeEgg3View(view)
-       initVegeEgg4View(view)
+        initVegeEgg4View(view)
+
         //Bind data
-        menuViewModel.todaySpecialList.observe(viewLifecycleOwner, Observer {
-            val listData = it
-            val adapter = MenuTodaySpecialAdapter(requireContext(), listData)
-            recyclerView!!.adapter = adapter
-        })
+       todaySpecialViewModel.todaySpecialList.observe(viewLifecycleOwner, Observer {
+           val listData = it
+           val adapter = TodaySpecialAdapter(requireContext(), listData)
+           recyclerTodaySpecialView!!.adapter = adapter
+       })
 
        chickenMenuViewModel.chickenList.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuChickenAdapter(requireContext(), listData)
+           val adapter = ChickenAdapter(requireContext(), listData)
            recyclerChickenView!!.adapter = adapter
        })
 
        pork1MenuViewModel.pork1List.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuPork1Adapter(requireContext(), listData)
+           val adapter = Pork1Adapter(requireContext(), listData)
            recyclerPork1View!!.adapter = adapter
        })
 
        pork2MenuViewModel.pork2List.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuPork2Adapter(requireContext(), listData)
+           val adapter = Pork2Adapter(requireContext(), listData)
            recyclerPork2View!!.adapter = adapter
        })
 
        fishMenuViewModel.fishList.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuFishAdapter(requireContext(), listData)
+           val adapter = FishAdapter(requireContext(), listData)
            recyclerFishView!!.adapter = adapter
        })
 
        vegeEgg1MenuViewModel.vegeEgg1List.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuVegeEgg1Adapter(requireContext(), listData)
+           val adapter = VegeEgg1Adapter(requireContext(), listData)
            recyclerVegeEgg1View!!.adapter = adapter
        })
 
        vegeEgg2MenuViewModel.vegeEgg2List.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuVegeEgg2Adapter(requireContext(), listData)
+           val adapter = VegeEgg2Adapter(requireContext(), listData)
            recyclerVegeEgg2View!!.adapter = adapter
        })
 
        vegeEgg3MenuViewModel.vegeEgg3List.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuVegeEgg3Adapter(requireContext(), listData)
+           val adapter = VegeEgg3Adapter(requireContext(), listData)
            recyclerVegeEgg3View!!.adapter = adapter
        })
 
        vegeEgg4MenuViewModel.vegeEgg4List.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuVegeEgg4Adapter(requireContext(), listData)
+           val adapter = VegeEgg4Adapter(requireContext(), listData)
            recyclerVegeEgg4View!!.adapter = adapter
        })
         return view
     }
 
     private fun initTodaySpecialView(view:View) {
-        recyclerView = view.findViewById(R.id.recycler_today_special) as RecyclerView
-        recyclerView!!.setHasFixedSize(true)
-        recyclerView!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        recyclerTodaySpecialView = view.findViewById(R.id.recycler_today_special) as RecyclerView
+        recyclerTodaySpecialView!!.setHasFixedSize(true)
+        recyclerTodaySpecialView!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
     }
 
     private fun initChickenView(view:View) {
         recyclerChickenView = view.findViewById(R.id.recycler_chicken) as RecyclerView
         recyclerChickenView!!.setHasFixedSize(true)
-        /*val layoutManager = GridLayoutManager(context, 2)
-        layoutManager.orientation = RecyclerView.VERTICAL
-        layoutManager.spanSizeLookup = object: GridLayoutManager.SpanSizeLookup() {
-            override fun getSpanSize(position: Int): Int {
-                return if(chickenAdapter != null)
-                {
-                    when(chickenAdapter!!.getItemViewType(position)) {
-                        Common.DEFAULT_COLUMN_COUNT -> 1
-                        Common.FULL_WIDTH_COLUMN -> 2
-                        else -> 1
-                    }
-                } else
-                    -1
-            }
-        }
-        recyclerChickenView!!.layoutManager = layoutManager
-        recyclerChickenView!!.addItemDecoration(SpacesItemDecoration(8))*/
         recyclerChickenView!!.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
     }
 

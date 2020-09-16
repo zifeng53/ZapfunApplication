@@ -39,48 +39,51 @@
         <action
             android:id="@+id/action_myMenuFragment_to_burgerMenuFragment"
             app:destination="@id/burgerMenuFragment" />
+        <action
+            android:id="@+id/action_myMenuFragment_to_menuDetailFragment"
+            app:destination="@id/menuDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutUsFragment"
-        android:name="com.example.zapfunfoodorderingapplication.AboutUsFragment"
+        android:name="com.example.zapfunfoodorderingapplication.AboutUsActivity"
         android:label="fragment_about_us"
-        tools:layout="@layout/fragment_about_us" >
+        tools:layout="@layout/activity_about_us" >
         <action
             android:id="@+id/action_aboutUsFragment_to_myMenuFragment"
             app:destination="@id/myMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/contactUsFragment"
-        android:name="com.example.zapfunfoodorderingapplication.ContactUsFragment"
+        android:name="com.example.zapfunfoodorderingapplication.ContactUsActivity"
         android:label="fragment_contact_us"
-        tools:layout="@layout/fragment_contact_us" >
+        tools:layout="@layout/activity_contact_us" >
         <action
             android:id="@+id/action_contactUsFragment_to_myMenuFragment"
             app:destination="@id/myMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/helpCentreFragment"
-        android:name="com.example.zapfunfoodorderingapplication.HelpCentreFragment"
+        android:name="com.example.zapfunfoodorderingapplication.HelpCentreActivity"
         android:label="fragment_help_centre"
-        tools:layout="@layout/fragment_help_centre" >
+        tools:layout="@layout/activity_help_centre" >
         <action
             android:id="@+id/action_helpCentreFragment_to_myMenuFragment"
             app:destination="@id/myMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/myAddressFragment"
-        android:name="com.example.zapfunfoodorderingapplication.MyAddressFragment"
+        android:name="com.example.zapfunfoodorderingapplication.MyAddressActivity"
         android:label="fragment_my_address"
-        tools:layout="@layout/fragment_my_address" >
+        tools:layout="@layout/activity_address" >
         <action
             android:id="@+id/action_myAddressFragment_to_myMenuFragment"
             app:destination="@id/myMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/myProfileFragment"
-        android:name="com.example.zapfunfoodorderingapplication.MyProfileFragment"
+        android:name="com.example.zapfunfoodorderingapplication.ProfileActivity"
         android:label="fragment_my_profile"
-        tools:layout="@layout/fragment_my_profile" >
+        tools:layout="@layout/activity_profile" >
         <action
             android:id="@+id/action_myProfileFragment_to_myMenuFragment"
             app:destination="@id/myMenuFragment" />
@@ -128,5 +131,14 @@
         android:name="com.example.zapfunfoodorderingapplication.CardCheckoutActivity"
         android:label="activity_card_checkout"
         tools:layout="@layout/activity_card_checkout" />
+    <fragment
+        android:id="@+id/menuDetailFragment"
+        android:name="com.example.zapfunfoodorderingapplication.MenuDetailFragment"
+        android:label="fragment_menu_detail"
+        tools:layout="@layout/fragment_menu_detail" >
+        <action
+            android:id="@+id/action_menuDetailFragment_to_myMenuFragment"
+            app:destination="@id/myMenuFragment" />
+    </fragment>
 
 </navigation>
