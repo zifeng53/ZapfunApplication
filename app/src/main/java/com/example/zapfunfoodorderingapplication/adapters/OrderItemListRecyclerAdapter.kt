@@ -7,18 +7,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zapfunfoodorderingapplication.R
-import com.example.zapfunfoodorderingapplication.models.CartModel
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.example.zapfunfoodorderingapplication.models.CartMenuModel
 
-class OrderItemListRecyclerAdapter(internal var context: Context, internal var data: List<CartModel>) :
+class OrderItemListRecyclerAdapter(internal var context: Context, internal var data: List<CartMenuModel>) :
     RecyclerView.Adapter<OrderItemListRecyclerAdapter.OrderListViewHolder>(){
     private var mContext: Context = context
-    private var items: List<CartModel>? = data
+    private var items: List<CartMenuModel>? = data
     private var inflater: LayoutInflater = LayoutInflater.from(context)
+    private var totalNoShipping = 0
 
     class OrderListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var tvItem: TextView = itemView.findViewById(R.id.textView28)
@@ -33,13 +29,14 @@ class OrderItemListRecyclerAdapter(internal var context: Context, internal var d
     override
     fun onBindViewHolder(holder: OrderListViewHolder, position: Int){
         val item = items?.get(position)
-        var riceName = item?.rice_type
-        var dish1Name = item?.dish1
-        var dish2Name = item?.dish2
-        var dish3Name = item?.dish3
-        var dish4Name = item?.dish4
+        //var riceName = item?.rice_type
+        var dishName = item?.item
+        val dishPrice = item?.price
 
-        holder.tvItem.text = "Rice: " + riceName + "\n" + dish1Name + "\n" + dish2Name + "\n" + dish3Name + "\n" + dish4Name
+        holder.tvItem.text = dishName
+        holder.tvPrice.text = "RM " + dishPrice.toString()
+
+        //holder.tvItem.text = "Rice: " + riceName + "\n" + dish1Name + "\n" + dish2Name + "\n" + dish3Name + "\n" + dish4Name
 
         //holder.tvPrice.text = item?.unit_price
     }

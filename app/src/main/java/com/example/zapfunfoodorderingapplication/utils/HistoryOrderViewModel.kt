@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.zapfunfoodorderingapplication.callback.HistoryOrderLoadCallback
 import com.example.zapfunfoodorderingapplication.models.OrderModel
+import com.example.zapfunfoodorderingapplication.models.PaymentModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -48,6 +49,7 @@ class HistoryOrderViewModel: ViewModel(),HistoryOrderLoadCallback {
                         val model = itemSnapShot.getValue<OrderModel>(OrderModel::class.java)
                         tempList.add(model!!)
 
+
                 }
                 tempList.sortByDescending { selector(it) }
                 historyLoadCallbackListener.onHistoryOrderLoadSuccess(tempList)
@@ -57,6 +59,8 @@ class HistoryOrderViewModel: ViewModel(),HistoryOrderLoadCallback {
                 historyLoadCallbackListener.onHistoryOrderLoadFailed((p0.message!!))
             }
         })
+
+
     }
     fun selector(o: OrderModel): String? = o.order_status
     override fun onHistoryOrderLoadSuccess(HistoryList: List<OrderModel>) {

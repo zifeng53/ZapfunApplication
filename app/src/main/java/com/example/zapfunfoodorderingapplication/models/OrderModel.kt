@@ -12,11 +12,12 @@ class OrderModel{
     var rec_phoneNo: String? = ""
     var address: String? = ""
     var unitFloor: String? = ""
+    var remark:String? = ""
     lateinit var order_item: List<OrderItemModel>
 
     constructor()
         constructor(order_id: String?, user_id: String?, sub_total: Int?, delivery_fee: Int?, order_date: String?, order_time: String?, order_status: String?,
-                    rec_name: String?, rec_phoneNo: String?, address: String?, unitFloor: String?, order_item: List<OrderItemModel>){
+                    rec_name: String?, rec_phoneNo: String?, address: String?, unitFloor: String?, remark:String?, order_item: List<OrderItemModel>){
             this.order_id = order_id
             this.user_id = user_id
             this.sub_total = sub_total
@@ -28,6 +29,7 @@ class OrderModel{
             this.rec_phoneNo = rec_phoneNo
             this.address = address
             this.unitFloor = unitFloor
+            this.remark = remark
             this.order_item = order_item
         }
 
