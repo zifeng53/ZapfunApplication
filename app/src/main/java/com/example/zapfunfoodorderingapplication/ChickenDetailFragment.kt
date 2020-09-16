@@ -108,13 +108,14 @@ class ChickenDetailFragment : Fragment() {
 
     private fun saveCart() {
         val item = txt_chicken!!.text.toString()
-        val price = "txt_price!!.text".toDouble()
+        val price = txt_chickenprice!!.text.toString()
+        val intPrice = price.toDouble()
         val userID = userId!!.text.toString()
 
         val ref = FirebaseDatabase.getInstance().getReference("Cart")
         val item_id = ref.push().key
 
-        val cart = CartMenuModel(item_id, userID, item, price)
+        val cart = CartMenuModel(item_id, userID, item, intPrice)
 
         ref.child(item_id!!).setValue(cart).addOnCompleteListener{
             Toast.makeText(context, "ADD TO CART SUCCESSFULLY!", Toast.LENGTH_SHORT).show()

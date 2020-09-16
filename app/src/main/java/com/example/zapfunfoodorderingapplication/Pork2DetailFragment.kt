@@ -13,16 +13,22 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.example.zapfunfoodorderingapplication.models.CartMenuModel
+import com.example.zapfunfoodorderingapplication.models.MenuPork1Model
 import com.example.zapfunfoodorderingapplication.models.MenuPork2Model
+import com.example.zapfunfoodorderingapplication.utils.Pork1DetailViewModel
 import com.example.zapfunfoodorderingapplication.utils.Pork2DetailViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.fragment_fish_detail.*
 import kotlinx.android.synthetic.main.fragment_pork1_detail.*
 import kotlinx.android.synthetic.main.fragment_pork2_detail.*
 import kotlinx.android.synthetic.main.fragment_pork2_detail.imgPork1
+import kotlinx.android.synthetic.main.fragment_pork2_detail.txtUserID
+import kotlinx.android.synthetic.main.fragment_vege_egg1_detail.*
+import kotlinx.android.synthetic.main.fragment_vege_egg2_detail.*
 
 class Pork2DetailFragment : Fragment() {
 
@@ -60,7 +66,7 @@ class Pork2DetailFragment : Fragment() {
 
                     override fun onDataChange(p0: DataSnapshot){
                         val map = p0.value as Map<String,Any>
-                        txtUserID1.text = map["userid"].toString()
+                        txtUserID.text = map["userid"].toString()
                     }
                 })
         }
@@ -73,7 +79,7 @@ class Pork2DetailFragment : Fragment() {
         // Inflate the layout for this fragment
         pork2DetailViewModel = ViewModelProviders.of(this).get(Pork2DetailViewModel::class.java)
 
-        val root = inflater.inflate(R.layout.fragment_pork1_detail, container, false)
+        val root = inflater.inflate(R.layout.fragment_pork2_detail, container, false)
 
         val btnBack: TextView = root.findViewById(R.id.txtBack)
         btnBack.setOnClickListener{view : View ->
@@ -108,13 +114,14 @@ class Pork2DetailFragment : Fragment() {
 
     private fun saveCart() {
         val item = txt_pork1!!.text.toString()
-        val price = "txt_price!!.text".toDouble()
+        val price = txt_pork1price!!.text.toString()
+        val intPrice = price.toDouble()
         val userID = userId!!.text.toString()
 
         val ref = FirebaseDatabase.getInstance().getReference("Cart")
         val item_id = ref.push().key
 
-        val cart = CartMenuModel(item_id, userID, item, price)
+        val cart = CartMenuModel(item_id, userID, item, intPrice)
 
         ref.child(item_id!!).setValue(cart).addOnCompleteListener{
             Toast.makeText(context, "ADD TO CART SUCCESSFULLY!", Toast.LENGTH_SHORT).show()
