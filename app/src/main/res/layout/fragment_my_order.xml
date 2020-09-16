@@ -285,7 +285,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
             android:layout_marginRight="7dp"
-            android:text="RM"
+            android:text="RM 5"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -351,7 +351,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
             android:layout_marginRight="7dp"
-            android:text="remarks" />
+            android:text="" />
 
         <TextView
             android:id="@+id/textView37"

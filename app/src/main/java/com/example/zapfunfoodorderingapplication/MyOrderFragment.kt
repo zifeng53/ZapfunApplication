@@ -1,6 +1,7 @@
 package com.example.zapfunfoodorderingapplication
 
 import android.app.AlertDialog
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
@@ -26,7 +28,6 @@ import kotlinx.android.synthetic.main.popup_edit_dialog.view.*
 class MyOrderFragment : Fragment() {
     private lateinit var cartOrderViewModel: CartOrderViewModel
     var CartRecyclerView: RecyclerView?=null
-
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +37,9 @@ class MyOrderFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
 
         readdata()
+
+
+        //textView37.text = currentDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
     }
 
     fun readdata() {
