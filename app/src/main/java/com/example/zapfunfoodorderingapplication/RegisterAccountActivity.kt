@@ -45,9 +45,9 @@ class RegisterAccountActivity : AppCompatActivity() {
         }
 
         //have an account to login page
-        gotaccount.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
-        }
+        //gotaccount.setOnClickListener {
+        //    startActivity(Intent(this, LoginActivity::class.java))
+        //}
 
         //right top back icon
         backbtn.setOnClickListener {
