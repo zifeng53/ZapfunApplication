@@ -33,8 +33,14 @@ class OrderItemListRecyclerAdapter(internal var context: Context, internal var d
     override
     fun onBindViewHolder(holder: OrderListViewHolder, position: Int){
         val item = items?.get(position)
-        val dish1Id = item?.dish1
-        val dish2Id = item?.dish2
+        var riceName = item?.rice_type
+        var dish1Name = item?.dish1
+        var dish2Name = item?.dish2
+        var dish3Name = item?.dish3
+        var dish4Name = item?.dish4
+
+        holder.tvItem.text = "Rice: " + riceName + "\n" + dish1Name + "\n" + dish2Name + "\n" + dish3Name + "\n" + dish4Name
+
         //holder.tvPrice.text = item?.unit_price
     }
 
