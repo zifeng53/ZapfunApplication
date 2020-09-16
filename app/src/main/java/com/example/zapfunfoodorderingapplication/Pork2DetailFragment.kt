@@ -125,6 +125,7 @@ class Pork2DetailFragment : Fragment() {
 
         ref.child(item_id!!).setValue(cart).addOnCompleteListener{
             Toast.makeText(context, "ADD TO CART SUCCESSFULLY!", Toast.LENGTH_SHORT).show()
+            requireView().findNavController().navigate(R.id.action_pork2DetailFragment_to_myMenuFragment)
         }
     }
 

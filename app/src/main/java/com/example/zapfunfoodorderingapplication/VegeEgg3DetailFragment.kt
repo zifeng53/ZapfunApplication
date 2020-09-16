@@ -120,6 +120,7 @@ class VegeEgg3DetailFragment : Fragment() {
 
         ref.child(item_id!!).setValue(cart).addOnCompleteListener{
             Toast.makeText(context, "ADD TO CART SUCCESSFULLY!", Toast.LENGTH_SHORT).show()
+            requireView().findNavController().navigate(R.id.action_vegeEgg3DetailFragment_to_myMenuFragment)
         }
     }
 
