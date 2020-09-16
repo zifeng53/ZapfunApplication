@@ -112,10 +112,10 @@ class TodaySpecialDetailFragment : Fragment() {
         val price = txt_price!!.text.toString()
         val userID = userId!!.text.toString()
 
-        val ref = FirebaseDatabase.getInstance().getReference("CartTest")
+        val ref = FirebaseDatabase.getInstance().getReference("Cart")
         val item_id = ref.push().key
 
-        val cart = CartMenuModel(userID, item, price)
+        val cart = CartMenuModel(item_id, userID, item, price)
 
         ref.child(item_id!!).setValue(cart).addOnCompleteListener{
             Toast.makeText(context, "ADD TO CART SUCCESSFULLY!", Toast.LENGTH_SHORT).show()

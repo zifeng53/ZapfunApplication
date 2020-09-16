@@ -58,6 +58,20 @@
         app:layout_constraintTop_toBottomOf="@+id/ChickenName" />
 
     <TextView
+        android:id="@+id/txtUserID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:text=""
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TodaySpecialName" />
+
+    <TextView
         android:id="@+id/ChickenPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
