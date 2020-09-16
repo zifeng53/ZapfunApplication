@@ -4,7 +4,7 @@
     <string name="DeliveryLocation">"Current Location"</string>
     <string name="HistoryTitle">"My History"</string>
     <string name="OrderSummaryTitle">Order Summary</string>
-    <string name="RiceQuantity">Rice Quantity : </string>
+    <string name="RiceSize">Rice Size : </string>
     <string name="MyOrderLabel">My Orders</string>
     <string name="MyOrderEditLabel">Edit</string>
     <string name="ConfirmQuantity">0</string>

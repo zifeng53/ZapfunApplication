@@ -12,6 +12,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zapfunfoodorderingapplication.adapters.*
+import com.example.zapfunfoodorderingapplication.models.CartMenuModel
 import com.example.zapfunfoodorderingapplication.utils.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -19,10 +20,13 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_my_menu.*
+import kotlinx.android.synthetic.main.fragment_my_menu.txtUserID
+import kotlinx.android.synthetic.main.fragment_today_special_detail.*
 
 class   MyMenuFragment : Fragment() {
 
-    var quantity:Int = 0;
+    private var rice:TextView? = null
+    private var ricePrice: Double?=null
 
     private lateinit var todaySpecialViewModel: TodaySpecialMenuViewModel
     var recyclerTodaySpecialView:RecyclerView?=null
@@ -79,6 +83,7 @@ class   MyMenuFragment : Fragment() {
                     override fun onDataChange(p0: DataSnapshot){
                         val map = p0.value as Map<String,Any>
                         textView38.text = map["address"].toString()
+                        txtUserID.text = map["userid"].toString()
                     }
                 })
         }
@@ -94,20 +99,35 @@ class   MyMenuFragment : Fragment() {
         burgerMenu.setOnClickListener{view : View ->
             view.findNavController().navigate(R.id.action_myMenuFragment_to_burgerMenuFragment)}
 
-        val txtRice: TextView = view.findViewById(R.id.lblConfirmRice)
-        val btnMinus: Button = view.findViewById((R.id.btnMinus))
-        val btnPlus: Button = view.findViewById((R.id.btnPlus))
+       val txtRice: TextView = view.findViewById(R.id.lblConfirmRice)
+       val radioGroup: RadioGroup = view.findViewById(R.id.radioGroup)
+       radioGroup.setOnCheckedChangeListener{group, checkedID ->
+           if(checkedID == R.id.rbNone) {
+               txtRice.text = "No Rice"
+               ricePrice = 0.0
+           }
 
-       btnMinus.setOnClickListener{view : View ->
-           if(quantity <= 0) {
-               quantity = 0
-           } else {
-               quantity--
-               txtRice.setText("" + quantity) } }
+           if(checkedID == R.id.rbLess) {
+               txtRice.text = "Less Rice"
+               ricePrice = 1.0
+           }
 
-       btnPlus.setOnClickListener{view : View ->
-               quantity++
-               txtRice.setText("" + quantity) }
+           if(checkedID == R.id.rbNormal) {
+               txtRice.text = "Normal Rice"
+               ricePrice = 1.0
+           }
+
+           if(checkedID == R.id.rbExtra) {
+               txtRice.text = "Add Rice (+RM0.50)"
+               ricePrice = 1.5
+           }
+       }
+
+       val btnAdd: TextView = view.findViewById(R.id.btnAddToCart)
+       btnAdd.setOnClickListener { view: View ->
+           saveCart()
+       }
+
 
        todaySpecialViewModel =
             ViewModelProviders.of(this).get(TodaySpecialMenuViewModel::class.java)
@@ -201,6 +221,22 @@ class   MyMenuFragment : Fragment() {
            recyclerVegeEgg4View!!.adapter = adapter
        })
         return view
+    }
+
+    private fun saveCart() {
+        rice = requireView().findViewById(R.id.lblConfirmRice) as TextView
+        val item = rice!!.text.toString()
+        val price = ricePrice!!.toDouble()
+        val userID = txtUserID!!.text.toString()
+
+        val ref = FirebaseDatabase.getInstance().getReference("Cart")
+        val item_id = ref.push().key
+
+        val cart = CartMenuModel(item_id, userID, item, price)
+
+        ref.child(item_id!!).setValue(cart).addOnCompleteListener{
+            Toast.makeText(context, "ADD TO CART SUCCESSFULLY!", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun initTodaySpecialView(view:View) {

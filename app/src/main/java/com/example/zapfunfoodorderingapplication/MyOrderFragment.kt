@@ -48,22 +48,27 @@ class MyOrderFragment : Fragment() {
         val uid_search = user?.uid
 
         if (email_search != null && uid_search != null){
-            FirebaseDatabase.getInstance().reference
-                .child("User_Profile")
-                .child(uid_search)
-                .addValueEventListener(object : ValueEventListener {
-                    override fun onCancelled(p0: DatabaseError){
+            try {
 
-                    }
+                FirebaseDatabase.getInstance().reference
+                    .child("User_Profile")
+                    .child(uid_search)
+                    .addValueEventListener(object : ValueEventListener {
+                        override fun onCancelled(p0: DatabaseError) {
 
-                    override fun onDataChange(p0: DataSnapshot){
-                        val map = p0.value as Map<String,Any>
-                        textView32.text = map["last_name"].toString()
-                        textView33.text = map["phoneno"].toString()
-                        textView34.text = map["address"].toString()
-                        textView35.text = map["floor"].toString()
-                    }
-                })
+                        }
+
+                        override fun onDataChange(p0: DataSnapshot) {
+                            val map = p0.value as Map<String, Any>
+                            textView32.text = map["last_name"].toString()
+                            textView33.text = map["phoneno"].toString()
+                            textView34.text = map["address"].toString()
+                            textView35.text = map["floor"].toString()
+                        }
+                    })
+            }catch (e:Exception){
+                var i=0
+            }
         }
     }
 

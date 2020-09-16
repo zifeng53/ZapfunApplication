@@ -70,29 +70,61 @@
 
         <TextView
             android:id="@+id/lblConfirmRice"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
-            android:text="@string/ConfirmQuantity"
+            android:layout_width="251dp"
+            android:layout_height="39dp"
+            android:layout_marginEnd="16dp"
+            android:text=""
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/Line2"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.37"
-            app:layout_constraintStart_toEndOf="@+id/btnMinus"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.866" />
+
+        <TextView
+            android:id="@+id/txtUserID"
+            android:layout_width="251dp"
+            android:layout_height="39dp"
+            android:layout_marginEnd="16dp"
+            android:text=""
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.866" />
 
         <TextView
             android:id="@+id/lblRiceType"
-            android:layout_width="128dp"
-            android:layout_height="22dp"
+            android:layout_width="130dp"
+            android:layout_height="39dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="65dp"
-            android:text="@string/RiceQuantity"
+            android:text="@string/RiceSize"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textSize="16sp"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnAddToCart"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="161dp"
+            android:layout_marginEnd="162dp"
+            android:background="@drawable/bg_whiterounded"
+            android:text="Add RICE"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/Line2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:layout_constraintVertical_bias="0.634" />
 
         <View
             android:id="@+id/Line2"
@@ -104,7 +136,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lblRiceType" />
+            app:layout_constraintTop_toBottomOf="@+id/btnAddToCart" />
 
         <TextView
             android:id="@+id/lblTodaySpecial"
@@ -254,51 +286,57 @@
             android:id="@+id/recycler_vege_egg4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recycler_vege_egg3" />
 
-        <Button
-            android:id="@+id/btnAddCart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="80dp"
-            android:text="@string/AddToCart"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="352dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddToCart"
+            app:layout_constraintEnd_toEndOf="@id/Line2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recycler_vege_egg4" />
+            app:layout_constraintTop_toBottomOf="@+id/lblRiceType">
 
-        <Button
-            android:id="@+id/btnMinus"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="160dp"
-            android:layout_marginBottom="18dp"
-            android:background="@android:color/transparent"
-            android:text="-"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/lblTodaySpecial"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/line25" />
+            <RadioButton
+                android:id="@+id/rbNone"
+                android:layout_width="86dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:text="None"
+                android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/btnPlus"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="5dp"
-            android:background="@android:color/transparent"
-            android:text="+"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/Line2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/line25"
-            app:layout_constraintVertical_bias="0.0" />
+            <RadioButton
+                android:id="@+id/rbLess"
+                android:layout_width="84dp"
+                android:layout_height="match_parent"
+                android:text="Less"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Normal"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbExtra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Extra"
+                android:textSize="16sp" />
+        </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
