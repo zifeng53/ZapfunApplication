@@ -1,7 +1,6 @@
 package com.example.zapfunfoodorderingapplication
 
 import android.app.AlertDialog
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,10 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.zapfunfoodorderingapplication.adapters.OrderItemHeaderRecyclerAdapter
-import com.example.zapfunfoodorderingapplication.utils.JsonHelper2
+import androidx.recyclerview.widget.RecyclerView
+import com.example.zapfunfoodorderingapplication.adapters.OrderItemListRecyclerAdapter
+import com.example.zapfunfoodorderingapplication.utils.CartOrderViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -22,6 +24,8 @@ import kotlinx.android.synthetic.main.fragment_my_order.*
 import kotlinx.android.synthetic.main.popup_edit_dialog.view.*
 
 class MyOrderFragment : Fragment() {
+    private lateinit var cartOrderViewModel: CartOrderViewModel
+    var CartRecyclerView: RecyclerView?=null
 
     private lateinit var auth: FirebaseAuth
 
@@ -65,6 +69,19 @@ class MyOrderFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_my_order, container, false)
+
+        cartOrderViewModel = ViewModelProviders.of(this).get(CartOrderViewModel::class.java)
+
+        cartListView(view)
+        //Bind Data
+        cartOrderViewModel.cartList.observe(viewLifecycleOwner, Observer{
+            val listData = it
+            val adapter = OrderItemListRecyclerAdapter(requireContext(), listData)
+            CartRecyclerView!!.adapter = adapter
+        })
+
+
+
         val btnEdit: TextView = view.findViewById(R.id.textView16)
         btnEdit.setOnClickListener{view : View ->
             //Inflate the dialog with custom view
@@ -114,15 +131,22 @@ class MyOrderFragment : Fragment() {
         return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
-    {
-        super.onViewCreated(view, savedInstanceState)
+    //override fun onViewCreated(view: View, savedInstanceState: Bundle?)
+    //{
+    //    super.onViewCreated(view, savedInstanceState)
+//
+     //   recyclerOrderList.apply {
+     //       layoutManager = LinearLayoutManager(activity)
+    //        adapter = OrderItemHeaderRecyclerAdapter((this.context!!), JsonHelper2(this.context!!).getListData())
+    //    }
+   // }
 
-        recyclerOrderList.apply {
-            layoutManager = LinearLayoutManager(activity)
-            adapter = OrderItemHeaderRecyclerAdapter((this.context!!), JsonHelper2(this.context!!).getListData())
-        }
+    private fun cartListView(view:View){
+        CartRecyclerView = view.findViewById(R.id.recyclerOrderList) as RecyclerView
+        CartRecyclerView!!.setHasFixedSize(true)
+        CartRecyclerView!!.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
     }
+
     companion object{
         fun newInstance(): MyOrderFragment = MyOrderFragment()
     }
