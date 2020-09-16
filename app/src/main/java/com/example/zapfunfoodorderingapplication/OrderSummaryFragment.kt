@@ -6,14 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.zapfunfoodorderingapplication.adapters.OrderItemHeaderRecyclerAdapter
-import com.example.zapfunfoodorderingapplication.utils.JsonHelper2
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.fragment_my_order.*
-import kotlinx.android.synthetic.main.fragment_my_order.recyclerOrderList
 import kotlinx.android.synthetic.main.fragment_order_summary.*
 
 class OrderSummaryFragment : Fragment() {
@@ -58,7 +53,7 @@ class OrderSummaryFragment : Fragment() {
             mMessageReference = FirebaseDatabase.getInstance().getReference("Payment")
 
 
-            adapter = OrderItemHeaderRecyclerAdapter((this.context!!), JsonHelper2(this.context!!).getListData())
+            //adapter = OrderItemHeaderRecyclerAdapter((this.context!!), JsonHelper2(this.context!!).getListData())
         }
     }
 
