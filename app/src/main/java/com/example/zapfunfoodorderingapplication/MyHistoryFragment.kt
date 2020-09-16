@@ -47,40 +47,6 @@ class MyHistoryFragment : Fragment() {
         return view
     }
 
-    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?)
-    {
-        super.onViewCreated(view, savedInstanceState)
-
-        // ...
-        mDatabase = FirebaseDatabase.getInstance().reference
-        mOrderReference = FirebaseDatabase.getInstance().getReference("Order")
-
-        val OrderListener = object : ValueEventListener {            //
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    val order = dataSnapshot.getValue(Order::class.java)
-                }
-            }
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Failed to read value
-                Log.e(TAG, "onCancelled: Failed to read user!")
-            }
-        }
-
-        mOrderReference!!.addValueEventListener(OrderListener)
-
-        /*MHrecyclerView.apply {
-            layoutManager = LinearLayoutManager(activity)
-            adapter = StatusRecyclerAdapter(
-                (this.context!!),
-                JsonHelper(this.context!!).getHistoryData()
-            )
-        }
-         */
-    }
-
-     */
-
     private fun historyListView(view:View) {
         HistoryRecyclerView = view.findViewById(R.id.MHrecyclerView) as RecyclerView
         HistoryRecyclerView!!.setHasFixedSize(true)

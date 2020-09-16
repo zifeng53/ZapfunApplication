@@ -83,7 +83,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tvOrderDate"
+            android:id="@+id/OStvOrderDate"
             android:layout_toEndOf="@id/imageFood"
             android:text="Order date"
             android:textSize="14sp"
@@ -91,6 +91,21 @@
             android:paddingTop="0dp"
             android:paddingStart="5dp"
             android:paddingBottom="2dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hiddenCtrl"
+            android:textSize="1sp"
+            android:text="hiddenCtrl"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp"
+            android:textColor="@color/colorWhite"
+            android:layout_alignBottom="@+id/OStvOrderDate"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            />
 
     </RelativeLayout>
 

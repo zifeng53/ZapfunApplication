@@ -11,13 +11,13 @@
         tools:layout="@layout/fragment_my_history" >
         <action
             android:id="@+id/action_myHistoryFragment_to_orderSummaryFragment"
-            app:destination="@id/orderSummaryFragment" />
+            app:destination="@id/orderSummaryActivity" />
     </fragment>
     <fragment
-        android:id="@+id/orderSummaryFragment"
-        android:name="com.example.zapfunfoodorderingapplication.OrderSummaryFragment"
-        android:label="OrderSummaryFragment"
-        tools:layout="@layout/fragment_order_summary">
+        android:id="@+id/orderSummaryActivity"
+        android:name="com.example.zapfunfoodorderingapplication.OrderSummaryActivity"
+        android:label="OrderSummaryAcitvity"
+        tools:layout="@layout/activity_order_summary">
         <action
             android:id="@+id/action_orderSummaryFragment_to_myHistoryFragment"
             app:destination="@id/myHistoryFragment" />
