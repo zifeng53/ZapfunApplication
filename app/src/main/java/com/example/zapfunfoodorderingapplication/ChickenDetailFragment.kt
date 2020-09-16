@@ -96,7 +96,7 @@ class ChickenDetailFragment : Fragment() {
     private fun displayChickenInfo(it: MenuChickenModel?){
         Glide.with(requireContext()).load(it!!.image).into(imgChicken)
         txt_chicken!!.text = StringBuilder(it!!.name!!)
-        txt_chickenprice!!.text = "RM " + StringBuilder(it!!.price!!.toString())
+        txt_chickenprice!!.text = StringBuilder(it!!.price!!.toString())
     }
 
     private fun initChickenViews(root: View?) {

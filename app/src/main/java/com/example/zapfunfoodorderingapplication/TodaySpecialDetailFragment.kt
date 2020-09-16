@@ -97,7 +97,7 @@ class TodaySpecialDetailFragment : Fragment() {
     private fun displayTodaySpecialInfo(it: MenuTodaySpecialModel?) {
         Glide.with(requireContext()).load(it!!.image).into(imgTodaySpecial)
         txt_name!!.text = StringBuilder(it!!.name!!)
-        txt_price!!.text = "RM " + StringBuilder(it!!.price!!.toString())
+        txt_price!!.text = StringBuilder(it!!.price!!.toString())
     }
 
     private fun initViews(root: View?) {
