@@ -108,7 +108,7 @@ class ChickenDetailFragment : Fragment() {
 
     private fun saveCart() {
         val item = txt_chicken!!.text.toString()
-        val price = txt_chickenprice!!.text.toString()
+        val price = "txt_price!!.text".toDouble()
         val userID = userId!!.text.toString()
 
         val ref = FirebaseDatabase.getInstance().getReference("Cart")

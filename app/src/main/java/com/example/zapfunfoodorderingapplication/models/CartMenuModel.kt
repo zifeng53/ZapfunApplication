@@ -4,10 +4,10 @@ class CartMenuModel {
     var item_id: String?=""
     var user_id: String?=""
     var item: String? = ""
-    var price: String? = ""
+    var price: Double? = null
 
     constructor()
-    constructor(item_id:String?, user_id:String?, item:String, price:String) {
+    constructor(item_id:String?, user_id:String?, item:String, price:Double) {
         this.item_id = item_id
         this.user_id = user_id
         this.item = item

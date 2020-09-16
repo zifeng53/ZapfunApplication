@@ -103,12 +103,12 @@ class Pork2DetailFragment : Fragment() {
         img_pork1 = root!!.findViewById(R.id.imgPork1) as ImageView
         txt_pork1 = root!!.findViewById(R.id.Pork1Name) as TextView
         txt_pork1price = root!!.findViewById(R.id.Pork1Price) as TextView
-        userId = root!!.findViewById(R.id.txtUserID1) as TextView
+        userId = root!!.findViewById(R.id.txtUserID) as TextView
     }
 
     private fun saveCart() {
         val item = txt_pork1!!.text.toString()
-        val price = txt_pork1price!!.text.toString()
+        val price = "txt_price!!.text".toDouble()
         val userID = userId!!.text.toString()
 
         val ref = FirebaseDatabase.getInstance().getReference("Cart")
