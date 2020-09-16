@@ -13,6 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zapfunfoodorderingapplication.adapters.*
 import com.example.zapfunfoodorderingapplication.utils.*
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.fragment_my_menu.*
 
 class   MyMenuFragment : Fragment() {
 
@@ -44,6 +50,39 @@ class   MyMenuFragment : Fragment() {
 
     private lateinit var vegeEgg4MenuViewModel: VegeEgg4MenuViewModel
     var recyclerVegeEgg4View:RecyclerView?=null
+
+    private lateinit var auth: FirebaseAuth
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        retainInstance = true
+
+        auth = FirebaseAuth.getInstance()
+
+        readdata()
+    }
+
+    fun readdata() {
+        val user = auth.currentUser
+        val email_search = user?.email
+        val uid_search = user?.uid
+
+        if (email_search != null && uid_search != null){
+            FirebaseDatabase.getInstance().reference
+                .child("User_Profile")
+                .child(uid_search)
+                .addValueEventListener(object : ValueEventListener {
+                    override fun onCancelled(p0: DatabaseError){
+
+                    }
+
+                    override fun onDataChange(p0: DataSnapshot){
+                        val map = p0.value as Map<String,Any>
+                        textView38.text = map["address"].toString()
+                    }
+                })
+        }
+    }
 
    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
