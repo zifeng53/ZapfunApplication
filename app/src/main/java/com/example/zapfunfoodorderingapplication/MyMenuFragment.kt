@@ -131,37 +131,37 @@ class   MyMenuFragment : Fragment() {
 
        pork2MenuViewModel.pork2List.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuPork2Adapter(requireContext(), listData)
+           val adapter = Pork2Adapter(requireContext(), listData)
            recyclerPork2View!!.adapter = adapter
        })
 
        fishMenuViewModel.fishList.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuFishAdapter(requireContext(), listData)
+           val adapter = FishAdapter(requireContext(), listData)
            recyclerFishView!!.adapter = adapter
        })
 
        vegeEgg1MenuViewModel.vegeEgg1List.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuVegeEgg1Adapter(requireContext(), listData)
+           val adapter = VegeEgg1Adapter(requireContext(), listData)
            recyclerVegeEgg1View!!.adapter = adapter
        })
 
        vegeEgg2MenuViewModel.vegeEgg2List.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuVegeEgg2Adapter(requireContext(), listData)
+           val adapter = VegeEgg2Adapter(requireContext(), listData)
            recyclerVegeEgg2View!!.adapter = adapter
        })
 
        vegeEgg3MenuViewModel.vegeEgg3List.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuVegeEgg3Adapter(requireContext(), listData)
+           val adapter = VegeEgg3Adapter(requireContext(), listData)
            recyclerVegeEgg3View!!.adapter = adapter
        })
 
        vegeEgg4MenuViewModel.vegeEgg4List.observe(viewLifecycleOwner, Observer {
            val listData = it
-           val adapter = MenuVegeEgg4Adapter(requireContext(), listData)
+           val adapter = VegeEgg4Adapter(requireContext(), listData)
            recyclerVegeEgg4View!!.adapter = adapter
        })
         return view
