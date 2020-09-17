@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         tools:context=".OrderSummaryActivity">
 
+
         <ImageView
             android:id="@+id/OSBtnBack"
             android:layout_width="28dp"
@@ -45,7 +46,8 @@
             android:layout_below="@+id/OSLine1"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:text="Estimated Time: 15:20 (10 mins)"
+            android:text=""
+            android:textStyle="bold"
             android:fontFamily="sans-serif-smallcaps"
             android:textSize="18sp" />
 
@@ -53,7 +55,6 @@
             android:id="@+id/imageViewStatus"
             android:layout_width="200dp"
             android:layout_height="170dp"
-            android:src="@drawable/image_preparing"
             android:paddingTop="18dp"
             android:paddingBottom="10dp"
             android:layout_centerHorizontal="true"
@@ -66,8 +67,7 @@
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_below="@+id/imageViewStatus"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/preparing"/>
+            android:layout_centerHorizontal="true"/>
 
         <View
             android:id="@+id/OSLine2"
@@ -99,17 +99,6 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/lblOSQty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/lblOSOrderDetail"
-            android:layout_marginStart="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_toEndOf="@+id/lblOSItem"
-            android:text="QTY"
-            android:textSize="18sp" />
-
-        <TextView
             android:id="@+id/lblOSPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -120,20 +109,114 @@
             android:text="RM"
             android:textSize="18sp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/OSRecyclerView"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/lblOSItem"
-            android:layout_marginTop="6dp"
+            android:id="@+id/RVItem"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"/>
+            android:layout_marginRight="5dp"
+            android:layout_below="@+id/lblOSPrice"
+            android:background="#D3D3D3"
+            >
+            <View
+                android:id="@+id/OSLine"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginTop="11dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/OSItem1"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/OSItemPrice1"
+                android:padding="8dp"
+                android:layout_alignEnd="@+id/OSLine"
+                android:text=""
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/OSItem2"
+                android:layout_below="@+id/OSItem1"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/OSItemPrice2"
+                android:padding="8dp"
+                android:layout_alignEnd="@+id/OSItemPrice1"
+                android:layout_below="@+id/OSItemPrice1"
+                android:text=""
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/OSItem3"
+                android:layout_below="@+id/OSItem2"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/OSItemPrice3"
+                android:padding="8dp"
+                android:layout_alignEnd="@+id/OSItemPrice2"
+                android:layout_below="@+id/OSItemPrice2"
+                android:text=""
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/OSItem4"
+                android:layout_below="@+id/OSItem3"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/OSItemPrice4"
+                android:padding="8dp"
+                android:layout_alignEnd="@+id/OSItemPrice3"
+                android:layout_below="@+id/OSItemPrice3"
+                android:text=""
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/lblOSSubTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/OSRecyclerView"
+            android:layout_below="@+id/RVItem"
             android:layout_marginTop="10dp"
             android:text="Subtotal"
             android:textSize="16sp"
@@ -144,7 +227,7 @@
             android:id="@+id/lblOSSubTotalShow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/OSRecyclerView"
+            android:layout_below="@+id/RVItem"
             android:layout_alignEnd="@+id/lblOSPrice"
             android:layout_marginTop="10dp"
             android:text="0.00"
@@ -233,8 +316,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
             android:layout_toStartOf="@id/lblOSPaymentMethodShow"
-            android:layout_below="@+id/lblOSOrderDateTimeShow"
-            android:src="@drawable/image_card"/>
+            android:layout_below="@+id/lblOSOrderDateTimeShow" />
 
         <TextView
             android:id="@+id/lblOSPaymentMethodShow"
@@ -243,7 +325,7 @@
             android:layout_below="@+id/lblOSOrderDateTimeShow"
             android:layout_alignEnd="@+id/lblOSOrderDateTimeShow"
             android:layout_marginTop="10dp"
-            android:text="Credit/Debit Card"
+            android:text="             "
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -262,6 +344,7 @@
             android:layout_marginTop="7dp"
             android:layout_below="@+id/OSLine3"
             android:src="@drawable/ic_baseline_location_on_24"
+
             android:layout_alignStart="@+id/lblOSOrderDetail"/>
 
         <TextView
@@ -306,35 +389,25 @@
             android:text="Street Address"
             android:textSize="16sp"/>
 
-        <TextView
-            android:id="@+id/lblOSUnitFloor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/lblOSAddress"
-            android:layout_alignStart="@+id/lblOSOrderDetail"
-            android:layout_marginTop="10dp"
-            android:textSize="16sp"
-            android:text="Unit / Floor" />
-
         <ImageView
             android:id="@+id/imageOSRemark"
             android:layout_width="20dp"
             android:layout_height="27dp"
             android:layout_alignStart="@+id/lblOSOrderDetail"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/lblOSUnitFloor"
+            android:layout_below="@+id/lblOSAddress"
             android:src="@drawable/ic_baseline_remark"/>
 
         <TextView
             android:id="@+id/lblOSRemark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/lblOSUnitFloor"
+            android:layout_below="@+id/lblOSAddress"
             android:layout_toEndOf="@id/imageOSRemark"
             android:layout_marginStart="7dp"
             android:layout_marginEnd="18dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="13dp"
+            android:layout_marginBottom="20dp"
             android:text="Remark"
             android:textSize="16sp"/>
 

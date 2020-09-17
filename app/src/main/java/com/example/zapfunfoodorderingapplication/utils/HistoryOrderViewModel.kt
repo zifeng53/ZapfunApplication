@@ -11,6 +11,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.lang.Exception
 
 class HistoryOrderViewModel: ViewModel(),HistoryOrderLoadCallback {
 
@@ -43,12 +44,12 @@ class HistoryOrderViewModel: ViewModel(),HistoryOrderLoadCallback {
         val historyRef = FirebaseDatabase.getInstance().getReference().child("Order")
             .orderByChild("user_id").equalTo(uidSearch)
         historyRef.addListenerForSingleValueEvent(object: ValueEventListener {
+
             override fun onDataChange(p0: DataSnapshot) {
                 for(itemSnapShot in p0.children)
                 {
-                        val model = itemSnapShot.getValue<OrderModel>(OrderModel::class.java)
-                        tempList.add(model!!)
-
+                    val model = itemSnapShot.getValue<OrderModel>(OrderModel::class.java)
+                    tempList.add(model!!)
 
                 }
                 tempList.sortByDescending { selector(it) }
