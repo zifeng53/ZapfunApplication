@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -16,6 +17,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.zapfunfoodorderingapplication.adapters.OrderItemListRecyclerAdapter
+import com.example.zapfunfoodorderingapplication.models.OrderModel
 import com.example.zapfunfoodorderingapplication.utils.CartOrderViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -23,12 +25,19 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_my_order.*
+import kotlinx.android.synthetic.main.myorder_item_list.*
 import kotlinx.android.synthetic.main.popup_edit_dialog.view.*
 
 class MyOrderFragment : Fragment() {
     private lateinit var cartOrderViewModel: CartOrderViewModel
     var CartRecyclerView: RecyclerView?=null
     private lateinit var auth: FirebaseAuth
+
+    //private var textView32:TextView?=null //name
+    //private var textView33:TextView?=null //phone
+   // private var textView34:TextView?=null //address
+    //private var textView35:TextView?=null //floor
+    //private var textView36:TextView?=null //remarks
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +47,7 @@ class MyOrderFragment : Fragment() {
 
         readdata()
 
+        //textView29.setText(textView39.text)
 
         //textView37.text = currentDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
     }
@@ -87,9 +97,11 @@ class MyOrderFragment : Fragment() {
             val listData = it
             val adapter = OrderItemListRecyclerAdapter(requireContext(), listData)
             CartRecyclerView!!.adapter = adapter
+
+            textView29.text = (PriceObject.totalPrice).toString()
         })
 
-
+        //textView29.setText(textView39.text)
 
         val btnEdit: TextView = view.findViewById(R.id.textView16)
         btnEdit.setOnClickListener{view : View ->
@@ -134,10 +146,40 @@ class MyOrderFragment : Fragment() {
                 view.findNavController().navigate(R.id.action_myOrderFragment_to_cardCheckoutActivity)
             }
             else if (radio_cash.isChecked){
-
+                clearCart()
+                Toast.makeText(context, "PAID SUCCESSFULLY!", Toast.LENGTH_SHORT).show()
             }
         }
         return view
+    }
+
+    fun clearCart(){
+        auth = FirebaseAuth.getInstance()
+
+        val ref = FirebaseDatabase.getInstance().reference
+            .child("Cart")
+
+        ref.removeValue()
+    }
+
+    private fun saveOrder(){
+        val user = auth.currentUser
+        val uid_search = user?.uid
+
+        val name = textView32!!.text.toString()
+        val phone = textView33!!.text.toString()
+        val street = textView34!!.text.toString()
+        val unit = textView35!!.text.toString()
+        val remark = textView36!!.text.toString()
+
+        val ref = FirebaseDatabase.getInstance().getReference("Order")
+        val order_id = ref.push().key
+
+        //val order = OrderModel(order_id, uid_search, )
+
+        //ref.child(order_id!!).setValue(order).addOnCompleteListener{
+        //    Toast.makeText(context, "PAID SUCCESSFULLY!", Toast.LENGTH_SHORT).show()
+        //}
     }
 
     //override fun onViewCreated(view: View, savedInstanceState: Bundle?)
