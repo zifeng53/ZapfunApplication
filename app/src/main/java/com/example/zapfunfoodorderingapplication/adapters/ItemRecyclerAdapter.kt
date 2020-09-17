@@ -17,6 +17,7 @@ class ItemRecyclerAdapter(internal var context: Context, internal var data: List
     private var items: List<OrderModel>? = data
     private var inflater: LayoutInflater = LayoutInflater.from(context)
     var OrderID = ""
+    val delivery_fee : Double = 5.00
 
 
     inner class HistoryItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -26,10 +27,6 @@ class ItemRecyclerAdapter(internal var context: Context, internal var data: List
         var tvOrderDate: TextView = itemView.findViewById(R.id.OStvOrderDate)
         var tvStatus: TextView = itemView.findViewById(R.id.lblOSStatus)
         var order_id: TextView = itemView.findViewById(R.id.hiddenCtrl)
-
-        //var itemBar: TextView = itemView.findViewById(R.id.HistoryExpandable_layout)
-
-
     }
 
     override
@@ -37,41 +34,42 @@ class ItemRecyclerAdapter(internal var context: Context, internal var data: List
         return HistoryItemViewHolder(LayoutInflater.from(context).inflate(R.layout.order_item_list, parent, false)
         )
     }
-
-
     override
     fun onBindViewHolder(holder: HistoryItemViewHolder, position: Int) {
         val item = items?.get(position)
         holder.tvRecipient.text = item?.rec_name
-        holder.tvAmount.text = "RM" + item?.sub_total.toString()
+        var amount = item?.sub_total
+        if (amount != null) {
+            holder.tvAmount.text = "RM" + (amount + delivery_fee).toString() + "0"
+        }
         holder.tvItemDetails.text = item?.address
         holder.tvOrderDate.text = item?.order_date + "," + item?.order_time
         holder.tvStatus.text = item?.order_status
         holder.order_id.text = item?.order_id
         OrderID = holder.order_id.text.toString()
+        var status = item?.order_status.toString()
+        if (status == "delivered"){
+            holder.tvStatus.setBackgroundResource(R.drawable.bg_roundedgrey)
+        }else {
+            holder.tvStatus.setBackgroundResource(R.drawable.bg_rounded)
+        }
+
 
         holder.itemView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 var orderID: TextView? = v?.findViewById(R.id.hiddenCtrl)
                 var id = orderID?.text.toString()
-                try {
 
                     val intent = Intent(mContext, OrderSummaryActivity::class.java)
                     intent.putExtra("OrderIdValue", id)
                     mContext.startActivity(intent)
-                }catch (e:Exception){
-                    var i = 1
-                }
             }
         })
     }
-
 
     override
     fun getItemCount(): Int {
         //return items?.size?:0
         return data.size
     }
-
-
 }

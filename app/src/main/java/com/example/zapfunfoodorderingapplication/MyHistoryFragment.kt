@@ -18,12 +18,6 @@ class MyHistoryFragment : Fragment() {
     private lateinit var historyOrderViewModel: HistoryOrderViewModel
     var  HistoryRecyclerView: RecyclerView?=null
 
-    private var mDatabase: DatabaseReference? = null
-    private var mOrderReference: DatabaseReference? = null
-
-    var childList = ArrayList<JSONObject>()
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
