@@ -46,10 +46,6 @@ class MyOrderFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
 
         readdata()
-
-        //textView29.setText(textView39.text)
-
-        //textView37.text = currentDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
     }
 
     fun readdata() {
@@ -98,8 +94,14 @@ class MyOrderFragment : Fragment() {
             val adapter = OrderItemListRecyclerAdapter(requireContext(), listData)
             CartRecyclerView!!.adapter = adapter
 
-            textView29.text = (PriceObject.totalPrice).toString()
+            //textView29.text = (PriceObject.totalPrice).toString()
         })
+
+        val btnClearAll: TextView = view.findViewById(R.id.textView7)
+        btnClearAll.setOnClickListener{
+            clearCart()
+            Toast.makeText(context, "CART IS CLEARED!", Toast.LENGTH_SHORT).show()
+        }
 
         //textView29.setText(textView39.text)
 
@@ -147,7 +149,7 @@ class MyOrderFragment : Fragment() {
             }
             else if (radio_cash.isChecked){
                 clearCart()
-                Toast.makeText(context, "PAID SUCCESSFULLY!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "ORDER PLACED SUCCESSFULLY!", Toast.LENGTH_SHORT).show()
             }
         }
         return view

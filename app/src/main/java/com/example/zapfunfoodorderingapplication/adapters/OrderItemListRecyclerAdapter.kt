@@ -47,7 +47,7 @@ class OrderItemListRecyclerAdapter(internal var context: Context, internal var d
         totalNoShipping += dish_price.toDouble()
 
         if(position==data.size-1) {
-            holder.tvTotal.text = totalNoShipping.toString()
+            holder.tvTotal.text = "Total Price: RM " + totalNoShipping.toString()
             PriceObject.totalPrice = totalNoShipping
         }
     }

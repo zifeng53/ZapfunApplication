@@ -45,7 +45,6 @@ class CartOrderViewModel: ViewModel(),OrderListLoadCallback {
                     val model = itemSnapShot.getValue<CartMenuModel>(CartMenuModel::class.java)
                     tempList.add(model!!)
                 }
-                //tempList.sortByDescending { selector(it) }
                 orderLoadCallbackListener.onOrderListLoadSuccess(tempList)
             }
                 override fun onCancelled(p0: DatabaseError){
@@ -54,7 +53,6 @@ class CartOrderViewModel: ViewModel(),OrderListLoadCallback {
         })
     }
 
-    fun selector(p: CartMenuModel): String? = p.user_id
     override fun onOrderListLoadSuccess(OrderList: List<CartMenuModel>) {
         orderListMutableLiveData!!.value = OrderList
     }

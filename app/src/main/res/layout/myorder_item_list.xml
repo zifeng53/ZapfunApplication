@@ -36,18 +36,6 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView40"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView41"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="7dp"
-            android:text="Delete"
-            android:textColor="#2196F3"
-            android:textSize="16sp" />
-
-        <TextView
             android:id="@+id/textView41"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,9 +47,10 @@
             android:id="@+id/textView39"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/textView41"
             android:layout_marginStart="7dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="7dp"
             android:layout_marginBottom="7dp"
             android:visibility="visible"
